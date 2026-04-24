@@ -86,7 +86,17 @@ function TopBar() {
           {!isHome && <Breadcrumb />}
         </div>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <Link
+            to="/muro"
+            className="topbar-muro-link"
+            aria-label="Ir al muro comunitario"
+          >
+            <span aria-hidden="true">💬</span>
+            <span className="topbar-muro-label">Muro</span>
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

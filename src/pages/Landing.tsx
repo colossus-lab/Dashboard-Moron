@@ -158,6 +158,25 @@ export function Landing() {
         </section>
       </SectionReveal>
 
+      {/* ─── CTA Muro comunitario ─── */}
+      <SectionReveal>
+        <section className="muro-cta" aria-labelledby="muro-cta-title">
+          <div className="muro-cta-body">
+            <span className="muro-cta-eyebrow">Nuevo · Comunidad</span>
+            <h2 id="muro-cta-title" className="muro-cta-title">
+              El muro comunitario de Morón
+            </h2>
+            <p className="muro-cta-desc">
+              Un espacio anónimo para que los vecinos de Morón, Castelar, Haedo,
+              El Palomar y Villa Sarmiento dejen su mensaje y se lean entre sí.
+            </p>
+          </div>
+          <Link to="/muro" className="muro-cta-action">
+            Entrar al muro <span aria-hidden="true">→</span>
+          </Link>
+        </section>
+      </SectionReveal>
+
       {/* ─── Footer ─── */}
       <footer className="landing-footer">
         <div className="footer-rule" />

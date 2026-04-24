@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { Landing } from './pages/Landing';
+import { Muro } from './pages/Muro';
 import { ReportView } from './pages/ReportView';
 import { IntroHero } from './components/ui/IntroHero';
 import { useFirstVisit } from './hooks/useFirstVisit';
@@ -86,6 +87,7 @@ export default function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/muro" element={<Muro />} />
             <Route path="/*" element={<ReportView />} />
           </Routes>
         </Layout>
