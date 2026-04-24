@@ -2,7 +2,7 @@ import type { ReportEntry } from '../types/report';
 
 // ═══════════════════════════════════════════════════════════════
 // Report Registry — Dashboard Morón
-// 11 informes: 9 de Población (Censo 2022) + 2 de Seguridad
+// 10 informes: 8 de Población (Censo 2022) + 2 de Seguridad
 // ═══════════════════════════════════════════════════════════════
 
 export const REPORTS: ReportEntry[] = [
@@ -111,19 +111,6 @@ export const REPORTS: ReportEntry[] = [
     dataPath: '/data/poblacion/educacion.json',
     order: 8,
   },
-  {
-    id: 'poblacion-fecundidad',
-    slug: 'poblacion/fecundidad',
-    title: 'Fecundidad',
-    shortTitle: 'Fecundidad',
-    category: 'Población',
-    subcategory: 'Fecundidad',
-    icon: '👶',
-    color: '#a855f7',
-    mdPath: '/reports/poblacion/fecundidad.md',
-    dataPath: '/data/poblacion/fecundidad.json',
-    order: 9,
-  },
   // ─── Grupo 2: Seguridad ───
   {
     id: 'seguridad-snic',
@@ -136,7 +123,7 @@ export const REPORTS: ReportEntry[] = [
     color: '#6366f1',
     mdPath: '/reports/seguridad/snic.md',
     dataPath: '/data/seguridad/snic.json',
-    order: 10,
+    order: 9,
   },
   {
     id: 'seguridad-muertes-viales',
@@ -149,7 +136,7 @@ export const REPORTS: ReportEntry[] = [
     color: '#ef4444',
     mdPath: '/reports/seguridad/muertes-viales.md',
     dataPath: '/data/seguridad/muertes-viales.json',
-    order: 11,
+    order: 10,
   },
 ];
 

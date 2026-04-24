@@ -9,7 +9,7 @@ const HERO_STATS = [
   { value: 331183, label: 'Habitantes', suffix: '' },
   { value: 55, label: 'km²', suffix: '' },
   { value: 5, label: 'Localidades', suffix: '' },
-  { value: 11, label: 'Informes', suffix: '' },
+  { value: 10, label: 'Informes', suffix: '' },
 ];
 
 // ─── Resumen del partido (Cuadro 1.2 bloque Gobierno Local, INDEC 2022) ───
@@ -35,7 +35,6 @@ const MINI_STATS: Record<string, string> = {
   'poblacion-prevision': '33% percibe',
   'poblacion-actividad-economica': '58,6% empleo',
   'poblacion-educacion': '13,2% universitario',
-  'poblacion-fecundidad': '0,99 hijos/mujer',
   'seguridad-snic': '13,4K hechos 2024',
   'seguridad-muertes-viales': '94 víctimas 2017-23',
 };

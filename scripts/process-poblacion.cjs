@@ -1,6 +1,6 @@
 // ════════════════════════════════════════════════════════════════════
 // process-poblacion.cjs
-// Genera los 7 informes de Población del Dashboard Morón a partir de
+// Genera los 8 informes de Población del Dashboard Morón a partir de
 // los cuadros del Censo 2022 publicados por INDEC.
 //
 // Outputs:
@@ -988,102 +988,6 @@ function processEducacion() {
 }
 
 // ════════════════════════════════════════════════════════════════════
-// 9. FECUNDIDAD (cuadro general)
-// Fuente: fecundidad_c1_2 — partido-level con celdas combinadas "cod nombre"
-// ════════════════════════════════════════════════════════════════════
-function processFecundidad() {
-  console.log('\n─── Fecundidad ───');
-
-  const c1 = loadCuadro('c2022_bsas_fecundidad_c1_2.xlsx', 'Cuadro 1.2');
-  const moronRow = findPartidoRow(c1, MORON.codigo, MORON.nombre);
-  if (!moronRow) throw new Error('No se encontró fila de Morón en fecundidad c1.2');
-
-  const mujeres = toNumber(moronRow[1]);
-  const sinHijos = toNumber(moronRow[2]);
-  const h1 = toNumber(moronRow[3]);
-  const h2 = toNumber(moronRow[4]);
-  const h3 = toNumber(moronRow[5]);
-  const h4 = toNumber(moronRow[6]);
-  const h5Mas = toNumber(moronRow[7]);
-  const promedioRaw = toNumber(moronRow[8]);
-
-  // Algunos cuadros INDEC muestran el promedio como entero tras redondeo de Excel;
-  // si resulta entero, recomputarlo a partir de los recuentos por categoría.
-  const calcPromedio = (0 * sinHijos + 1 * h1 + 2 * h2 + 3 * h3 + 4 * h4 + 5 * h5Mas) / mujeres;
-  const promedio = (promedioRaw != null && promedioRaw > 0 && promedioRaw % 1 !== 0) ? promedioRaw : calcPromedio;
-
-  const pctSinHijos = (sinHijos / mujeres) * 100;
-  const pct1o2 = ((h1 + h2) / mujeres) * 100;
-  const pct3Mas = ((h3 + h4 + h5Mas) / mujeres) * 100;
-
-  // GBA24 ranking — promedio de hijos e hijas por mujer
-  const gbaRows = GBA24.map(p => {
-    const r = findPartidoRow(c1, p.codigo, p.nombre);
-    if (!r) return { codigo: p.codigo, nombre: p.nombre, value: null };
-    const muj = toNumber(r[1]);
-    const sh = toNumber(r[2]);
-    const x1 = toNumber(r[3]);
-    const x2 = toNumber(r[4]);
-    const x3 = toNumber(r[5]);
-    const x4 = toNumber(r[6]);
-    const x5 = toNumber(r[7]);
-    const prom = muj ? (0 * sh + 1 * x1 + 2 * x2 + 3 * x3 + 4 * x4 + 5 * x5) / muj : null;
-    return { codigo: p.codigo, nombre: p.nombre, value: prom };
-  });
-  const rkPromedio = rankGBA(gbaRows);
-
-  const data = {
-    meta: {
-      id: 'poblacion-fecundidad',
-      title: 'Fecundidad — Morón',
-      category: 'Población',
-      subcategory: 'Fecundidad',
-      source: SOURCE,
-      date: DATE,
-    },
-    kpis: [
-      { id: 'mujeres-14-49', label: 'Mujeres de 14 a 49 años', value: mujeres, formatted: fmtInt(mujeres), unit: 'personas' },
-      { id: 'promedio', label: 'Promedio de hijas e hijos', value: promedio, formatted: fmtDec(promedio, 2), comparison: 'Por mujer de 14-49' },
-      { id: 'sin-hijos', label: 'Sin hijos', value: pctSinHijos, formatted: fmtPct(pctSinHijos) },
-      { id: 'uno-dos', label: 'Con 1 o 2 hijos', value: pct1o2, formatted: fmtPct(pct1o2) },
-      { id: 'tres-mas', label: 'Con 3 o más', value: pct3Mas, formatted: fmtPct(pct3Mas) },
-    ],
-    charts: [
-      {
-        id: 'distribucion',
-        type: 'bar',
-        title: 'Mujeres de 14 a 49 años por cantidad de hijas e hijos nacidos vivos — Morón',
-        sectionId: 'distribucion',
-        data: [
-          { cantidad: 'Ninguno', mujeres: sinHijos },
-          { cantidad: '1', mujeres: h1 },
-          { cantidad: '2', mujeres: h2 },
-          { cantidad: '3', mujeres: h3 },
-          { cantidad: '4', mujeres: h4 },
-          { cantidad: '5 y más', mujeres: h5Mas },
-        ],
-        config: { xAxis: 'cantidad' },
-      },
-      {
-        id: 'gba-promedio',
-        type: 'bar',
-        title: 'Promedio de hijas e hijos por mujer (14-49) — 24 partidos GBA',
-        sectionId: 'comparacion',
-        data: rkPromedio.map(r => ({ partido: r.name, value: r.value })),
-        config: { xAxis: 'partido', layout: 'horizontal' },
-      },
-    ],
-    rankings: [
-      { id: 'rk-promedio', title: 'Promedio de hijas e hijos por mujer (14-49) — 24 GBA', sectionId: 'comparacion', items: rkPromedio, order: 'desc' },
-    ],
-    mapData: buildFeatured(promedio, fmtDec(promedio, 2), 'Promedio de hijas e hijos por mujer de 14 a 49 años en Morón'),
-  };
-
-  writeJson(path.join(OUT_DIR, 'fecundidad.json'), data);
-  return { promedio };
-}
-
-// ════════════════════════════════════════════════════════════════════
 // RESUMEN — Gobierno local y viviendas colectivas
 // Cuadro chico pero con datos únicos: categoría del municipio, viviendas
 // colectivas, población en situación de calle. Se emite para consumo de
@@ -1146,7 +1050,6 @@ function main() {
   processPrevision();
   processActividadEconomica();
   processEducacion();
-  processFecundidad();
   processResumenGobierno();
   console.log('\n✅ Done.');
 }

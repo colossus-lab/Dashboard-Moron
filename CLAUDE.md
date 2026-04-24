@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Contexto
 
-Dashboard de datos abiertos del **Municipio de Morón** (Provincia de Buenos Aires, Argentina). SPA estática pensada para habitantes del partido: 11 informes (9 de Población sobre Censo 2022 + 2 de Seguridad sobre SNIC y SAT muertes viales), más un cuadro resumen en la Landing derivado del cuadro "Gobierno Local" del Censo. Comparaciones contra los 24 partidos del GBA. Prosa narrativa en tercera persona (sin voseo militante, sin interpretación sin respaldo del dato, sin secciones prescriptivas de política pública). El voseo queda reservado para el copy de la UI y el hero.
+Dashboard de datos abiertos del **Municipio de Morón** (Provincia de Buenos Aires, Argentina). SPA estática pensada para habitantes del partido: 10 informes (8 de Población sobre Censo 2022 + 2 de Seguridad sobre SNIC y SAT muertes viales), más un cuadro resumen en la Landing derivado del cuadro "Gobierno Local" del Censo. Comparaciones contra los 24 partidos del GBA. Prosa narrativa en tercera persona (sin voseo militante, sin interpretación sin respaldo del dato, sin secciones prescriptivas de política pública). El voseo queda reservado para el copy de la UI y el hero.
 
 ## Comandos
 

@@ -1,6 +1,6 @@
 # Dashboard Morón
 
-> Dashboard interactivo de datos abiertos del **Municipio de Morón** (Provincia de Buenos Aires, Argentina). 11 informes sobre el Censo Nacional 2022 (INDEC) y estadísticas de seguridad (SNIC, SAT), comparados contra los 24 partidos del Gran Buenos Aires.
+> Dashboard interactivo de datos abiertos del **Municipio de Morón** (Provincia de Buenos Aires, Argentina). 10 informes sobre el Censo Nacional 2022 (INDEC) y estadísticas de seguridad (SNIC, SAT), comparados contra los 24 partidos del Gran Buenos Aires.
 
 Hecho por [Colossus Lab](https://colossuslab.org) con datos abiertos vía [OpenArg](https://www.openarg.org).
 
@@ -23,13 +23,12 @@ Hecho por [Colossus Lab](https://colossuslab.org) con datos abiertos vía [OpenA
 
 ## Qué muestra el dashboard
 
-Morón es el 9º partido del Gran Buenos Aires en densidad poblacional, uno de los más envejecidos del conurbano y un consolidado centro urbano del primer cordón. Este dashboard presenta **11 informes** que cubren:
+Morón es el 9º partido del Gran Buenos Aires en densidad poblacional, uno de los más envejecidos del conurbano y un consolidado centro urbano del primer cordón. Este dashboard presenta **10 informes** que cubren:
 
 - **Demografía** — estructura por sexo y edad, pirámide poblacional, serie histórica 1970-2022.
 - **Vivienda y hogares** — stock habitacional, condiciones habitacionales por hogar y por persona.
 - **Salud y previsión** — cobertura de salud, beneficios previsionales.
 - **Trabajo y educación** — actividad económica, máximo nivel educativo, asistencia escolar.
-- **Fecundidad** — distribución de hijas/os nacidos vivos en mujeres 14-49.
 - **Seguridad** — delitos SNIC (2000-2024), víctimas fatales de siniestros viales (2017-2023).
 
 Cada informe incluye: KPIs principales del partido, gráficos de Morón, rankings comparativos contra los 24 partidos del GBA y tablas descriptivas. Los datos se actualizan al regenerar el pipeline desde las fuentes oficiales.
@@ -61,7 +60,7 @@ Los slugs son públicos y comparten URL limpia. Ejemplo:
 
 ## Catálogo de informes
 
-### Población (9)
+### Población (8)
 
 | # | Informe | Slug | Fuente |
 |---|---|---|---|
@@ -73,14 +72,13 @@ Los slugs son públicos y comparten URL limpia. Ejemplo:
 | 6 | Previsión Social | `poblacion/prevision` | Censo 2022 — Cuadros Previsión |
 | 7 | Actividad Económica | `poblacion/actividad-economica` | Censo 2022 — Cuadros Actividad Económica |
 | 8 | Educación | `poblacion/educacion` | Censo 2022 — Cuadros Educación |
-| 9 | Fecundidad | `poblacion/fecundidad` | Censo 2022 — Cuadros Fecundidad |
 
 ### Seguridad (2)
 
 | # | Informe | Slug | Fuente |
 |---|---|---|---|
-| 10 | Seguridad Ciudadana — SNIC 2000-2024 | `seguridad/snic` | Sistema Nacional de Información Criminal — Ministerio de Seguridad de la Nación |
-| 11 | Muertes Viales — SAT 2017-2023 | `seguridad/muertes-viales` | Sistema de Alerta Temprana de Muertes Viales — Ministerio de Seguridad de la Nación |
+| 9 | Seguridad Ciudadana — SNIC 2000-2024 | `seguridad/snic` | Sistema Nacional de Información Criminal — Ministerio de Seguridad de la Nación |
+| 10 | Muertes Viales — SAT 2017-2023 | `seguridad/muertes-viales` | Sistema de Alerta Temprana de Muertes Viales — Ministerio de Seguridad de la Nación |
 
 ---
 
@@ -155,7 +153,7 @@ Editá esas rutas al layout de tu sistema antes de correr el pipeline.
 ### Comandos
 
 ```bash
-node scripts/process-poblacion.cjs   # Regenera los 9 JSONs de public/data/poblacion/ + public/data/resumen.json
+node scripts/process-poblacion.cjs   # Regenera los 8 JSONs de public/data/poblacion/ + public/data/resumen.json
 node scripts/process-seguridad.cjs   # Regenera snic.json y muertes-viales.json
 npm run build-data                   # Corre ambos en secuencia
 ```
@@ -177,7 +175,7 @@ Detalles del schema `ReportData` en [`src/types/report.ts`](src/types/report.ts)
 Dashboard-Moron/
 ├── public/
 │   ├── data/                      # JSONs consumidos por el SPA (commiteados)
-│   │   ├── poblacion/             #   9 informes de población
+│   │   ├── poblacion/             #   8 informes de población
 │   │   ├── seguridad/             #   2 informes de seguridad
 │   │   └── resumen.json           #   Cuadro resumen de la Landing
 │   └── reports/                   # Markdown narrativos por informe
@@ -185,7 +183,7 @@ Dashboard-Moron/
 │       └── seguridad/
 ├── scripts/
 │   ├── lib/indec-utils.cjs        # Helpers comunes (GBA24, lectura xlsx, formato)
-│   ├── process-poblacion.cjs      # Pipeline de población (9 informes + resumen)
+│   ├── process-poblacion.cjs      # Pipeline de población (8 informes + resumen)
 │   ├── process-seguridad.cjs      # Pipeline de seguridad (SNIC + SAT)
 │   └── build-data.cjs             # Orquestador que llama a ambos
 ├── src/
@@ -195,7 +193,7 @@ Dashboard-Moron/
 │   ├── components/
 │   │   ├── charts/ChartRenderer.tsx     # Bar/line/pie/pyramid con Nivo
 │   │   └── ui/                    # KPICounter, SectionReveal, IntroHero, ThemeToggle
-│   ├── data/reportRegistry.ts     # Fuente de verdad: 11 informes
+│   ├── data/reportRegistry.ts     # Fuente de verdad: 10 informes
 │   ├── types/report.ts            # Schema ReportData
 │   ├── hooks/useReportData.ts     # Fetch + cache de JSONs
 │   ├── store/useStore.ts          # Zustand — tema, sección activa
