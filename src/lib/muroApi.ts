@@ -27,35 +27,63 @@ function functionsUrl(name: string) {
 
 async function callFunction<T>(name: string, body: unknown): Promise<T> {
   if (!SUPABASE_CONFIGURED) {
+    console.error('[muro] Supabase no configurado', {
+      hasUrl: Boolean(SUPABASE_URL),
+      hasKey: Boolean(SUPABASE_ANON_KEY),
+    });
     throw new MuroApiError(
-      'Supabase no está configurado en el frontend.',
+      friendlyError('not_configured'),
       'not_configured',
       0,
     );
   }
-  const res = await fetch(functionsUrl(name), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      apikey: SUPABASE_ANON_KEY,
-      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-    },
-    body: JSON.stringify(body),
-  });
+
+  const url = functionsUrl(name);
+
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify(body),
+    });
+  } catch (err) {
+    // TypeError: Failed to fetch — típicamente CORS, DNS o red caída.
+    console.error('[muro] fetch falló', { url, err });
+    throw new MuroApiError(
+      friendlyError('network_error'),
+      'network_error',
+      0,
+      { cause: String(err) },
+    );
+  }
 
   let payload: unknown = null;
   try {
     payload = await res.json();
   } catch {
-    /* noop: respuesta vacía */
+    /* respuesta vacía o no-JSON (ej. HTML 404) */
   }
 
   if (!res.ok) {
     const code =
-      (payload && typeof payload === 'object' && 'error' in payload && typeof (payload as { error?: unknown }).error === 'string'
+      payload &&
+      typeof payload === 'object' &&
+      'error' in payload &&
+      typeof (payload as { error?: unknown }).error === 'string'
         ? (payload as { error: string }).error
-        : 'unknown_error');
-    throw new MuroApiError(friendlyError(code), code, res.status, (payload as Record<string, unknown>) ?? {});
+        : 'unknown_error';
+    console.error('[muro] respuesta no OK', { url, status: res.status, payload });
+    throw new MuroApiError(
+      friendlyError(code),
+      code,
+      res.status,
+      (payload as Record<string, unknown>) ?? {},
+    );
   }
 
   return payload as T;
@@ -89,7 +117,9 @@ function friendlyError(code: string): string {
     case 'message_not_found':
       return 'El mensaje ya no existe.';
     case 'not_configured':
-      return 'El muro no está configurado todavía.';
+      return 'El muro todavía no está configurado. Faltan credenciales de Supabase en el deploy.';
+    case 'network_error':
+      return 'No pudimos conectarnos con el servidor. Revisá tu conexión e intentá de nuevo.';
     default:
       return 'Ocurrió un error. Probá de nuevo en un rato.';
   }

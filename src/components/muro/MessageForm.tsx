@@ -42,8 +42,11 @@ export function MessageForm({ defaultLocalidad, onPosted }: Props) {
       onPosted?.(message);
       setTimeout(() => setSuccess(false), 2500);
     } catch (err) {
+      console.error('[muro] postMessage falló', err);
       if (err instanceof MuroApiError) {
         setError(err.message);
+      } else if (err instanceof Error) {
+        setError(`Ocurrió un error: ${err.message}`);
       } else {
         setError('Ocurrió un error. Intentá de nuevo.');
       }
