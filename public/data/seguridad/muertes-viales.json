@@ -1,0 +1,636 @@
+{
+  "meta": {
+    "id": "seguridad-muertes-viales",
+    "title": "Muertes Viales — Morón (SAT 2017-2023)",
+    "category": "Seguridad",
+    "subcategory": "Muertes Viales",
+    "source": "Sistema de Alerta Temprana de Muertes Viales — Ministerio de Seguridad de la Nación",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "total-victimas",
+      "label": "Víctimas totales (2017-2023)",
+      "value": 94,
+      "formatted": "94",
+      "status": "critical",
+      "comparison": "7 años de cobertura"
+    },
+    {
+      "id": "promedio",
+      "label": "Promedio anual",
+      "value": 13.428571428571429,
+      "formatted": "13,4",
+      "unit": "víctimas/año"
+    },
+    {
+      "id": "vehiculo-top",
+      "label": "Vehículo más afectado",
+      "value": 30,
+      "formatted": "Motocicleta",
+      "comparison": "30 víctimas"
+    },
+    {
+      "id": "calle-top",
+      "label": "Calle con más víctimas",
+      "value": 7,
+      "formatted": "AVE PTE PERON",
+      "comparison": "7 víctimas"
+    }
+  ],
+  "charts": [
+    {
+      "id": "serie-anual",
+      "type": "line",
+      "title": "Víctimas fatales por año — Morón",
+      "sectionId": "evolucion",
+      "data": [
+        {
+          "id": "Víctimas",
+          "data": [
+            {
+              "x": "2017",
+              "y": 24
+            },
+            {
+              "x": "2018",
+              "y": 20
+            },
+            {
+              "x": "2019",
+              "y": 10
+            },
+            {
+              "x": "2020",
+              "y": 6
+            },
+            {
+              "x": "2021",
+              "y": 12
+            },
+            {
+              "x": "2022",
+              "y": 8
+            },
+            {
+              "x": "2023",
+              "y": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vehiculos",
+      "type": "pie",
+      "title": "Víctimas por tipo de vehículo",
+      "sectionId": "vehiculos",
+      "data": [
+        {
+          "id": "Motocicleta",
+          "label": "Motocicleta",
+          "value": 30
+        },
+        {
+          "id": "Automóvil",
+          "label": "Automóvil",
+          "value": 23
+        },
+        {
+          "id": "Sin determinar",
+          "label": "Sin determinar",
+          "value": 17
+        },
+        {
+          "id": "No corresponde",
+          "label": "No corresponde",
+          "value": 12
+        },
+        {
+          "id": "Peatón",
+          "label": "Peatón",
+          "value": 8
+        },
+        {
+          "id": "Bicicleta",
+          "label": "Bicicleta",
+          "value": 2
+        },
+        {
+          "id": "Camioneta",
+          "label": "Camioneta",
+          "value": 1
+        },
+        {
+          "id": "Ciclomotor",
+          "label": "Ciclomotor",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "edades",
+      "type": "bar",
+      "title": "Víctimas por grupo etario",
+      "sectionId": "perfil",
+      "data": [
+        {
+          "edad": "10-14",
+          "value": 1
+        },
+        {
+          "edad": "25-29",
+          "value": 5
+        },
+        {
+          "edad": "30-34",
+          "value": 10
+        },
+        {
+          "edad": "35-39",
+          "value": 6
+        },
+        {
+          "edad": "40-44",
+          "value": 6
+        },
+        {
+          "edad": "45-49",
+          "value": 5
+        },
+        {
+          "edad": "50-54",
+          "value": 3
+        },
+        {
+          "edad": "55-59",
+          "value": 2
+        },
+        {
+          "edad": "60-64",
+          "value": 5
+        },
+        {
+          "edad": "65-69",
+          "value": 3
+        },
+        {
+          "edad": "70-74",
+          "value": 4
+        },
+        {
+          "edad": "75-79",
+          "value": 1
+        },
+        {
+          "edad": "Sin determinar",
+          "value": 18
+        },
+        {
+          "edad": "80-84",
+          "value": 1
+        },
+        {
+          "edad": "20-24",
+          "value": 14
+        },
+        {
+          "edad": "15-19",
+          "value": 6
+        },
+        {
+          "edad": "4 o menos",
+          "value": 3
+        },
+        {
+          "edad": "85-89",
+          "value": 1
+        }
+      ],
+      "config": {
+        "xAxis": "edad"
+      }
+    },
+    {
+      "id": "modo",
+      "type": "pie",
+      "title": "Modo de producción del hecho",
+      "sectionId": "circunstancias",
+      "data": [
+        {
+          "id": "Colisión vehículo-vehículo",
+          "label": "Colisión vehículo-vehículo",
+          "value": 52
+        },
+        {
+          "id": "Colisión vehículo-persona",
+          "label": "Colisión vehículo-persona",
+          "value": 20
+        },
+        {
+          "id": "Sin determinar",
+          "label": "Sin determinar",
+          "value": 18
+        },
+        {
+          "id": "Colisión vehículo-objeto",
+          "label": "Colisión vehículo-objeto",
+          "value": 2
+        },
+        {
+          "id": "Vuelco-Despistes",
+          "label": "Vuelco-Despistes",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "calles",
+      "type": "bar",
+      "title": "Top 15 calles/rutas con más víctimas — Morón",
+      "sectionId": "rutas",
+      "data": [
+        {
+          "calle": "AVE PTE PERON",
+          "value": 7
+        },
+        {
+          "calle": "CORDOBA",
+          "value": 4
+        },
+        {
+          "calle": "AVE RIVADAVIA",
+          "value": 3
+        },
+        {
+          "calle": "AVE EVA PERON",
+          "value": 3
+        },
+        {
+          "calle": "AU. DEL OESTE",
+          "value": 3
+        },
+        {
+          "calle": "3 DE FEBRERO",
+          "value": 3
+        },
+        {
+          "calle": "NUESTRA SENORA DEL BUEN VIAJE",
+          "value": 2
+        },
+        {
+          "calle": "GRAL JOSE M GALAN",
+          "value": 2
+        },
+        {
+          "calle": "PTE FIGUEROA ALCORTA",
+          "value": 2
+        },
+        {
+          "calle": "AVE PTE HIPOLITO YRIGOYEN",
+          "value": 2
+        },
+        {
+          "calle": "AVE DON BOSCO",
+          "value": 2
+        },
+        {
+          "calle": "AVE CALLAO",
+          "value": 2
+        },
+        {
+          "calle": "GRAL TOMAS GUIDO",
+          "value": 2
+        },
+        {
+          "calle": "MURILLO",
+          "value": 2
+        },
+        {
+          "calle": "ESTANISLAO DEL CAMPO",
+          "value": 2
+        }
+      ],
+      "config": {
+        "xAxis": "calle",
+        "layout": "horizontal"
+      }
+    },
+    {
+      "id": "gba-total",
+      "type": "bar",
+      "title": "Víctimas fatales viales — 24 GBA (2017-2023)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "La Matanza",
+          "value": 361
+        },
+        {
+          "partido": "Quilmes",
+          "value": 234
+        },
+        {
+          "partido": "Moreno",
+          "value": 162
+        },
+        {
+          "partido": "Berazategui",
+          "value": 149
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 142
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 134
+        },
+        {
+          "partido": "Tigre",
+          "value": 134
+        },
+        {
+          "partido": "Merlo",
+          "value": 131
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 115
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 115
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 114
+        },
+        {
+          "partido": "General San Martín",
+          "value": 102
+        },
+        {
+          "partido": "Morón",
+          "value": 94
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 92
+        },
+        {
+          "partido": "San Isidro",
+          "value": 91
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 87
+        },
+        {
+          "partido": "Lanús",
+          "value": 78
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 77
+        },
+        {
+          "partido": "Vicente López",
+          "value": 74
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 72
+        },
+        {
+          "partido": "San Miguel",
+          "value": 62
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 48
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 40
+        },
+        {
+          "partido": "San Fernando",
+          "value": 29
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-calles",
+      "title": "Calles más críticas — Morón",
+      "sectionId": "rutas",
+      "items": [
+        {
+          "name": "AVE PTE PERON",
+          "value": 7
+        },
+        {
+          "name": "CORDOBA",
+          "value": 4
+        },
+        {
+          "name": "AVE RIVADAVIA",
+          "value": 3
+        },
+        {
+          "name": "AVE EVA PERON",
+          "value": 3
+        },
+        {
+          "name": "AU. DEL OESTE",
+          "value": 3
+        },
+        {
+          "name": "3 DE FEBRERO",
+          "value": 3
+        },
+        {
+          "name": "NUESTRA SENORA DEL BUEN VIAJE",
+          "value": 2
+        },
+        {
+          "name": "GRAL JOSE M GALAN",
+          "value": 2
+        },
+        {
+          "name": "PTE FIGUEROA ALCORTA",
+          "value": 2
+        },
+        {
+          "name": "AVE PTE HIPOLITO YRIGOYEN",
+          "value": 2
+        },
+        {
+          "name": "AVE DON BOSCO",
+          "value": 2
+        },
+        {
+          "name": "AVE CALLAO",
+          "value": 2
+        },
+        {
+          "name": "GRAL TOMAS GUIDO",
+          "value": 2
+        },
+        {
+          "name": "MURILLO",
+          "value": 2
+        },
+        {
+          "name": "ESTANISLAO DEL CAMPO",
+          "value": 2
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-gba",
+      "title": "Víctimas fatales viales — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "La Matanza",
+          "value": 361,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Quilmes",
+          "value": 234,
+          "municipioId": "06658"
+        },
+        {
+          "name": "Moreno",
+          "value": 162,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Berazategui",
+          "value": 149,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 142,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 134,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Tigre",
+          "value": 134,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Merlo",
+          "value": 131,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 115,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 115,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 114,
+          "municipioId": "06490"
+        },
+        {
+          "name": "General San Martín",
+          "value": 102,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Morón",
+          "value": 94,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 92,
+          "municipioId": "06840"
+        },
+        {
+          "name": "San Isidro",
+          "value": 91,
+          "municipioId": "06756"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 87,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Lanús",
+          "value": 78,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 77,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Vicente López",
+          "value": 74,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 72,
+          "municipioId": "06270"
+        },
+        {
+          "name": "San Miguel",
+          "value": 62,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 48,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 40,
+          "municipioId": "06408"
+        },
+        {
+          "name": "San Fernando",
+          "value": 29,
+          "municipioId": "06749"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 94,
+      "formatted": "94",
+      "caption": "Víctimas fatales en siniestros viales (2017-2023)",
+      "label": "94 víctimas fatales (2017-2023)"
+    }
+  ]
+}

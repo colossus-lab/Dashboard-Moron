@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "id": "poblacion-salud",
+    "title": "Cobertura de Salud — Morón",
+    "category": "Población",
+    "subcategory": "Salud",
+    "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "obra-social",
+      "label": "Obra social / prepaga",
+      "value": 75.94752319303709,
+      "formatted": "75,9%",
+      "status": "good",
+      "comparison": "250.260 personas (incluye PAMI)"
+    },
+    {
+      "id": "plan-estatal",
+      "label": "Plan estatal de salud",
+      "value": 1.6214641429728966,
+      "formatted": "1,6%",
+      "comparison": "5.343 personas"
+    },
+    {
+      "id": "sin-cobertura",
+      "label": "Sin cobertura",
+      "value": 22.43101266399002,
+      "formatted": "22,4%",
+      "status": "warning",
+      "comparison": "73.914 personas"
+    },
+    {
+      "id": "pob-total",
+      "label": "Población en viv. particulares",
+      "value": 329517,
+      "formatted": "329.517",
+      "unit": "hab"
+    }
+  ],
+  "charts": [
+    {
+      "id": "cobertura",
+      "type": "pie",
+      "title": "Tipo de cobertura de salud — Morón",
+      "sectionId": "cobertura",
+      "data": [
+        {
+          "id": "Obra social / prepaga",
+          "label": "Obra social / prepaga",
+          "value": 250260
+        },
+        {
+          "id": "Plan estatal",
+          "label": "Plan estatal",
+          "value": 5343
+        },
+        {
+          "id": "Sin cobertura",
+          "label": "Sin cobertura",
+          "value": 73914
+        }
+      ]
+    },
+    {
+      "id": "gba-sin",
+      "type": "bar",
+      "title": "% sin cobertura — 24 GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Moreno",
+          "value": 50.24003140208212
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 48.346762875868414
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 46.67026003975169
+        },
+        {
+          "partido": "Merlo",
+          "value": 46.484168094049025
+        },
+        {
+          "partido": "La Matanza",
+          "value": 46.06998380115483
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 41.45673020007103
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 41.11922263618971
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 40.47412571801455
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 39.18989590352687
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 38.01433396923184
+        },
+        {
+          "partido": "Berazategui",
+          "value": 36.053559866937555
+        },
+        {
+          "partido": "Quilmes",
+          "value": 35.771652521313
+        },
+        {
+          "partido": "San Miguel",
+          "value": 35.685945368533496
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 31.890203440853256
+        },
+        {
+          "partido": "General San Martín",
+          "value": 31.46840403776802
+        },
+        {
+          "partido": "Tigre",
+          "value": 31.159714177520947
+        },
+        {
+          "partido": "San Fernando",
+          "value": 30.92478623486987
+        },
+        {
+          "partido": "Lanús",
+          "value": 28.086141353370387
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 28.07135423921861
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 27.197028033307664
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 26.32217683711366
+        },
+        {
+          "partido": "Morón",
+          "value": 22.43101266399002
+        },
+        {
+          "partido": "San Isidro",
+          "value": 19.312246180459358
+        },
+        {
+          "partido": "Vicente López",
+          "value": 13.536702300198545
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-os",
+      "title": "% con obra social/prepaga — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 84.86174926303107,
+          "municipioId": "06861"
+        },
+        {
+          "name": "San Isidro",
+          "value": 78.54975707653948,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Morón",
+          "value": 75.94752319303709,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 71.89169752167342,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 70.76112486510506,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 69.58185498078483,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Lanús",
+          "value": 69.33757316646417,
+          "municipioId": "06434"
+        },
+        {
+          "name": "San Fernando",
+          "value": 66.39723201187616,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Tigre",
+          "value": 66.28836342207215,
+          "municipioId": "06805"
+        },
+        {
+          "name": "General San Martín",
+          "value": 66.19302906842024,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 66.04140029456035,
+          "municipioId": "06408"
+        },
+        {
+          "name": "San Miguel",
+          "value": 61.83366397070045,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Quilmes",
+          "value": 61.611272385378314,
+          "municipioId": "06658"
+        },
+        {
+          "name": "Berazategui",
+          "value": 61.47970574445759,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 59.19529668457684,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 58.315629559900486,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 57.076539563424255,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 55.78696578666983,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 55.621286879468336,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Merlo",
+          "value": 51.26039581484615,
+          "municipioId": "06539"
+        },
+        {
+          "name": "La Matanza",
+          "value": 50.95244419672017,
+          "municipioId": "06427"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 50.46535202295676,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 48.61166598033611,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Moreno",
+          "value": 47.096870560200635,
+          "municipioId": "06560"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-sin",
+      "title": "% sin cobertura — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Moreno",
+          "value": 50.24003140208212,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 48.346762875868414,
+          "municipioId": "06274"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 46.67026003975169,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Merlo",
+          "value": 46.484168094049025,
+          "municipioId": "06539"
+        },
+        {
+          "name": "La Matanza",
+          "value": 46.06998380115483,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 41.45673020007103,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 41.11922263618971,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 40.47412571801455,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 39.18989590352687,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 38.01433396923184,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Berazategui",
+          "value": 36.053559866937555,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Quilmes",
+          "value": 35.771652521313,
+          "municipioId": "06658"
+        },
+        {
+          "name": "San Miguel",
+          "value": 35.685945368533496,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 31.890203440853256,
+          "municipioId": "06408"
+        },
+        {
+          "name": "General San Martín",
+          "value": 31.46840403776802,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Tigre",
+          "value": 31.159714177520947,
+          "municipioId": "06805"
+        },
+        {
+          "name": "San Fernando",
+          "value": 30.92478623486987,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Lanús",
+          "value": 28.086141353370387,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 28.07135423921861,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 27.197028033307664,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 26.32217683711366,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Morón",
+          "value": 22.43101266399002,
+          "municipioId": "06568"
+        },
+        {
+          "name": "San Isidro",
+          "value": 19.312246180459358,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Vicente López",
+          "value": 13.536702300198545,
+          "municipioId": "06861"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 22.43101266399002,
+      "formatted": "22,4%",
+      "caption": "De la población de Morón no tiene obra social, prepaga ni plan estatal",
+      "label": "22,4% · De la población de Morón no tiene obra social, prepaga ni plan estatal"
+    }
+  ]
+}

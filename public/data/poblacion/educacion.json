@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "id": "poblacion-educacion",
+    "title": "Educación — Morón",
+    "category": "Población",
+    "subcategory": "Educación",
+    "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "asiste-actual",
+      "label": "Asiste actualmente",
+      "value": 30.981709593131768,
+      "formatted": "31,0%",
+      "status": "good"
+    },
+    {
+      "id": "alfabetizado",
+      "label": "Alguna vez asistió",
+      "value": 97.01502502147082,
+      "formatted": "97,0%",
+      "status": "good"
+    },
+    {
+      "id": "sec-completo",
+      "label": "Secundario completo",
+      "value": 19.248841186193854,
+      "formatted": "19,2%"
+    },
+    {
+      "id": "universitario",
+      "label": "Universitario completo",
+      "value": 13.191917333189506,
+      "formatted": "13,2%",
+      "status": "good"
+    },
+    {
+      "id": "nunca-asistio",
+      "label": "Nunca asistió",
+      "value": 2.9849749785291806,
+      "formatted": "3,0%",
+      "status": "good"
+    },
+    {
+      "id": "sin-instruccion",
+      "label": "Sin instrucción",
+      "value": 0.16180562385585975,
+      "formatted": "0,16%"
+    }
+  ],
+  "charts": [
+    {
+      "id": "nivel",
+      "type": "pie",
+      "title": "Máximo nivel educativo alcanzado — Morón",
+      "sectionId": "nivel",
+      "data": [
+        {
+          "id": "Sin instrucción",
+          "label": "Sin instrucción",
+          "value": 510
+        },
+        {
+          "id": "Primario completo",
+          "label": "Primario completo",
+          "value": 31117
+        },
+        {
+          "id": "Secundario completo",
+          "label": "Secundario completo",
+          "value": 60671
+        },
+        {
+          "id": "Terciario",
+          "label": "Terciario no universitario",
+          "value": 30872
+        },
+        {
+          "id": "Universitario",
+          "label": "Universitario completo",
+          "value": 41580
+        },
+        {
+          "id": "Posgrado",
+          "label": "Posgrado",
+          "value": 6333
+        }
+      ]
+    },
+    {
+      "id": "asistencia",
+      "type": "pie",
+      "title": "Condición de asistencia escolar — Morón",
+      "sectionId": "asistencia",
+      "data": [
+        {
+          "id": "Asiste",
+          "label": "Asiste actualmente",
+          "value": 102090
+        },
+        {
+          "id": "Asistió",
+          "label": "No asiste pero asistió",
+          "value": 217591
+        },
+        {
+          "id": "Nunca",
+          "label": "Nunca asistió",
+          "value": 9836
+        }
+      ]
+    },
+    {
+      "id": "gba-univ",
+      "type": "bar",
+      "title": "% con universitario completo — 24 partidos GBA",
+      "sectionId": "comparacion",
+      "data": [],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-univ",
+      "title": "% con universitario completo — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [],
+      "order": "desc"
+    },
+    {
+      "id": "rk-sec",
+      "title": "% con secundario completo — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [],
+      "order": "desc"
+    },
+    {
+      "id": "rk-sin-inst",
+      "title": "% sin instrucción — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [],
+      "order": "asc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 19.248841186193854,
+      "formatted": "19,2%",
+      "caption": "De la población de 5+ de Morón completó al menos el secundario",
+      "label": "19,2% · De la población de 5+ de Morón completó al menos el secundario"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+  "date": "2026-04-23",
+  "categoriaCod": "MU",
+  "categoria": "Municipio de única categoría",
+  "totalViviendas": 141287,
+  "viviendasParticulares": 141238,
+  "viviendasColectivas": 49,
+  "poblacionTotal": 331183,
+  "poblacionEnViviendasParticulares": 329517,
+  "poblacionEnViviendasColectivas": 1623,
+  "poblacionEnSituacionDeCalle": 43
+}

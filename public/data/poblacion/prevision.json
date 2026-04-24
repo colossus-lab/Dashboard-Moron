@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "id": "poblacion-prevision",
+    "title": "Previsión Social — Morón",
+    "category": "Población",
+    "subcategory": "Previsión",
+    "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "pct-percibe",
+      "label": "Percibe jubilación/pensión",
+      "value": 21.579463275035888,
+      "formatted": "21,6%",
+      "comparison": "71.108 personas"
+    },
+    {
+      "id": "jub",
+      "label": "Solo jubilación",
+      "value": 14.145248955289105,
+      "formatted": "14,1%",
+      "comparison": "46.611 personas"
+    },
+    {
+      "id": "pension",
+      "label": "Solo pensión por fallecimiento",
+      "value": 1.1434918380538788,
+      "formatted": "1,1%",
+      "comparison": "3.768 personas"
+    },
+    {
+      "id": "no-percibe",
+      "label": "No percibe",
+      "value": 78.42053672496412,
+      "formatted": "78,4%",
+      "comparison": "258.409 personas"
+    }
+  ],
+  "charts": [
+    {
+      "id": "percibe",
+      "type": "pie",
+      "title": "Composición de beneficios previsionales — Morón",
+      "sectionId": "composicion",
+      "data": [
+        {
+          "id": "Solo jubilación",
+          "label": "Solo jubilación",
+          "value": 46611
+        },
+        {
+          "id": "Solo pensión",
+          "label": "Solo pensión fallecimiento",
+          "value": 3768
+        },
+        {
+          "id": "Jubilación + pensión",
+          "label": "Jubilación + pensión",
+          "value": 13002
+        },
+        {
+          "id": "Otra pensión",
+          "label": "Otra pensión",
+          "value": 7727
+        },
+        {
+          "id": "No percibe",
+          "label": "No percibe",
+          "value": 258409
+        }
+      ]
+    },
+    {
+      "id": "gba-percibe",
+      "type": "bar",
+      "title": "% Percibe jubilación/pensión — 24 GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Vicente López",
+          "value": 22.590637375642064
+        },
+        {
+          "partido": "Morón",
+          "value": 21.579463275035888
+        },
+        {
+          "partido": "San Isidro",
+          "value": 21.563764874416343
+        },
+        {
+          "partido": "Lanús",
+          "value": 21.207352618343293
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 20.76678286261554
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 19.91950841870728
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 19.785478412638582
+        },
+        {
+          "partido": "General San Martín",
+          "value": 19.274560576644024
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 19.273750863846548
+        },
+        {
+          "partido": "San Fernando",
+          "value": 18.521440803277635
+        },
+        {
+          "partido": "Quilmes",
+          "value": 18.327281591201917
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 18.189760283762418
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 17.351123780412763
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 17.28728466124494
+        },
+        {
+          "partido": "San Miguel",
+          "value": 17.19517778116893
+        },
+        {
+          "partido": "Berazategui",
+          "value": 16.900437587908286
+        },
+        {
+          "partido": "Merlo",
+          "value": 16.194426673820775
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 15.95365773733872
+        },
+        {
+          "partido": "Tigre",
+          "value": 15.861175779928343
+        },
+        {
+          "partido": "La Matanza",
+          "value": 15.55056478231713
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 15.395406653249674
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 14.928406504364858
+        },
+        {
+          "partido": "Moreno",
+          "value": 14.409005172311979
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 14.093243379317288
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-percibe",
+      "title": "% Percibe jubilación/pensión — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 22.590637375642064,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Morón",
+          "value": 21.579463275035888,
+          "municipioId": "06568"
+        },
+        {
+          "name": "San Isidro",
+          "value": 21.563764874416343,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Lanús",
+          "value": 21.207352618343293,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 20.76678286261554,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 19.91950841870728,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 19.785478412638582,
+          "municipioId": "06035"
+        },
+        {
+          "name": "General San Martín",
+          "value": 19.274560576644024,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 19.273750863846548,
+          "municipioId": "06410"
+        },
+        {
+          "name": "San Fernando",
+          "value": 18.521440803277635,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Quilmes",
+          "value": 18.327281591201917,
+          "municipioId": "06658"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 18.189760283762418,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 17.351123780412763,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 17.28728466124494,
+          "municipioId": "06028"
+        },
+        {
+          "name": "San Miguel",
+          "value": 17.19517778116893,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Berazategui",
+          "value": 16.900437587908286,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Merlo",
+          "value": 16.194426673820775,
+          "municipioId": "06539"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 15.95365773733872,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Tigre",
+          "value": 15.861175779928343,
+          "municipioId": "06805"
+        },
+        {
+          "name": "La Matanza",
+          "value": 15.55056478231713,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 15.395406653249674,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 14.928406504364858,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Moreno",
+          "value": 14.409005172311979,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 14.093243379317288,
+          "municipioId": "06270"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 21.579463275035888,
+      "formatted": "21,6%",
+      "caption": "De la población de Morón percibe jubilación o pensión",
+      "label": "21,6% · De la población de Morón percibe jubilación o pensión"
+    }
+  ]
+}

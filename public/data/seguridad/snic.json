@@ -1,0 +1,1571 @@
+{
+  "meta": {
+    "id": "seguridad-snic",
+    "title": "Seguridad Ciudadana — Morón (SNIC 2000-2024)",
+    "category": "Seguridad",
+    "subcategory": "SNIC Departamental",
+    "source": "Sistema Nacional de Información Criminal (SNIC) — Ministerio de Seguridad de la Nación",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "hechos-ult",
+      "label": "Hechos delictivos 2024",
+      "value": 13389,
+      "formatted": "13.389",
+      "status": "good",
+      "comparison": "-3,6% vs 2023"
+    },
+    {
+      "id": "var-5y",
+      "label": "Variación 5 años (2019→2024)",
+      "value": -10.626793938989385,
+      "formatted": "-10,6%",
+      "status": "good",
+      "comparison": "14.981 → 13.389 hechos"
+    },
+    {
+      "id": "top-delito",
+      "label": "Delito más frecuente",
+      "value": 5006,
+      "formatted": "5.006",
+      "comparison": "Robos (excluye los agravados por el resultado de lesiones y/o muertes)"
+    },
+    {
+      "id": "homicidios",
+      "label": "Homicidios dolosos 2024",
+      "value": 15,
+      "formatted": "15",
+      "status": "critical",
+      "comparison": "Tasa: 4,7 / 100K"
+    },
+    {
+      "id": "victimas-fem",
+      "label": "Víctimas mujeres 2024",
+      "value": 920,
+      "formatted": "920",
+      "comparison": "1.192 varones • 43,6% del total"
+    },
+    {
+      "id": "victimas-tot",
+      "label": "Víctimas totales 2024",
+      "value": 2150,
+      "formatted": "2.150"
+    }
+  ],
+  "charts": [
+    {
+      "id": "serie-hechos",
+      "type": "line",
+      "title": "Evolución de hechos delictivos totales — Morón (2000-2024)",
+      "sectionId": "panorama",
+      "data": [
+        {
+          "id": "Hechos",
+          "data": [
+            {
+              "x": "2000",
+              "y": 8935
+            },
+            {
+              "x": "2001",
+              "y": 9065
+            },
+            {
+              "x": "2002",
+              "y": 12650
+            },
+            {
+              "x": "2003",
+              "y": 11038
+            },
+            {
+              "x": "2004",
+              "y": 10019
+            },
+            {
+              "x": "2005",
+              "y": 8363
+            },
+            {
+              "x": "2006",
+              "y": 7499
+            },
+            {
+              "x": "2007",
+              "y": 7712
+            },
+            {
+              "x": "2008",
+              "y": 8422
+            },
+            {
+              "x": "2009",
+              "y": 6386
+            },
+            {
+              "x": "2010",
+              "y": 8249
+            },
+            {
+              "x": "2011",
+              "y": 8557
+            },
+            {
+              "x": "2012",
+              "y": 8879
+            },
+            {
+              "x": "2013",
+              "y": 10276
+            },
+            {
+              "x": "2014",
+              "y": 10188
+            },
+            {
+              "x": "2015",
+              "y": 9550
+            },
+            {
+              "x": "2016",
+              "y": 8820
+            },
+            {
+              "x": "2017",
+              "y": 9264
+            },
+            {
+              "x": "2018",
+              "y": 10993
+            },
+            {
+              "x": "2019",
+              "y": 14981
+            },
+            {
+              "x": "2020",
+              "y": 11623
+            },
+            {
+              "x": "2021",
+              "y": 12709
+            },
+            {
+              "x": "2022",
+              "y": 13901
+            },
+            {
+              "x": "2023",
+              "y": 13886
+            },
+            {
+              "x": "2024",
+              "y": 13389
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie-victimas",
+      "type": "line",
+      "title": "Víctimas registradas — Morón (2000-2024)",
+      "sectionId": "panorama",
+      "data": [
+        {
+          "id": "Víctimas",
+          "data": [
+            {
+              "x": "2000",
+              "y": 1309
+            },
+            {
+              "x": "2001",
+              "y": 1207
+            },
+            {
+              "x": "2002",
+              "y": 1450
+            },
+            {
+              "x": "2003",
+              "y": 1479
+            },
+            {
+              "x": "2004",
+              "y": 1906
+            },
+            {
+              "x": "2005",
+              "y": 2204
+            },
+            {
+              "x": "2006",
+              "y": 1918
+            },
+            {
+              "x": "2007",
+              "y": 1964
+            },
+            {
+              "x": "2008",
+              "y": 2101
+            },
+            {
+              "x": "2009",
+              "y": 789
+            },
+            {
+              "x": "2010",
+              "y": 1331
+            },
+            {
+              "x": "2011",
+              "y": 1377
+            },
+            {
+              "x": "2012",
+              "y": 1102
+            },
+            {
+              "x": "2013",
+              "y": 1031
+            },
+            {
+              "x": "2014",
+              "y": 2647
+            },
+            {
+              "x": "2015",
+              "y": 2823
+            },
+            {
+              "x": "2016",
+              "y": 2259
+            },
+            {
+              "x": "2017",
+              "y": 2149
+            },
+            {
+              "x": "2018",
+              "y": 2115
+            },
+            {
+              "x": "2019",
+              "y": 2379
+            },
+            {
+              "x": "2020",
+              "y": 1881
+            },
+            {
+              "x": "2021",
+              "y": 2515
+            },
+            {
+              "x": "2022",
+              "y": 2626
+            },
+            {
+              "x": "2023",
+              "y": 2417
+            },
+            {
+              "x": "2024",
+              "y": 2150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie-homicidios",
+      "type": "line",
+      "title": "Homicidios dolosos — Morón (2000-2024)",
+      "sectionId": "homicidios",
+      "data": [
+        {
+          "id": "Homicidios",
+          "data": [
+            {
+              "x": "2000",
+              "y": 32
+            },
+            {
+              "x": "2001",
+              "y": 19
+            },
+            {
+              "x": "2002",
+              "y": 37
+            },
+            {
+              "x": "2003",
+              "y": 22
+            },
+            {
+              "x": "2004",
+              "y": 13
+            },
+            {
+              "x": "2005",
+              "y": 14
+            },
+            {
+              "x": "2006",
+              "y": 12
+            },
+            {
+              "x": "2007",
+              "y": 15
+            },
+            {
+              "x": "2008",
+              "y": 11
+            },
+            {
+              "x": "2009",
+              "y": 25
+            },
+            {
+              "x": "2010",
+              "y": 16
+            },
+            {
+              "x": "2011",
+              "y": 21
+            },
+            {
+              "x": "2012",
+              "y": 20
+            },
+            {
+              "x": "2013",
+              "y": 25
+            },
+            {
+              "x": "2014",
+              "y": 26
+            },
+            {
+              "x": "2015",
+              "y": 19
+            },
+            {
+              "x": "2016",
+              "y": 25
+            },
+            {
+              "x": "2017",
+              "y": 14
+            },
+            {
+              "x": "2018",
+              "y": 13
+            },
+            {
+              "x": "2019",
+              "y": 6
+            },
+            {
+              "x": "2020",
+              "y": 11
+            },
+            {
+              "x": "2021",
+              "y": 12
+            },
+            {
+              "x": "2022",
+              "y": 7
+            },
+            {
+              "x": "2023",
+              "y": 13
+            },
+            {
+              "x": "2024",
+              "y": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "top-delitos",
+      "type": "bar",
+      "title": "Top 10 delitos en Morón — 2024",
+      "sectionId": "delitos",
+      "data": [
+        {
+          "delito": "Robos (excluye los agravados por el r…",
+          "value": 5006
+        },
+        {
+          "delito": "Hurtos",
+          "value": 3151
+        },
+        {
+          "delito": "Amenazas",
+          "value": 927
+        },
+        {
+          "delito": "Lesiones culposas en Accidentes Viales",
+          "value": 843
+        },
+        {
+          "delito": "Lesiones dolosas",
+          "value": 774
+        },
+        {
+          "delito": "Estafas y defraudaciones asistidas vi…",
+          "value": 430
+        },
+        {
+          "delito": "Estafas y defraudaciones (no incluye …",
+          "value": 366
+        },
+        {
+          "delito": "Tentativas de robo (excluye las agrav…",
+          "value": 328
+        },
+        {
+          "delito": "Daños (no incluye informáticos)",
+          "value": 267
+        },
+        {
+          "delito": "Delitos contra la administración pública",
+          "value": 214
+        }
+      ],
+      "config": {
+        "xAxis": "delito",
+        "layout": "horizontal"
+      }
+    },
+    {
+      "id": "serie-top",
+      "type": "line",
+      "title": "Evolución de los 5 delitos principales — Morón",
+      "sectionId": "delitos",
+      "data": [
+        {
+          "id": "Robos (excluye los agravados…",
+          "data": [
+            {
+              "x": "2000",
+              "y": 3265
+            },
+            {
+              "x": "2001",
+              "y": 3185
+            },
+            {
+              "x": "2002",
+              "y": 5432
+            },
+            {
+              "x": "2003",
+              "y": 4605
+            },
+            {
+              "x": "2004",
+              "y": 3127
+            },
+            {
+              "x": "2005",
+              "y": 1823
+            },
+            {
+              "x": "2006",
+              "y": 1599
+            },
+            {
+              "x": "2007",
+              "y": 1308
+            },
+            {
+              "x": "2008",
+              "y": 1565
+            },
+            {
+              "x": "2009",
+              "y": 2134
+            },
+            {
+              "x": "2010",
+              "y": 2176
+            },
+            {
+              "x": "2011",
+              "y": 2787
+            },
+            {
+              "x": "2012",
+              "y": 3090
+            },
+            {
+              "x": "2013",
+              "y": 3968
+            },
+            {
+              "x": "2014",
+              "y": 3579
+            },
+            {
+              "x": "2015",
+              "y": 2822
+            },
+            {
+              "x": "2016",
+              "y": 2770
+            },
+            {
+              "x": "2017",
+              "y": 2631
+            },
+            {
+              "x": "2018",
+              "y": 3294
+            },
+            {
+              "x": "2019",
+              "y": 5365
+            },
+            {
+              "x": "2020",
+              "y": 3565
+            },
+            {
+              "x": "2021",
+              "y": 3616
+            },
+            {
+              "x": "2022",
+              "y": 3542
+            },
+            {
+              "x": "2023",
+              "y": 4086
+            },
+            {
+              "x": "2024",
+              "y": 5006
+            }
+          ]
+        },
+        {
+          "id": "Hurtos",
+          "data": [
+            {
+              "x": "2000",
+              "y": 2208
+            },
+            {
+              "x": "2001",
+              "y": 2011
+            },
+            {
+              "x": "2002",
+              "y": 3551
+            },
+            {
+              "x": "2003",
+              "y": 2997
+            },
+            {
+              "x": "2004",
+              "y": 2692
+            },
+            {
+              "x": "2005",
+              "y": 1628
+            },
+            {
+              "x": "2006",
+              "y": 1541
+            },
+            {
+              "x": "2007",
+              "y": 1786
+            },
+            {
+              "x": "2008",
+              "y": 1758
+            },
+            {
+              "x": "2009",
+              "y": 1540
+            },
+            {
+              "x": "2010",
+              "y": 1766
+            },
+            {
+              "x": "2011",
+              "y": 1379
+            },
+            {
+              "x": "2012",
+              "y": 1657
+            },
+            {
+              "x": "2013",
+              "y": 1989
+            },
+            {
+              "x": "2014",
+              "y": 1880
+            },
+            {
+              "x": "2015",
+              "y": 1686
+            },
+            {
+              "x": "2016",
+              "y": 1648
+            },
+            {
+              "x": "2017",
+              "y": 1488
+            },
+            {
+              "x": "2018",
+              "y": 2201
+            },
+            {
+              "x": "2019",
+              "y": 3042
+            },
+            {
+              "x": "2020",
+              "y": 2345
+            },
+            {
+              "x": "2021",
+              "y": 2381
+            },
+            {
+              "x": "2022",
+              "y": 2972
+            },
+            {
+              "x": "2023",
+              "y": 3366
+            },
+            {
+              "x": "2024",
+              "y": 3151
+            }
+          ]
+        },
+        {
+          "id": "Amenazas",
+          "data": [
+            {
+              "x": "2000",
+              "y": 648
+            },
+            {
+              "x": "2001",
+              "y": 716
+            },
+            {
+              "x": "2002",
+              "y": 920
+            },
+            {
+              "x": "2003",
+              "y": 988
+            },
+            {
+              "x": "2004",
+              "y": 1202
+            },
+            {
+              "x": "2005",
+              "y": 1130
+            },
+            {
+              "x": "2006",
+              "y": 826
+            },
+            {
+              "x": "2007",
+              "y": 670
+            },
+            {
+              "x": "2008",
+              "y": 707
+            },
+            {
+              "x": "2009",
+              "y": 609
+            },
+            {
+              "x": "2010",
+              "y": 1143
+            },
+            {
+              "x": "2011",
+              "y": 1164
+            },
+            {
+              "x": "2012",
+              "y": 1289
+            },
+            {
+              "x": "2013",
+              "y": 1363
+            },
+            {
+              "x": "2014",
+              "y": 1194
+            },
+            {
+              "x": "2015",
+              "y": 1036
+            },
+            {
+              "x": "2016",
+              "y": 802
+            },
+            {
+              "x": "2017",
+              "y": 763
+            },
+            {
+              "x": "2018",
+              "y": 805
+            },
+            {
+              "x": "2019",
+              "y": 1078
+            },
+            {
+              "x": "2020",
+              "y": 1325
+            },
+            {
+              "x": "2021",
+              "y": 1334
+            },
+            {
+              "x": "2022",
+              "y": 1238
+            },
+            {
+              "x": "2023",
+              "y": 1250
+            },
+            {
+              "x": "2024",
+              "y": 927
+            }
+          ]
+        },
+        {
+          "id": "Lesiones culposas en Acciden…",
+          "data": [
+            {
+              "x": "2000",
+              "y": 317
+            },
+            {
+              "x": "2001",
+              "y": 294
+            },
+            {
+              "x": "2002",
+              "y": 356
+            },
+            {
+              "x": "2003",
+              "y": 374
+            },
+            {
+              "x": "2004",
+              "y": 581
+            },
+            {
+              "x": "2005",
+              "y": 780
+            },
+            {
+              "x": "2006",
+              "y": 886
+            },
+            {
+              "x": "2007",
+              "y": 1013
+            },
+            {
+              "x": "2008",
+              "y": 1156
+            },
+            {
+              "x": "2009",
+              "y": 0
+            },
+            {
+              "x": "2010",
+              "y": 0
+            },
+            {
+              "x": "2011",
+              "y": 0
+            },
+            {
+              "x": "2012",
+              "y": 0
+            },
+            {
+              "x": "2013",
+              "y": 0
+            },
+            {
+              "x": "2014",
+              "y": 1039
+            },
+            {
+              "x": "2015",
+              "y": 1156
+            },
+            {
+              "x": "2016",
+              "y": 1073
+            },
+            {
+              "x": "2017",
+              "y": 1153
+            },
+            {
+              "x": "2018",
+              "y": 1104
+            },
+            {
+              "x": "2019",
+              "y": 1296
+            },
+            {
+              "x": "2020",
+              "y": 731
+            },
+            {
+              "x": "2021",
+              "y": 1009
+            },
+            {
+              "x": "2022",
+              "y": 1020
+            },
+            {
+              "x": "2023",
+              "y": 1013
+            },
+            {
+              "x": "2024",
+              "y": 843
+            }
+          ]
+        },
+        {
+          "id": "Lesiones dolosas",
+          "data": [
+            {
+              "x": "2000",
+              "y": 466
+            },
+            {
+              "x": "2001",
+              "y": 537
+            },
+            {
+              "x": "2002",
+              "y": 746
+            },
+            {
+              "x": "2003",
+              "y": 730
+            },
+            {
+              "x": "2004",
+              "y": 944
+            },
+            {
+              "x": "2005",
+              "y": 979
+            },
+            {
+              "x": "2006",
+              "y": 793
+            },
+            {
+              "x": "2007",
+              "y": 664
+            },
+            {
+              "x": "2008",
+              "y": 698
+            },
+            {
+              "x": "2009",
+              "y": 707
+            },
+            {
+              "x": "2010",
+              "y": 1251
+            },
+            {
+              "x": "2011",
+              "y": 1314
+            },
+            {
+              "x": "2012",
+              "y": 1037
+            },
+            {
+              "x": "2013",
+              "y": 973
+            },
+            {
+              "x": "2014",
+              "y": 1265
+            },
+            {
+              "x": "2015",
+              "y": 1234
+            },
+            {
+              "x": "2016",
+              "y": 813
+            },
+            {
+              "x": "2017",
+              "y": 610
+            },
+            {
+              "x": "2018",
+              "y": 569
+            },
+            {
+              "x": "2019",
+              "y": 727
+            },
+            {
+              "x": "2020",
+              "y": 783
+            },
+            {
+              "x": "2021",
+              "y": 970
+            },
+            {
+              "x": "2022",
+              "y": 922
+            },
+            {
+              "x": "2023",
+              "y": 821
+            },
+            {
+              "x": "2024",
+              "y": 774
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gba-hechos",
+      "type": "bar",
+      "title": "Hechos delictivos por partido — 24 GBA (2024)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "La Matanza",
+          "value": 50858
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 18161
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 16776
+        },
+        {
+          "partido": "Lanús",
+          "value": 16170
+        },
+        {
+          "partido": "Merlo",
+          "value": 15802
+        },
+        {
+          "partido": "General San Martín",
+          "value": 15516
+        },
+        {
+          "partido": "Moreno",
+          "value": 15117
+        },
+        {
+          "partido": "Morón",
+          "value": 13389
+        },
+        {
+          "partido": "Tigre",
+          "value": 12579
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 12377
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 12203
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 11616
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 11605
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 11339
+        },
+        {
+          "partido": "Berazategui",
+          "value": 11184
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 10125
+        },
+        {
+          "partido": "San Isidro",
+          "value": 8555
+        },
+        {
+          "partido": "San Miguel",
+          "value": 8441
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 6956
+        },
+        {
+          "partido": "Vicente López",
+          "value": 6313
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 5802
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 4854
+        },
+        {
+          "partido": "San Fernando",
+          "value": 3753
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    },
+    {
+      "id": "gba-homicidios",
+      "type": "bar",
+      "title": "Homicidios dolosos por partido — 24 GBA (2024)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "La Matanza",
+          "value": 141
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 45
+        },
+        {
+          "partido": "Moreno",
+          "value": 40
+        },
+        {
+          "partido": "Merlo",
+          "value": 33
+        },
+        {
+          "partido": "General San Martín",
+          "value": 32
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 26
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 26
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 25
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 22
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 19
+        },
+        {
+          "partido": "Lanús",
+          "value": 19
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 18
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 16
+        },
+        {
+          "partido": "Tigre",
+          "value": 16
+        },
+        {
+          "partido": "Morón",
+          "value": 15
+        },
+        {
+          "partido": "San Isidro",
+          "value": 12
+        },
+        {
+          "partido": "Berazategui",
+          "value": 10
+        },
+        {
+          "partido": "San Miguel",
+          "value": 8
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 6
+        },
+        {
+          "partido": "San Fernando",
+          "value": 5
+        },
+        {
+          "partido": "Vicente López",
+          "value": 5
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 4
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 4
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-hechos",
+      "title": "Hechos 2024 — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "La Matanza",
+          "value": 50858,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 18161,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 16776,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Lanús",
+          "value": 16170,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Merlo",
+          "value": 15802,
+          "municipioId": "06539"
+        },
+        {
+          "name": "General San Martín",
+          "value": 15516,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Moreno",
+          "value": 15117,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Morón",
+          "value": 13389,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Tigre",
+          "value": 12579,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 12377,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 12203,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 11616,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 11605,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 11339,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Berazategui",
+          "value": 11184,
+          "municipioId": "06091"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 10125,
+          "municipioId": "06412"
+        },
+        {
+          "name": "San Isidro",
+          "value": 8555,
+          "municipioId": "06756"
+        },
+        {
+          "name": "San Miguel",
+          "value": 8441,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 6956,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Vicente López",
+          "value": 6313,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 5802,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 4854,
+          "municipioId": "06408"
+        },
+        {
+          "name": "San Fernando",
+          "value": 3753,
+          "municipioId": "06749"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-homicidios",
+      "title": "Homicidios dolosos 2024 — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "La Matanza",
+          "value": 141,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 45,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Moreno",
+          "value": 40,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Merlo",
+          "value": 33,
+          "municipioId": "06539"
+        },
+        {
+          "name": "General San Martín",
+          "value": 32,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 26,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 26,
+          "municipioId": "06274"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 25,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 22,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 19,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Lanús",
+          "value": 19,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 18,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 16,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Tigre",
+          "value": 16,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Morón",
+          "value": 15,
+          "municipioId": "06568"
+        },
+        {
+          "name": "San Isidro",
+          "value": 12,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Berazategui",
+          "value": 10,
+          "municipioId": "06091"
+        },
+        {
+          "name": "San Miguel",
+          "value": 8,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 6,
+          "municipioId": "06408"
+        },
+        {
+          "name": "San Fernando",
+          "value": 5,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Vicente López",
+          "value": 5,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 4,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 4,
+          "municipioId": "06410"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-robos",
+      "title": "Robos 2024 — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "La Matanza",
+          "value": 21567,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Morón",
+          "value": 5006,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 4790,
+          "municipioId": "06490"
+        },
+        {
+          "name": "General San Martín",
+          "value": 4602,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 4401,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Lanús",
+          "value": 4144,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Merlo",
+          "value": 4023,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Moreno",
+          "value": 3819,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 3629,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 2959,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 2885,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Berazategui",
+          "value": 2524,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 2479,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 2263,
+          "municipioId": "06515"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 2236,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Tigre",
+          "value": 1883,
+          "municipioId": "06805"
+        },
+        {
+          "name": "San Isidro",
+          "value": 1842,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 1427,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Vicente López",
+          "value": 1320,
+          "municipioId": "06861"
+        },
+        {
+          "name": "San Miguel",
+          "value": 1122,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 1026,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 887,
+          "municipioId": "06270"
+        },
+        {
+          "name": "San Fernando",
+          "value": 633,
+          "municipioId": "06749"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 13389,
+      "formatted": "13.389",
+      "caption": "Hechos delictivos registrados en Morón — 2024",
+      "label": "13.389 hechos delictivos en 2024"
+    }
+  ]
+}

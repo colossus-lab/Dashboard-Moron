@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "id": "poblacion-fecundidad",
+    "title": "Fecundidad — Morón",
+    "category": "Población",
+    "subcategory": "Fecundidad",
+    "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "mujeres-14-49",
+      "label": "Mujeres de 14 a 49 años",
+      "value": 84160,
+      "formatted": "84.160",
+      "unit": "personas"
+    },
+    {
+      "id": "promedio",
+      "label": "Promedio de hijas e hijos",
+      "value": 0.9894249049429658,
+      "formatted": "0,99",
+      "comparison": "Por mujer de 14-49"
+    },
+    {
+      "id": "sin-hijos",
+      "label": "Sin hijos",
+      "value": 51.88569391634981,
+      "formatted": "51,9%"
+    },
+    {
+      "id": "uno-dos",
+      "label": "Con 1 o 2 hijos",
+      "value": 35.75570342205323,
+      "formatted": "35,8%"
+    },
+    {
+      "id": "tres-mas",
+      "label": "Con 3 o más",
+      "value": 12.358602661596958,
+      "formatted": "12,4%"
+    }
+  ],
+  "charts": [
+    {
+      "id": "distribucion",
+      "type": "bar",
+      "title": "Mujeres de 14 a 49 años por cantidad de hijas e hijos nacidos vivos — Morón",
+      "sectionId": "distribucion",
+      "data": [
+        {
+          "cantidad": "Ninguno",
+          "mujeres": 43667
+        },
+        {
+          "cantidad": "1",
+          "mujeres": 14213
+        },
+        {
+          "cantidad": "2",
+          "mujeres": 15879
+        },
+        {
+          "cantidad": "3",
+          "mujeres": 6287
+        },
+        {
+          "cantidad": "4",
+          "mujeres": 2132
+        },
+        {
+          "cantidad": "5 y más",
+          "mujeres": 1982
+        }
+      ],
+      "config": {
+        "xAxis": "cantidad"
+      }
+    },
+    {
+      "id": "gba-promedio",
+      "type": "bar",
+      "title": "Promedio de hijas e hijos por mujer (14-49) — 24 partidos GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "José C. Paz",
+          "value": 1.5320775110013125
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 1.527465686202704
+        },
+        {
+          "partido": "Moreno",
+          "value": 1.4974850773014323
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 1.443937202697287
+        },
+        {
+          "partido": "Merlo",
+          "value": 1.4259836580766814
+        },
+        {
+          "partido": "La Matanza",
+          "value": 1.3984824210495277
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 1.3805542587955693
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 1.374613454390221
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 1.3502073484021233
+        },
+        {
+          "partido": "Quilmes",
+          "value": 1.3009732908136047
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 1.2868964544241017
+        },
+        {
+          "partido": "Tigre",
+          "value": 1.2857434041026645
+        },
+        {
+          "partido": "Berazategui",
+          "value": 1.2841039279869066
+        },
+        {
+          "partido": "San Miguel",
+          "value": 1.244167323687162
+        },
+        {
+          "partido": "San Fernando",
+          "value": 1.2179372393160526
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 1.199550042312535
+        },
+        {
+          "partido": "General San Martín",
+          "value": 1.1639548799429633
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 1.136335048304447
+        },
+        {
+          "partido": "Lanús",
+          "value": 1.1102438373528136
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 1.0977577695134948
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 1.0614790928794207
+        },
+        {
+          "partido": "San Isidro",
+          "value": 1.0079047073895386
+        },
+        {
+          "partido": "Morón",
+          "value": 0.9894249049429658
+        },
+        {
+          "partido": "Vicente López",
+          "value": 0.8431921748468929
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-promedio",
+      "title": "Promedio de hijas e hijos por mujer (14-49) — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "José C. Paz",
+          "value": 1.5320775110013125,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 1.527465686202704,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Moreno",
+          "value": 1.4974850773014323,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 1.443937202697287,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Merlo",
+          "value": 1.4259836580766814,
+          "municipioId": "06539"
+        },
+        {
+          "name": "La Matanza",
+          "value": 1.3984824210495277,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 1.3805542587955693,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 1.374613454390221,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 1.3502073484021233,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Quilmes",
+          "value": 1.3009732908136047,
+          "municipioId": "06658"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 1.2868964544241017,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Tigre",
+          "value": 1.2857434041026645,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Berazategui",
+          "value": 1.2841039279869066,
+          "municipioId": "06091"
+        },
+        {
+          "name": "San Miguel",
+          "value": 1.244167323687162,
+          "municipioId": "06760"
+        },
+        {
+          "name": "San Fernando",
+          "value": 1.2179372393160526,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 1.199550042312535,
+          "municipioId": "06408"
+        },
+        {
+          "name": "General San Martín",
+          "value": 1.1639548799429633,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 1.136335048304447,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Lanús",
+          "value": 1.1102438373528136,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 1.0977577695134948,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 1.0614790928794207,
+          "municipioId": "06840"
+        },
+        {
+          "name": "San Isidro",
+          "value": 1.0079047073895386,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Morón",
+          "value": 0.9894249049429658,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Vicente López",
+          "value": 0.8431921748468929,
+          "municipioId": "06861"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 0.9894249049429658,
+      "formatted": "0,99",
+      "caption": "Promedio de hijas e hijos por mujer de 14 a 49 años en Morón",
+      "label": "0,99 · Promedio de hijas e hijos por mujer de 14 a 49 años en Morón"
+    }
+  ]
+}

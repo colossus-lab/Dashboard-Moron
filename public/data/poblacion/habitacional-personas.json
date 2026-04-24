@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "id": "poblacion-habitacional-personas",
+    "title": "Condiciones Habitacionales de la Población — Morón",
+    "category": "Población",
+    "subcategory": "Habitacional Personas",
+    "source": "INDEC — Censo Nacional de Población, Hogares y Viviendas 2022",
+    "date": "2026-04-23"
+  },
+  "kpis": [
+    {
+      "id": "pob-viv",
+      "label": "Población en viv. particulares",
+      "value": 329517,
+      "formatted": "329.517",
+      "unit": "hab"
+    },
+    {
+      "id": "gas-red",
+      "label": "Usan gas de red",
+      "value": 80.67231736147149,
+      "formatted": "80,7%",
+      "comparison": "265.829 personas",
+      "status": "good"
+    },
+    {
+      "id": "garrafa",
+      "label": "Dependen de garrafa",
+      "value": 11.449788630025157,
+      "formatted": "11,4%",
+      "comparison": "37.729 personas",
+      "status": "good"
+    },
+    {
+      "id": "electricidad",
+      "label": "Electricidad",
+      "value": 7.339833756680232,
+      "formatted": "7,3%",
+      "comparison": "24.186 personas"
+    }
+  ],
+  "charts": [
+    {
+      "id": "combustible-personas",
+      "type": "pie",
+      "title": "Combustible para cocinar — Población Morón",
+      "sectionId": "servicios",
+      "data": [
+        {
+          "id": "Gas de red",
+          "label": "Gas de red",
+          "value": 265829
+        },
+        {
+          "id": "Gas en garrafa",
+          "label": "Gas en garrafa",
+          "value": 37729
+        },
+        {
+          "id": "Gas a granel",
+          "label": "Gas a granel",
+          "value": 1416
+        },
+        {
+          "id": "Electricidad",
+          "label": "Electricidad",
+          "value": 24186
+        },
+        {
+          "id": "Leña/carbón",
+          "label": "Leña/carbón",
+          "value": 230
+        }
+      ]
+    },
+    {
+      "id": "gba-gasred",
+      "type": "bar",
+      "title": "% Población con gas de red — 24 GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Vicente López",
+          "value": 81.11969373460563
+        },
+        {
+          "partido": "Morón",
+          "value": 80.67231736147149
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 79.7946008903756
+        },
+        {
+          "partido": "San Isidro",
+          "value": 75.14815290325633
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 72.44175005478051
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 71.4346599338588
+        },
+        {
+          "partido": "Lanús",
+          "value": 70.39086595621205
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 68.69798452407291
+        },
+        {
+          "partido": "General San Martín",
+          "value": 65.41868108876655
+        },
+        {
+          "partido": "San Fernando",
+          "value": 63.62164594766773
+        },
+        {
+          "partido": "Berazategui",
+          "value": 60.25233863945883
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 58.39398911882361
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 56.73921160252259
+        },
+        {
+          "partido": "Quilmes",
+          "value": 56.04330029409251
+        },
+        {
+          "partido": "San Miguel",
+          "value": 53.937433236685486
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 53.681188587664266
+        },
+        {
+          "partido": "Tigre",
+          "value": 50.20423893827122
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 49.153265159515854
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 48.88732252542544
+        },
+        {
+          "partido": "La Matanza",
+          "value": 48.737404526967595
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 40.399464867046504
+        },
+        {
+          "partido": "Merlo",
+          "value": 39.58337632677769
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 35.37042878536844
+        },
+        {
+          "partido": "Moreno",
+          "value": 28.95105235185616
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    }
+  ],
+  "rankings": [
+    {
+      "id": "rk-gasred",
+      "title": "% Población con gas de red — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 81.11969373460563,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Morón",
+          "value": 80.67231736147149,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 79.7946008903756,
+          "municipioId": "06840"
+        },
+        {
+          "name": "San Isidro",
+          "value": 75.14815290325633,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 72.44175005478051,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 71.4346599338588,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Lanús",
+          "value": 70.39086595621205,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 68.69798452407291,
+          "municipioId": "06035"
+        },
+        {
+          "name": "General San Martín",
+          "value": 65.41868108876655,
+          "municipioId": "06371"
+        },
+        {
+          "name": "San Fernando",
+          "value": 63.62164594766773,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Berazategui",
+          "value": 60.25233863945883,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 58.39398911882361,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 56.73921160252259,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Quilmes",
+          "value": 56.04330029409251,
+          "municipioId": "06658"
+        },
+        {
+          "name": "San Miguel",
+          "value": 53.937433236685486,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 53.681188587664266,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Tigre",
+          "value": 50.20423893827122,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 49.153265159515854,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 48.88732252542544,
+          "municipioId": "06270"
+        },
+        {
+          "name": "La Matanza",
+          "value": 48.737404526967595,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 40.399464867046504,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Merlo",
+          "value": 39.58337632677769,
+          "municipioId": "06539"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 35.37042878536844,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Moreno",
+          "value": 28.95105235185616,
+          "municipioId": "06560"
+        }
+      ],
+      "order": "desc"
+    }
+  ],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 80.67231736147149,
+      "formatted": "80,7%",
+      "caption": "De la población de Morón vive en hogares con gas de red",
+      "label": "80,7% · De la población de Morón vive en hogares con gas de red"
+    }
+  ]
+}
