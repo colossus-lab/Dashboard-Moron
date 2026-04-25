@@ -20,7 +20,7 @@
       "label": "Tasa de actividad",
       "value": 64.53985834055047,
       "formatted": "64,5%",
-      "comparison": "PEA / Pob 14+"
+      "comparison": "PEA / Pob 14+ · vs prom. GBA: -0,0 pp"
     },
     {
       "id": "tasa-empleo",
@@ -28,7 +28,7 @@
       "value": 58.560478379145664,
       "formatted": "58,6%",
       "status": "good",
-      "comparison": "Ocupada / Pob 14+"
+      "comparison": "Ocupada / Pob 14+ · vs prom. GBA: +0,4 pp"
     },
     {
       "id": "tasa-desempleo",
@@ -36,11 +36,11 @@
       "value": 9.264631369120865,
       "formatted": "9,3%",
       "status": "good",
-      "comparison": "Desocupada / PEA"
+      "comparison": "Desocupada / PEA · vs prom. GBA: -0,6 pp"
     },
     {
       "id": "pea",
-      "label": "Económicamente activa",
+      "label": "Población económicamente activa",
       "value": 179597,
       "formatted": "179.597",
       "unit": "personas"
@@ -51,6 +51,21 @@
       "value": 98676,
       "formatted": "98.676",
       "unit": "personas"
+    },
+    {
+      "id": "brecha-empleo",
+      "label": "Brecha de empleo por sexo (BSAS)",
+      "value": 17.96410314008174,
+      "formatted": "+18,0 pp",
+      "status": "warning",
+      "comparison": "Varones − Mujeres · datos provinciales"
+    },
+    {
+      "id": "pos-gba",
+      "label": "Posición empleo en el GBA",
+      "value": 11,
+      "formatted": "11° de 24",
+      "comparison": "Mayor tasa de empleo = posiciones más altas"
     }
   ],
   "charts": [
@@ -76,6 +91,163 @@
           "value": 98676
         }
       ]
+    },
+    {
+      "id": "tasa-edad",
+      "type": "line",
+      "title": "Tasa de actividad por grupo etario — Provincia BSAS",
+      "sectionId": "edad",
+      "data": [
+        {
+          "id": "Tasa de actividad",
+          "data": [
+            {
+              "x": "15-19",
+              "y": 27.7
+            },
+            {
+              "x": "20-24",
+              "y": 74.1
+            },
+            {
+              "x": "25-29",
+              "y": 83.1
+            },
+            {
+              "x": "30-34",
+              "y": 85
+            },
+            {
+              "x": "35-39",
+              "y": 85.8
+            },
+            {
+              "x": "40-44",
+              "y": 85.7
+            },
+            {
+              "x": "45-49",
+              "y": 84.9
+            },
+            {
+              "x": "50-54",
+              "y": 81.5
+            },
+            {
+              "x": "55-59",
+              "y": 74.3
+            },
+            {
+              "x": "60-64",
+              "y": 57.4
+            },
+            {
+              "x": "65-69",
+              "y": 35
+            },
+            {
+              "x": "70-74",
+              "y": 20.8
+            },
+            {
+              "x": "75-79",
+              "y": 13.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tasa-empleo-edad",
+      "type": "line",
+      "title": "Tasa de empleo por grupo etario — Provincia BSAS",
+      "sectionId": "edad",
+      "data": [
+        {
+          "id": "Tasa de empleo",
+          "data": [
+            {
+              "x": "15-19",
+              "y": 19.7
+            },
+            {
+              "x": "20-24",
+              "y": 59.8
+            },
+            {
+              "x": "25-29",
+              "y": 74.1
+            },
+            {
+              "x": "30-34",
+              "y": 78.3
+            },
+            {
+              "x": "35-39",
+              "y": 80.1
+            },
+            {
+              "x": "40-44",
+              "y": 80.4
+            },
+            {
+              "x": "45-49",
+              "y": 80
+            },
+            {
+              "x": "50-54",
+              "y": 77
+            },
+            {
+              "x": "55-59",
+              "y": 70
+            },
+            {
+              "x": "60-64",
+              "y": 54.2
+            },
+            {
+              "x": "65-69",
+              "y": 33.1
+            },
+            {
+              "x": "70-74",
+              "y": 19.7
+            },
+            {
+              "x": "75-79",
+              "y": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sexo",
+      "type": "bar",
+      "title": "Tasa de actividad y empleo por sexo — Provincia BSAS",
+      "sectionId": "brecha",
+      "data": [
+        {
+          "categoria": "Mujeres act.",
+          "value": 58.8
+        },
+        {
+          "categoria": "Varones act.",
+          "value": 74.9
+        },
+        {
+          "categoria": "Mujeres emp.",
+          "value": 51.8
+        },
+        {
+          "categoria": "Varones emp.",
+          "value": 69.7
+        }
+      ],
+      "config": {
+        "xAxis": "categoria"
+      }
     },
     {
       "id": "gba-empleo",
@@ -689,5 +861,203 @@
       "caption": "De la población de 14+ de Morón está ocupada",
       "label": "58,6% · De la población de 14+ de Morón está ocupada"
     }
-  ]
+  ],
+  "extras": {
+    "actividad": {
+      "partido": {
+        "pob14": 278273,
+        "pea": 179597,
+        "ocupada": 162958,
+        "desocupada": 16639,
+        "pnea": 98676,
+        "tasaActividad": 64.53985834055047,
+        "tasaEmpleo": 58.560478379145664,
+        "tasaDesempleo": 9.264631369120865
+      },
+      "gba": {
+        "promPondActGBA": 64.56291739790193,
+        "promPondEmpGBA": 58.18209041869407,
+        "promPondDesGBA": 9.88311438884145,
+        "deltaEmpleo": 0.3783879604515974,
+        "deltaDesempleo": -0.6184830197205855,
+        "posActividad": 13,
+        "posEmpleo": 11,
+        "posDesempleo": 21
+      },
+      "provBSAS": {
+        "mujeres": {
+          "tActividad": 58.81934231569244,
+          "tEmpleo": 51.78277420044426,
+          "tDesempleo": 11.963017331070851
+        },
+        "varones": {
+          "tActividad": 74.88011916268049,
+          "tEmpleo": 69.746877340526,
+          "tDesempleo": 6.855279985602439
+        },
+        "brechaActividad": 16.06077684698805,
+        "brechaEmpleo": 17.96410314008174,
+        "informalidad": {
+          "pctEmpleadoSinAporte": 24.903095538078006,
+          "pctSDSinAporte": 66.47868689792037
+        },
+        "porEdad": [
+          {
+            "grupo": "14",
+            "pob14": 277163,
+            "pea": 17519,
+            "ocupada": 14339,
+            "desocupada": 3180,
+            "pnea": 259644,
+            "tActividad": 6.32082925931672,
+            "tEmpleo": 5.173489967997171,
+            "tDesempleo": 18.151720988640903
+          },
+          {
+            "grupo": "15-19",
+            "pob14": 1367538,
+            "pea": 378180,
+            "ocupada": 269371,
+            "desocupada": 108809,
+            "pnea": 989358,
+            "tActividad": 27.654076157298736,
+            "tEmpleo": 19.697514803976198,
+            "tDesempleo": 28.771748902638954
+          },
+          {
+            "grupo": "20-24",
+            "pob14": 1293362,
+            "pea": 957758,
+            "ocupada": 773237,
+            "desocupada": 184521,
+            "pnea": 335604,
+            "tActividad": 74.05181225364592,
+            "tEmpleo": 59.78504084703277,
+            "tDesempleo": 19.265931477471344
+          },
+          {
+            "grupo": "25-29",
+            "pob14": 1296778,
+            "pea": 1077924,
+            "ocupada": 960550,
+            "desocupada": 117374,
+            "pnea": 218854,
+            "tActividad": 83.12324854369831,
+            "tEmpleo": 74.07204625618263,
+            "tDesempleo": 10.88889383667123
+          },
+          {
+            "grupo": "30-34",
+            "pob14": 1292913,
+            "pea": 1098733,
+            "ocupada": 1011942,
+            "desocupada": 86791,
+            "pnea": 194180,
+            "tActividad": 84.98120136467033,
+            "tEmpleo": 78.26837536632395,
+            "tDesempleo": 7.899189338993186
+          },
+          {
+            "grupo": "35-39",
+            "pob14": 1241676,
+            "pea": 1065040,
+            "ocupada": 994684,
+            "desocupada": 70356,
+            "pnea": 176636,
+            "tActividad": 85.77438880996331,
+            "tEmpleo": 80.10817636807025,
+            "tDesempleo": 6.605949072335311
+          },
+          {
+            "grupo": "40-44",
+            "pob14": 1267205,
+            "pea": 1085831,
+            "ocupada": 1019422,
+            "desocupada": 66409,
+            "pnea": 181374,
+            "tActividad": 85.68708298972936,
+            "tEmpleo": 80.4464944503849,
+            "tDesempleo": 6.1159609552499425
+          },
+          {
+            "grupo": "45-49",
+            "pob14": 1121090,
+            "pea": 951321,
+            "ocupada": 896701,
+            "desocupada": 54620,
+            "pnea": 169769,
+            "tActividad": 84.85679115860457,
+            "tEmpleo": 79.984746987307,
+            "tDesempleo": 5.7414899912858015
+          },
+          {
+            "grupo": "50-54",
+            "pob14": 971898,
+            "pea": 792580,
+            "ocupada": 747999,
+            "desocupada": 44581,
+            "pnea": 179318,
+            "tActividad": 81.54970994898642,
+            "tEmpleo": 76.96270596297143,
+            "tDesempleo": 5.624794973378082
+          },
+          {
+            "grupo": "55-59",
+            "pob14": 848854,
+            "pea": 630531,
+            "ocupada": 594466,
+            "desocupada": 36065,
+            "pnea": 218323,
+            "tActividad": 74.28026492188292,
+            "tEmpleo": 70.03159553939783,
+            "tDesempleo": 5.719782215307415
+          },
+          {
+            "grupo": "60-64",
+            "pob14": 765838,
+            "pea": 439381,
+            "ocupada": 415069,
+            "desocupada": 24312,
+            "pnea": 326457,
+            "tActividad": 57.37257749027862,
+            "tEmpleo": 54.19801576834787,
+            "tDesempleo": 5.533238806411747
+          },
+          {
+            "grupo": "65-69",
+            "pob14": 668744,
+            "pea": 234048,
+            "ocupada": 221300,
+            "desocupada": 12748,
+            "pnea": 434696,
+            "tActividad": 34.99814577775651,
+            "tEmpleo": 33.09188568420801,
+            "tDesempleo": 5.446745966639322
+          },
+          {
+            "grupo": "70-74",
+            "pob14": 556735,
+            "pea": 115731,
+            "ocupada": 109584,
+            "desocupada": 6147,
+            "pnea": 441004,
+            "tActividad": 20.787448247370833,
+            "tEmpleo": 19.68333228555776,
+            "tDesempleo": 5.311455012053814
+          },
+          {
+            "grupo": "75-79",
+            "pob14": 407708,
+            "pea": 56075,
+            "ocupada": 52982,
+            "desocupada": 3093,
+            "pnea": 351633,
+            "tActividad": 13.753715894708959,
+            "tEmpleo": 12.995084717493894,
+            "tDesempleo": 5.515827017387428
+          }
+        ]
+      }
+    }
+  }
 }

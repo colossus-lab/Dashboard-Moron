@@ -17,6 +17,13 @@
       "comparison": "-3,6% vs 2023"
     },
     {
+      "id": "tasa-hechos",
+      "label": "Tasa total de hechos 2024",
+      "value": 4229.95960251,
+      "formatted": "4230,0 / 100K",
+      "comparison": "Promedio simple GBA24: 2881,8 / 100K"
+    },
+    {
       "id": "var-5y",
       "label": "Variación 5 años (2019→2024)",
       "value": -10.626793938989385,
@@ -25,11 +32,11 @@
       "comparison": "14.981 → 13.389 hechos"
     },
     {
-      "id": "top-delito",
-      "label": "Delito más frecuente",
-      "value": 5006,
-      "formatted": "5.006",
-      "comparison": "Robos (excluye los agravados por el resultado de lesiones y/o muertes)"
+      "id": "patrimoniales",
+      "label": "Delitos patrimoniales",
+      "value": 63.83598476361192,
+      "formatted": "63,8%",
+      "comparison": "8.547 hechos · robos + hurtos + tentativas"
     },
     {
       "id": "homicidios",
@@ -37,7 +44,14 @@
       "value": 15,
       "formatted": "15",
       "status": "critical",
-      "comparison": "Tasa: 4,7 / 100K"
+      "comparison": "Tasa: 4,74 / 100K · Prom. GBA: 4,45 / 100K"
+    },
+    {
+      "id": "pos-gba-hom",
+      "label": "Posición GBA — tasa homicidios 2024",
+      "value": 10,
+      "formatted": "10° de 24",
+      "comparison": "Mayor tasa de homicidios = posiciones más altas"
     },
     {
       "id": "victimas-fem",
@@ -47,10 +61,12 @@
       "comparison": "1.192 varones • 43,6% del total"
     },
     {
-      "id": "victimas-tot",
-      "label": "Víctimas totales 2024",
-      "value": 2150,
-      "formatted": "2.150"
+      "id": "estafas-virt",
+      "label": "Estafas virtuales 2024",
+      "value": 796,
+      "formatted": "796",
+      "status": "warning",
+      "comparison": "2023: 543 · +46,6% interanual"
     }
   ],
   "charts": [
@@ -388,6 +404,232 @@
             {
               "x": "2024",
               "y": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie-tasa-hom",
+      "type": "line",
+      "title": "Tasa de homicidios dolosos por 100.000 habitantes — Morón",
+      "sectionId": "homicidios",
+      "data": [
+        {
+          "id": "Tasa /100K",
+          "data": [
+            {
+              "x": "2000",
+              "y": 9.7
+            },
+            {
+              "x": "2001",
+              "y": 5.76
+            },
+            {
+              "x": "2002",
+              "y": 11.23
+            },
+            {
+              "x": "2003",
+              "y": 6.69
+            },
+            {
+              "x": "2004",
+              "y": 3.96
+            },
+            {
+              "x": "2005",
+              "y": 4.28
+            },
+            {
+              "x": "2006",
+              "y": 3.67
+            },
+            {
+              "x": "2007",
+              "y": 4.6
+            },
+            {
+              "x": "2008",
+              "y": 3.38
+            },
+            {
+              "x": "2009",
+              "y": 7.69
+            },
+            {
+              "x": "2010",
+              "y": 4.93
+            },
+            {
+              "x": "2011",
+              "y": 6.49
+            },
+            {
+              "x": "2012",
+              "y": 6.19
+            },
+            {
+              "x": "2013",
+              "y": 7.75
+            },
+            {
+              "x": "2014",
+              "y": 8.08
+            },
+            {
+              "x": "2015",
+              "y": 5.91
+            },
+            {
+              "x": "2016",
+              "y": 7.79
+            },
+            {
+              "x": "2017",
+              "y": 4.37
+            },
+            {
+              "x": "2018",
+              "y": 4.07
+            },
+            {
+              "x": "2019",
+              "y": 1.88
+            },
+            {
+              "x": "2020",
+              "y": 3.45
+            },
+            {
+              "x": "2021",
+              "y": 3.77
+            },
+            {
+              "x": "2022",
+              "y": 2.2
+            },
+            {
+              "x": "2023",
+              "y": 4.1
+            },
+            {
+              "x": "2024",
+              "y": 4.74
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie-tasa-hechos",
+      "type": "line",
+      "title": "Tasa total de hechos delictivos por 100.000 habitantes — Morón",
+      "sectionId": "panorama",
+      "data": [
+        {
+          "id": "Tasa /100K",
+          "data": [
+            {
+              "x": "2000",
+              "y": 2707.5
+            },
+            {
+              "x": "2001",
+              "y": 2747.1
+            },
+            {
+              "x": "2002",
+              "y": 3841
+            },
+            {
+              "x": "2003",
+              "y": 3358
+            },
+            {
+              "x": "2004",
+              "y": 3053.9
+            },
+            {
+              "x": "2005",
+              "y": 2554.1
+            },
+            {
+              "x": "2006",
+              "y": 2294.7
+            },
+            {
+              "x": "2007",
+              "y": 2364.4
+            },
+            {
+              "x": "2008",
+              "y": 2587.1
+            },
+            {
+              "x": "2009",
+              "y": 1965.5
+            },
+            {
+              "x": "2010",
+              "y": 2543.8
+            },
+            {
+              "x": "2011",
+              "y": 2643.7
+            },
+            {
+              "x": "2012",
+              "y": 2748.3
+            },
+            {
+              "x": "2013",
+              "y": 3186.5
+            },
+            {
+              "x": "2014",
+              "y": 3164.8
+            },
+            {
+              "x": "2015",
+              "y": 2971.8
+            },
+            {
+              "x": "2016",
+              "y": 2749.5
+            },
+            {
+              "x": "2017",
+              "y": 2893.4
+            },
+            {
+              "x": "2018",
+              "y": 3439.8
+            },
+            {
+              "x": "2019",
+              "y": 4694.5
+            },
+            {
+              "x": "2020",
+              "y": 3647.9
+            },
+            {
+              "x": "2021",
+              "y": 3995.5
+            },
+            {
+              "x": "2022",
+              "y": 4377.6
+            },
+            {
+              "x": "2023",
+              "y": 4380.1
+            },
+            {
+              "x": "2024",
+              "y": 4230
             }
           ]
         }
@@ -981,7 +1223,7 @@
     {
       "id": "gba-hechos",
       "type": "bar",
-      "title": "Hechos delictivos por partido — 24 GBA (2024)",
+      "title": "Hechos delictivos absolutos — 24 GBA (2024)",
       "sectionId": "comparacion",
       "data": [
         {
@@ -1083,9 +1325,113 @@
       }
     },
     {
+      "id": "gba-tasa",
+      "type": "bar",
+      "title": "Tasa total de hechos por 100.000 hab. — 24 GBA (2024)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Morón",
+          "value": 4230
+        },
+        {
+          "partido": "General San Martín",
+          "value": 3627.5
+        },
+        {
+          "partido": "Lanús",
+          "value": 3496.5
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 3385.1
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 3293.9
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 3147.9
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 3138.1
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 3113.7
+        },
+        {
+          "partido": "Berazategui",
+          "value": 2944.2
+        },
+        {
+          "partido": "San Isidro",
+          "value": 2937.4
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 2935.2
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 2908.6
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 2764.1
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 2739.9
+        },
+        {
+          "partido": "San Miguel",
+          "value": 2694.4
+        },
+        {
+          "partido": "Moreno",
+          "value": 2633.9
+        },
+        {
+          "partido": "Tigre",
+          "value": 2549.5
+        },
+        {
+          "partido": "Merlo",
+          "value": 2494.6
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 2457.5
+        },
+        {
+          "partido": "Vicente López",
+          "value": 2371.8
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 2251.8
+        },
+        {
+          "partido": "San Fernando",
+          "value": 2101.4
+        },
+        {
+          "partido": "La Matanza",
+          "value": 2063.8
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    },
+    {
       "id": "gba-homicidios",
       "type": "bar",
-      "title": "Homicidios dolosos por partido — 24 GBA (2024)",
+      "title": "Homicidios dolosos absolutos — 24 GBA (2024)",
       "sectionId": "comparacion",
       "data": [
         {
@@ -1185,12 +1531,116 @@
         "xAxis": "partido",
         "layout": "horizontal"
       }
+    },
+    {
+      "id": "gba-tasa-hom",
+      "type": "bar",
+      "title": "Tasa de homicidios por 100.000 hab. — 24 GBA (2024)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "José C. Paz",
+          "value": 7.77
+        },
+        {
+          "partido": "General San Martín",
+          "value": 7.48
+        },
+        {
+          "partido": "Moreno",
+          "value": 6.97
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 6.85
+        },
+        {
+          "partido": "La Matanza",
+          "value": 5.72
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 5.56
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 5.27
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 5.23
+        },
+        {
+          "partido": "Merlo",
+          "value": 5.21
+        },
+        {
+          "partido": "Morón",
+          "value": 4.74
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 4.73
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 4.29
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 4.25
+        },
+        {
+          "partido": "San Isidro",
+          "value": 4.12
+        },
+        {
+          "partido": "Lanús",
+          "value": 4.11
+        },
+        {
+          "partido": "Tigre",
+          "value": 3.24
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 3.04
+        },
+        {
+          "partido": "San Fernando",
+          "value": 2.8
+        },
+        {
+          "partido": "Berazategui",
+          "value": 2.63
+        },
+        {
+          "partido": "San Miguel",
+          "value": 2.55
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 2.16
+        },
+        {
+          "partido": "Vicente López",
+          "value": 1.88
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 1.67
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
     }
   ],
   "rankings": [
     {
       "id": "rk-hechos",
-      "title": "Hechos 2024 — 24 GBA",
+      "title": "Hechos absolutos 2024 — 24 GBA",
       "sectionId": "comparacion",
       "items": [
         {
@@ -1312,8 +1762,131 @@
       "order": "desc"
     },
     {
+      "id": "rk-tasa",
+      "title": "Tasa total /100K 2024 — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Morón",
+          "value": 4230,
+          "municipioId": "06568"
+        },
+        {
+          "name": "General San Martín",
+          "value": 3627.5,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Lanús",
+          "value": 3496.5,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 3385.1,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 3293.9,
+          "municipioId": "06840"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 3147.9,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 3138.1,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 3113.7,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Berazategui",
+          "value": 2944.2,
+          "municipioId": "06091"
+        },
+        {
+          "name": "San Isidro",
+          "value": 2937.4,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 2935.2,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 2908.6,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 2764.1,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 2739.9,
+          "municipioId": "06028"
+        },
+        {
+          "name": "San Miguel",
+          "value": 2694.4,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Moreno",
+          "value": 2633.9,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Tigre",
+          "value": 2549.5,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Merlo",
+          "value": 2494.6,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 2457.5,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Vicente López",
+          "value": 2371.8,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 2251.8,
+          "municipioId": "06274"
+        },
+        {
+          "name": "San Fernando",
+          "value": 2101.4,
+          "municipioId": "06749"
+        },
+        {
+          "name": "La Matanza",
+          "value": 2063.8,
+          "municipioId": "06427"
+        }
+      ],
+      "order": "desc"
+    },
+    {
       "id": "rk-homicidios",
-      "title": "Homicidios dolosos 2024 — 24 GBA",
+      "title": "Homicidios absolutos 2024 — 24 GBA",
       "sectionId": "comparacion",
       "items": [
         {
@@ -1430,6 +2003,129 @@
           "name": "Ituzaingó",
           "value": 4,
           "municipioId": "06410"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-tasa-hom",
+      "title": "Tasa homicidios /100K 2024 — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "José C. Paz",
+          "value": 7.77,
+          "municipioId": "06412"
+        },
+        {
+          "name": "General San Martín",
+          "value": 7.48,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Moreno",
+          "value": 6.97,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 6.85,
+          "municipioId": "06490"
+        },
+        {
+          "name": "La Matanza",
+          "value": 5.72,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 5.56,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 5.27,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 5.23,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Merlo",
+          "value": 5.21,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Morón",
+          "value": 4.74,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 4.73,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 4.29,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 4.25,
+          "municipioId": "06028"
+        },
+        {
+          "name": "San Isidro",
+          "value": 4.12,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Lanús",
+          "value": 4.11,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Tigre",
+          "value": 3.24,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 3.04,
+          "municipioId": "06408"
+        },
+        {
+          "name": "San Fernando",
+          "value": 2.8,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Berazategui",
+          "value": 2.63,
+          "municipioId": "06091"
+        },
+        {
+          "name": "San Miguel",
+          "value": 2.55,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 2.16,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Vicente López",
+          "value": 1.88,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 1.67,
+          "municipioId": "06270"
         }
       ],
       "order": "desc"
@@ -1567,5 +2263,85 @@
       "caption": "Hechos delictivos registrados en Morón — 2024",
       "label": "13.389 hechos delictivos en 2024"
     }
-  ]
+  ],
+  "extras": {
+    "snic": {
+      "moron": {
+        "last": 2024,
+        "prev": 2023,
+        "hechos2024": 13389,
+        "hechosPrev": 13886,
+        "hechos2019": 14981,
+        "varAnual": -3.579144462048106,
+        "var5y": -10.626793938989385,
+        "tasaTotal2024": 4229.95960251,
+        "tasa2000": 2707.5018754499997,
+        "hom2024": 15,
+        "homTasa": 4.7384534,
+        "homPrev": 13,
+        "robos2024": 5006,
+        "robosAgrav": 47,
+        "hurtos2024": 3151,
+        "tentRobos": 343,
+        "patrimoniales": 8547,
+        "pctPatrimoniales": 63.83598476361192,
+        "estafasVirt2023": 543,
+        "estafasVirt2024": 796,
+        "lesionesViales2024": 843,
+        "amenazas2024": 927,
+        "lesionesDolosas2024": 774,
+        "victimasFem2024": 920,
+        "victimasMasc2024": 1192,
+        "totalVic": 2150
+      },
+      "gba": {
+        "posTasaHechos": 1,
+        "posTasaHom": 10,
+        "promGBAtasaHom": 4.446521739130433,
+        "promGBAtasaTot": 2881.7739130434784
+      },
+      "topDelitos2024": [
+        {
+          "name": "Robos (excluye los agravados por el resultado de lesiones y/o muertes)",
+          "value": 5006
+        },
+        {
+          "name": "Hurtos",
+          "value": 3151
+        },
+        {
+          "name": "Amenazas",
+          "value": 927
+        },
+        {
+          "name": "Lesiones culposas en Accidentes Viales",
+          "value": 843
+        },
+        {
+          "name": "Lesiones dolosas",
+          "value": 774
+        },
+        {
+          "name": "Estafas y defraudaciones asistidas virtualmente",
+          "value": 430
+        },
+        {
+          "name": "Estafas y defraudaciones (no incluye virtuales) y usura",
+          "value": 366
+        },
+        {
+          "name": "Tentativas de robo (excluye las agravadas por el res. de lesiones y/o muerte)",
+          "value": 328
+        },
+        {
+          "name": "Daños (no incluye informáticos)",
+          "value": 267
+        },
+        {
+          "name": "Delitos contra la administración pública",
+          "value": 214
+        }
+      ]
+    }
+  }
 }

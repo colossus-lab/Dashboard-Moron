@@ -127,16 +127,40 @@ function findPartidoRow(matrix, codigo, nombreAlt) {
 // basándose en el título "Cuadro X.Y.N. ... partido <nombre>. ..."
 function buildPartidoSheetIndex(workbook, cuadroPrefix) {
   const index = {};
-  const re = new RegExp('^' + cuadroPrefix.replace(/\./g, '\\.') + '\\.\\d+$');
+  // Algunas hojas del INDEC vienen con espacios no separables (U+00A0) entre
+  // "Cuadro" y el número. Reemplazamos cualquier espacio del prefijo por
+  // \s+ y \. para los puntos.
+  const reSrc = '^' + cuadroPrefix
+    .replace(/\./g, '\\.')
+    .replace(/\s+/g, '\\s+') + '\\.\\d+$';
+  const re = new RegExp(reSrc);
+  // Listado completo de partidos de Buenos Aires que pueden aparecer (todos los GBA24
+  // más el resto del interior provincial — el sub-índice cubre 135 partidos).
+  // Para cada hoja escaneamos las primeras 4 filas y buscamos cuál de los nombres
+  // de GBA24 aparece después de "partido". El nombre puede contener puntos (ej.
+  // "José C. Paz") por lo que un regex simple ".+?\." truncaría el nombre.
+  const partidosCandidates = GBA24.map(p => p.nombre);
   for (const sheetName of workbook.SheetNames) {
     if (!re.test(sheetName)) continue;
     const sheet = workbook.Sheets[sheetName];
     if (!sheet) continue;
     const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null, blankrows: false });
-    const title = String(rows[0]?.[0] || rows[1]?.[0] || '');
-    const match = title.match(/partido\s+(.+?)\s*\./i);
-    if (match) {
-      index[normalize(match[1])] = sheetName;
+    let titleText = '';
+    for (let i = 0; i < Math.min(rows.length, 4); i++) {
+      const cell = String(rows[i]?.[0] || '');
+      if (/partido/i.test(cell)) { titleText = cell; break; }
+    }
+    if (!titleText) continue;
+    const titleNorm = normalize(titleText);
+    // Match: el nombre normalizado del partido aparece como sub-cadena en el título
+    // luego de la palabra "partido". Como GBA24 nombres tienen alta especificidad
+    // (no hay solapamientos), basta con includes.
+    for (const candidate of partidosCandidates) {
+      const candNorm = normalize(candidate);
+      if (titleNorm.includes(' partido ' + candNorm + ' ') || titleNorm.includes(' partido ' + candNorm + '.')) {
+        index[candNorm] = sheetName;
+        break;
+      }
     }
   }
   return index;

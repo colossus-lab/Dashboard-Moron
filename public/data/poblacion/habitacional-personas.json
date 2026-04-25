@@ -16,35 +16,112 @@
       "unit": "hab"
     },
     {
+      "id": "agua-dentro",
+      "label": "Agua por cañería dentro de la vivienda",
+      "value": 98.51479589823894,
+      "formatted": "98,5%",
+      "status": "good",
+      "comparison": "Brecha vs prom. GBA: +5,1 pp"
+    },
+    {
+      "id": "cloaca",
+      "label": "Conectado a red cloacal",
+      "value": 75.67196836582028,
+      "formatted": "75,7%",
+      "status": "good",
+      "comparison": "249.352 personas"
+    },
+    {
       "id": "gas-red",
-      "label": "Usan gas de red",
+      "label": "Cocina con gas de red",
       "value": 80.67231736147149,
       "formatted": "80,7%",
-      "comparison": "265.829 personas",
-      "status": "good"
+      "status": "good",
+      "comparison": "Brecha vs prom. GBA: +25,2 pp"
     },
     {
-      "id": "garrafa",
-      "label": "Dependen de garrafa",
-      "value": 11.449788630025157,
-      "formatted": "11,4%",
-      "comparison": "37.729 personas",
-      "status": "good"
+      "id": "internet-viv",
+      "label": "Internet en la vivienda",
+      "value": 91.78980143664819,
+      "formatted": "91,8%",
+      "status": "good",
+      "comparison": "302.463 personas"
     },
     {
-      "id": "electricidad",
-      "label": "Electricidad",
-      "value": 7.339833756680232,
-      "formatted": "7,3%",
-      "comparison": "24.186 personas"
+      "id": "sin-pc",
+      "label": "Sin computadora ni tablet",
+      "value": 26.974329093794857,
+      "formatted": "27,0%",
+      "status": "warning",
+      "comparison": "88.885 personas"
+    },
+    {
+      "id": "piso-precario",
+      "label": "Piso de tierra u otro material",
+      "value": 0.5471644862025328,
+      "formatted": "0,55%",
+      "comparison": "1.803 personas"
+    },
+    {
+      "id": "sin-baño",
+      "label": "Sin baño",
+      "value": 0.20636264593329023,
+      "formatted": "0,21%",
+      "comparison": "680 personas"
     }
   ],
   "charts": [
     {
+      "id": "agua-prov",
+      "type": "pie",
+      "title": "Provisión del agua a la vivienda — Morón",
+      "sectionId": "agua",
+      "data": [
+        {
+          "id": "Cañería dentro de la vivienda",
+          "label": "Cañería dentro de la vivienda",
+          "value": 324623
+        },
+        {
+          "id": "Fuera de la vivienda, dentro del terreno",
+          "label": "Fuera de la vivienda, dentro del terreno",
+          "value": 4382
+        },
+        {
+          "id": "Fuera del terreno",
+          "label": "Fuera del terreno",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "id": "sanit",
+      "type": "pie",
+      "title": "Población según tipo de desagüe del inodoro — Morón",
+      "sectionId": "cloaca",
+      "data": [
+        {
+          "id": "A red pública (cloaca)",
+          "label": "A red pública (cloaca)",
+          "value": 249352
+        },
+        {
+          "id": "A cámara séptica / pozo / otro",
+          "label": "A cámara séptica / pozo / otro",
+          "value": 79485
+        },
+        {
+          "id": "No tiene baño",
+          "label": "No tiene baño",
+          "value": 680
+        }
+      ]
+    },
+    {
       "id": "combustible-personas",
       "type": "pie",
       "title": "Combustible para cocinar — Población Morón",
-      "sectionId": "servicios",
+      "sectionId": "energia",
       "data": [
         {
           "id": "Gas de red",
@@ -74,9 +151,140 @@
       ]
     },
     {
+      "id": "digital",
+      "type": "pie",
+      "title": "Acceso digital en la vivienda — Población Morón",
+      "sectionId": "digital",
+      "data": [
+        {
+          "id": "Internet en vivienda + computadora",
+          "label": "Internet en vivienda + computadora",
+          "value": 236575
+        },
+        {
+          "id": "Internet en vivienda sin computadora",
+          "label": "Internet en vivienda sin computadora",
+          "value": 65888
+        },
+        {
+          "id": "Sin internet en vivienda",
+          "label": "Sin internet en vivienda",
+          "value": 27054
+        }
+      ]
+    },
+    {
+      "id": "gba-cloaca",
+      "type": "bar",
+      "title": "% Conectada a red cloacal — 24 partidos del GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Vicente López",
+          "value": 97.61959927425937
+        },
+        {
+          "partido": "San Isidro",
+          "value": 93.0907026873619
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 92.67165122447346
+        },
+        {
+          "partido": "San Fernando",
+          "value": 91.93975417740606
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 78.95262989700014
+        },
+        {
+          "partido": "Morón",
+          "value": 75.67196836582028
+        },
+        {
+          "partido": "Berazategui",
+          "value": 74.72483311379519
+        },
+        {
+          "partido": "Quilmes",
+          "value": 74.23667324074749
+        },
+        {
+          "partido": "General San Martín",
+          "value": 72.40018627545821
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 54.75045991335826
+        },
+        {
+          "partido": "Lanús",
+          "value": 54.581910576615854
+        },
+        {
+          "partido": "La Matanza",
+          "value": 53.61453062539735
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 46.44785130815674
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 43.81226913172015
+        },
+        {
+          "partido": "San Miguel",
+          "value": 42.975736303982906
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 41.56369777902235
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 39.136913182066806
+        },
+        {
+          "partido": "Merlo",
+          "value": 36.94151515776875
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 35.96804189164134
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 32.69257879367637
+        },
+        {
+          "partido": "Tigre",
+          "value": 32.45281665998194
+        },
+        {
+          "partido": "Moreno",
+          "value": 29.969188443755883
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 8.686008339987579
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 8.417680620591865
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
+    },
+    {
       "id": "gba-gasred",
       "type": "bar",
-      "title": "% Población con gas de red — 24 GBA",
+      "title": "% Cocina con gas de red — 24 partidos del GBA",
       "sectionId": "comparacion",
       "data": [
         {
@@ -180,12 +388,248 @@
         "xAxis": "partido",
         "layout": "horizontal"
       }
+    },
+    {
+      "id": "gba-internet",
+      "type": "bar",
+      "title": "% con internet en la vivienda — 24 partidos del GBA",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Vicente López",
+          "value": 93.53035741656299
+        },
+        {
+          "partido": "Morón",
+          "value": 91.78980143664819
+        },
+        {
+          "partido": "San Isidro",
+          "value": 90.89020129874518
+        },
+        {
+          "partido": "Ituzaingó",
+          "value": 90.21704320075513
+        },
+        {
+          "partido": "Tigre",
+          "value": 89.44253861269888
+        },
+        {
+          "partido": "Lanús",
+          "value": 89.01606456254441
+        },
+        {
+          "partido": "Hurlingham",
+          "value": 89.00361996320693
+        },
+        {
+          "partido": "Berazategui",
+          "value": 88.84346185617646
+        },
+        {
+          "partido": "Avellaneda",
+          "value": 88.08823408910267
+        },
+        {
+          "partido": "General San Martín",
+          "value": 86.37691984081097
+        },
+        {
+          "partido": "Almirante Brown",
+          "value": 85.66414441478098
+        },
+        {
+          "partido": "San Miguel",
+          "value": 85.62032656798412
+        },
+        {
+          "partido": "Tres de Febrero",
+          "value": 85.45654565456545
+        },
+        {
+          "partido": "Malvinas Argentinas",
+          "value": 85.23215445863063
+        },
+        {
+          "partido": "Esteban Echeverría",
+          "value": 84.83396472120279
+        },
+        {
+          "partido": "San Fernando",
+          "value": 84.7070993985938
+        },
+        {
+          "partido": "Lomas de Zamora",
+          "value": 83.95975170788338
+        },
+        {
+          "partido": "Quilmes",
+          "value": 83.95897900198489
+        },
+        {
+          "partido": "Merlo",
+          "value": 82.32917844687042
+        },
+        {
+          "partido": "La Matanza",
+          "value": 81.5274923142576
+        },
+        {
+          "partido": "Florencio Varela",
+          "value": 80.41192125432542
+        },
+        {
+          "partido": "José C. Paz",
+          "value": 79.72418819883195
+        },
+        {
+          "partido": "Ezeiza",
+          "value": 78.99305205920854
+        },
+        {
+          "partido": "Moreno",
+          "value": 78.66673150872415
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal"
+      }
     }
   ],
   "rankings": [
     {
+      "id": "rk-cloaca",
+      "title": "% con cloaca — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 97.61959927425937,
+          "municipioId": "06861"
+        },
+        {
+          "name": "San Isidro",
+          "value": 93.0907026873619,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 92.67165122447346,
+          "municipioId": "06840"
+        },
+        {
+          "name": "San Fernando",
+          "value": 91.93975417740606,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 78.95262989700014,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Morón",
+          "value": 75.67196836582028,
+          "municipioId": "06568"
+        },
+        {
+          "name": "Berazategui",
+          "value": 74.72483311379519,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Quilmes",
+          "value": 74.23667324074749,
+          "municipioId": "06658"
+        },
+        {
+          "name": "General San Martín",
+          "value": 72.40018627545821,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 54.75045991335826,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Lanús",
+          "value": 54.581910576615854,
+          "municipioId": "06434"
+        },
+        {
+          "name": "La Matanza",
+          "value": 53.61453062539735,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 46.44785130815674,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 43.81226913172015,
+          "municipioId": "06274"
+        },
+        {
+          "name": "San Miguel",
+          "value": 42.975736303982906,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 41.56369777902235,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 39.136913182066806,
+          "municipioId": "06028"
+        },
+        {
+          "name": "Merlo",
+          "value": 36.94151515776875,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 35.96804189164134,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 32.69257879367637,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Tigre",
+          "value": 32.45281665998194,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Moreno",
+          "value": 29.969188443755883,
+          "municipioId": "06560"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 8.686008339987579,
+          "municipioId": "06515"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 8.417680620591865,
+          "municipioId": "06412"
+        }
+      ],
+      "order": "desc"
+    },
+    {
       "id": "rk-gasred",
-      "title": "% Población con gas de red — 24 GBA",
+      "title": "% con gas de red — 24 GBA",
       "sectionId": "comparacion",
       "items": [
         {
@@ -310,16 +754,350 @@
         }
       ],
       "order": "desc"
+    },
+    {
+      "id": "rk-internet",
+      "title": "% con internet vivienda — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 93.53035741656299,
+          "municipioId": "06861"
+        },
+        {
+          "name": "Morón",
+          "value": 91.78980143664819,
+          "municipioId": "06568"
+        },
+        {
+          "name": "San Isidro",
+          "value": 90.89020129874518,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 90.21704320075513,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Tigre",
+          "value": 89.44253861269888,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Lanús",
+          "value": 89.01606456254441,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 89.00361996320693,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Berazategui",
+          "value": 88.84346185617646,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 88.08823408910267,
+          "municipioId": "06035"
+        },
+        {
+          "name": "General San Martín",
+          "value": 86.37691984081097,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 85.66414441478098,
+          "municipioId": "06028"
+        },
+        {
+          "name": "San Miguel",
+          "value": 85.62032656798412,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 85.45654565456545,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 85.23215445863063,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 84.83396472120279,
+          "municipioId": "06260"
+        },
+        {
+          "name": "San Fernando",
+          "value": 84.7070993985938,
+          "municipioId": "06749"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 83.95975170788338,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Quilmes",
+          "value": 83.95897900198489,
+          "municipioId": "06658"
+        },
+        {
+          "name": "Merlo",
+          "value": 82.32917844687042,
+          "municipioId": "06539"
+        },
+        {
+          "name": "La Matanza",
+          "value": 81.5274923142576,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 80.41192125432542,
+          "municipioId": "06274"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 79.72418819883195,
+          "municipioId": "06412"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 78.99305205920854,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Moreno",
+          "value": 78.66673150872415,
+          "municipioId": "06560"
+        }
+      ],
+      "order": "desc"
+    },
+    {
+      "id": "rk-agua",
+      "title": "% con agua por cañería dentro de la vivienda — 24 GBA",
+      "sectionId": "comparacion",
+      "items": [
+        {
+          "name": "Vicente López",
+          "value": 99.3555309206141,
+          "municipioId": "06861"
+        },
+        {
+          "name": "San Isidro",
+          "value": 98.74382555460203,
+          "municipioId": "06756"
+        },
+        {
+          "name": "Tres de Febrero",
+          "value": 98.69452057441094,
+          "municipioId": "06840"
+        },
+        {
+          "name": "Morón",
+          "value": 98.51479589823894,
+          "municipioId": "06568"
+        },
+        {
+          "name": "San Fernando",
+          "value": 97.67678361650273,
+          "municipioId": "06749"
+        },
+        {
+          "name": "General San Martín",
+          "value": 97.16649831384714,
+          "municipioId": "06371"
+        },
+        {
+          "name": "Avellaneda",
+          "value": 97.13424943392413,
+          "municipioId": "06035"
+        },
+        {
+          "name": "Lanús",
+          "value": 96.97944492382862,
+          "municipioId": "06434"
+        },
+        {
+          "name": "Ituzaingó",
+          "value": 96.92217796081648,
+          "municipioId": "06410"
+        },
+        {
+          "name": "Hurlingham",
+          "value": 96.45772303774797,
+          "municipioId": "06408"
+        },
+        {
+          "name": "Berazategui",
+          "value": 96.11612824004823,
+          "municipioId": "06091"
+        },
+        {
+          "name": "Tigre",
+          "value": 95.71669605705694,
+          "municipioId": "06805"
+        },
+        {
+          "name": "Quilmes",
+          "value": 93.48168807200044,
+          "municipioId": "06658"
+        },
+        {
+          "name": "San Miguel",
+          "value": 93.08133679230886,
+          "municipioId": "06760"
+        },
+        {
+          "name": "Lomas de Zamora",
+          "value": 92.6224104637392,
+          "municipioId": "06490"
+        },
+        {
+          "name": "Almirante Brown",
+          "value": 92.25920724817347,
+          "municipioId": "06028"
+        },
+        {
+          "name": "La Matanza",
+          "value": 92.24888524076187,
+          "municipioId": "06427"
+        },
+        {
+          "name": "Malvinas Argentinas",
+          "value": 91.46052816105278,
+          "municipioId": "06515"
+        },
+        {
+          "name": "Esteban Echeverría",
+          "value": 91.3578785367586,
+          "municipioId": "06260"
+        },
+        {
+          "name": "Ezeiza",
+          "value": 90.08760447084886,
+          "municipioId": "06270"
+        },
+        {
+          "name": "Florencio Varela",
+          "value": 89.16601618920596,
+          "municipioId": "06274"
+        },
+        {
+          "name": "Merlo",
+          "value": 88.90648753878008,
+          "municipioId": "06539"
+        },
+        {
+          "name": "Moreno",
+          "value": 87.5741196822276,
+          "municipioId": "06560"
+        },
+        {
+          "name": "José C. Paz",
+          "value": 86.90460513219428,
+          "municipioId": "06412"
+        }
+      ],
+      "order": "desc"
     }
   ],
   "mapData": [
     {
       "municipioId": "06568",
       "municipioNombre": "Morón",
-      "value": 80.67231736147149,
-      "formatted": "80,7%",
-      "caption": "De la población de Morón vive en hogares con gas de red",
-      "label": "80,7% · De la población de Morón vive en hogares con gas de red"
+      "value": 75.67196836582028,
+      "formatted": "75,7%",
+      "caption": "De la población de Morón vive en viviendas conectadas a red cloacal",
+      "label": "75,7% · De la población de Morón vive en viviendas conectadas a red cloacal"
     }
-  ]
+  ],
+  "extras": {
+    "habitacional": {
+      "partido": {
+        "pob": 329517,
+        "agua": {
+          "cañeriaDentro": 324623,
+          "fueraVivienda": 4382,
+          "fueraTerreno": 512,
+          "redPub": 290433,
+          "pctDentro": 98.51479589823894,
+          "pctRedPub": 88.13900345050483
+        },
+        "cloaca": {
+          "cloacaPersonas": 249352,
+          "pctCloaca": 75.67196836582028
+        },
+        "combustible": {
+          "gasRed": 265829,
+          "garrafa": 37729,
+          "granel": 1416,
+          "elec": 24186,
+          "lena": 230,
+          "pctGasRed": 80.67231736147149,
+          "pctGarrafa": 11.449788630025157,
+          "pctElec": 7.339833756680232
+        },
+        "piso": {
+          "ceramica": 311611,
+          "carpeta": 16103,
+          "tierra": 465,
+          "otro": 1338,
+          "pctCeramica": 94.56598597340957,
+          "pctTierraOtro": 0.5471644862025328
+        },
+        "baños": {
+          "baño1": 208341,
+          "baño2": 92553,
+          "baño3plus": 27943,
+          "sinBaño": 680,
+          "pctSinBaño": 0.20636264593329023,
+          "pctMultiBaño": 36.56746085937903
+        },
+        "habitaciones": {
+          "hab1": 19103,
+          "hab2": 68906,
+          "pctHab1": 5.797272978328887,
+          "pctHab1o2": 26.708485449916093
+        },
+        "digital": {
+          "internetVivTotal": 302463,
+          "internetVivConPC": 236575,
+          "internetVivSinPC": 65888,
+          "sinInternetVivTotal": 27054,
+          "sinInternetVivConPC": 4057,
+          "sinInternetVivSinPC": 22997,
+          "conCelInternet": 312870,
+          "pctInternetViv": 91.78980143664819,
+          "pctConPC": 73.02567090620514,
+          "pctSinPC": 26.974329093794857,
+          "pctSinInternetVivienda": 8.210198563351815,
+          "pctConCelInternet": 94.94806034286547
+        }
+      },
+      "gba": {
+        "posiciones": {
+          "gasRed": 2,
+          "agua": 4,
+          "cloaca": 6,
+          "internet": 2
+        },
+        "promPond": {
+          "gasRed": 55.51893765734165,
+          "agua": 93.39357649831466,
+          "internet": 84.75681767041627
+        }
+      }
+    }
+  }
 }
