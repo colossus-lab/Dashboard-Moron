@@ -24,18 +24,48 @@
       "unit": "víctimas/año"
     },
     {
-      "id": "vehiculo-top",
-      "label": "Vehículo más afectado",
-      "value": 30,
-      "formatted": "Motocicleta",
-      "comparison": "30 víctimas"
+      "id": "tasa",
+      "label": "Tasa anual por 100.000 hab.",
+      "value": 4.054728482008868,
+      "formatted": "4,05",
+      "unit": "víctimas/100K/año",
+      "comparison": "Acumulado 7 años: 28,4 / 100K"
     },
     {
-      "id": "calle-top",
-      "label": "Calle con más víctimas",
-      "value": 7,
-      "formatted": "AVE PTE PERON",
-      "comparison": "7 víctimas"
+      "id": "motos",
+      "label": "Víctimas en moto",
+      "value": 31,
+      "formatted": "31",
+      "status": "warning",
+      "comparison": "33,0% del total"
+    },
+    {
+      "id": "peatones",
+      "label": "Víctimas peatonas",
+      "value": 20,
+      "formatted": "20",
+      "comparison": "21,3% del total"
+    },
+    {
+      "id": "mes-pico",
+      "label": "Mes con más víctimas",
+      "value": 11,
+      "formatted": "Oct",
+      "comparison": "11 víctimas en Oct (acumulado 7 años)"
+    },
+    {
+      "id": "sexo",
+      "label": "Distribución por sexo",
+      "value": 64,
+      "formatted": "68,1% V",
+      "comparison": "64 varones · 22 mujeres"
+    },
+    {
+      "id": "pos-gba",
+      "label": "Posición GBA — víctimas absolutas",
+      "value": 13,
+      "formatted": "13° de 24",
+      "comparison": "Mayor cantidad de víctimas = posiciones más altas · prom. GBA: 114"
     }
   ],
   "charts": [
@@ -317,9 +347,68 @@
       }
     },
     {
+      "id": "estacionalidad",
+      "type": "bar",
+      "title": "Víctimas viales por mes (acumulado 2017-2023) — Morón",
+      "sectionId": "estacionalidad",
+      "data": [
+        {
+          "mes": "Ene",
+          "value": 7
+        },
+        {
+          "mes": "Feb",
+          "value": 7
+        },
+        {
+          "mes": "Mar",
+          "value": 4
+        },
+        {
+          "mes": "Abr",
+          "value": 5
+        },
+        {
+          "mes": "May",
+          "value": 8
+        },
+        {
+          "mes": "Jun",
+          "value": 10
+        },
+        {
+          "mes": "Jul",
+          "value": 7
+        },
+        {
+          "mes": "Ago",
+          "value": 6
+        },
+        {
+          "mes": "Sep",
+          "value": 3
+        },
+        {
+          "mes": "Oct",
+          "value": 11
+        },
+        {
+          "mes": "Nov",
+          "value": 6
+        },
+        {
+          "mes": "Dic",
+          "value": 6
+        }
+      ],
+      "config": {
+        "xAxis": "mes"
+      }
+    },
+    {
       "id": "gba-total",
       "type": "bar",
-      "title": "Víctimas fatales viales — 24 GBA (2017-2023)",
+      "title": "Víctimas fatales viales absolutas — 24 GBA (2017-2023)",
       "sectionId": "comparacion",
       "data": [
         {
@@ -632,5 +721,100 @@
       "caption": "Víctimas fatales en siniestros viales (2017-2023)",
       "label": "94 víctimas fatales (2017-2023)"
     }
-  ]
+  ],
+  "extras": {
+    "muertesViales": {
+      "moron": {
+        "totalVic": 94,
+        "promedioAnual": 13.428571428571429,
+        "tasaPor100K": 28.383099374062077,
+        "tasaAnualPor100K": 4.054728482008868,
+        "years": 7,
+        "motos": 31,
+        "autos": 23,
+        "peatones": 20,
+        "bicis": 2,
+        "utilitarios": 1,
+        "vicVarones": 64,
+        "vicMujeres": 22,
+        "mesPico": {
+          "mes": "Oct",
+          "value": 11
+        },
+        "callesTop": [
+          {
+            "name": "AVE PTE PERON",
+            "value": 7
+          },
+          {
+            "name": "CORDOBA",
+            "value": 4
+          },
+          {
+            "name": "AVE RIVADAVIA",
+            "value": 3
+          },
+          {
+            "name": "AVE EVA PERON",
+            "value": 3
+          },
+          {
+            "name": "AU. DEL OESTE",
+            "value": 3
+          },
+          {
+            "name": "3 DE FEBRERO",
+            "value": 3
+          },
+          {
+            "name": "NUESTRA SENORA DEL BUEN VIAJE",
+            "value": 2
+          },
+          {
+            "name": "GRAL JOSE M GALAN",
+            "value": 2
+          },
+          {
+            "name": "PTE FIGUEROA ALCORTA",
+            "value": 2
+          },
+          {
+            "name": "AVE PTE HIPOLITO YRIGOYEN",
+            "value": 2
+          },
+          {
+            "name": "AVE DON BOSCO",
+            "value": 2
+          },
+          {
+            "name": "AVE CALLAO",
+            "value": 2
+          },
+          {
+            "name": "GRAL TOMAS GUIDO",
+            "value": 2
+          },
+          {
+            "name": "MURILLO",
+            "value": 2
+          },
+          {
+            "name": "ESTANISLAO DEL CAMPO",
+            "value": 2
+          }
+        ]
+      },
+      "gba": {
+        "posGBA": 13,
+        "promGBA": 114.04166666666667
+      },
+      "porModo": {
+        "Colisión vehículo-vehículo": 52,
+        "Colisión vehículo-persona": 20,
+        "Sin determinar": 18,
+        "Colisión vehículo-objeto": 2,
+        "Vuelco-Despistes": 2
+      }
+    }
+  }
 }

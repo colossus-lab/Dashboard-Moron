@@ -10,7 +10,7 @@
   "kpis": [
     {
       "id": "pct-percibe",
-      "label": "Percibe jubilación/pensión",
+      "label": "Percibe jubilación o pensión",
       "value": 21.579463275035888,
       "formatted": "21,6%",
       "comparison": "71.108 personas"
@@ -21,6 +21,13 @@
       "value": 14.145248955289105,
       "formatted": "14,1%",
       "comparison": "46.611 personas"
+    },
+    {
+      "id": "jub-pension",
+      "label": "Jubilación + pensión",
+      "value": 3.9457751800362346,
+      "formatted": "3,9%",
+      "comparison": "13.002 personas"
     },
     {
       "id": "pension",
@@ -35,13 +42,36 @@
       "value": 78.42053672496412,
       "formatted": "78,4%",
       "comparison": "258.409 personas"
+    },
+    {
+      "id": "cob-65plus",
+      "label": "Cobertura 65+ (estimación)",
+      "value": 92.73090894635519,
+      "formatted": "92,7%",
+      "status": "good",
+      "comparison": "Aplica tasa provincial 65+ a Morón · ~4.135 mayores sin previsión"
+    },
+    {
+      "id": "delta-gba",
+      "label": "Brecha vs promedio GBA (percibe)",
+      "value": 4.085553262422636,
+      "formatted": "+4,1 pp",
+      "status": "good",
+      "comparison": "Prom. GBA24: 17,5%"
+    },
+    {
+      "id": "pos-gba",
+      "label": "Posición en el GBA (percibe)",
+      "value": 2,
+      "formatted": "2° de 24",
+      "comparison": "Mayor cobertura previsional = posiciones más altas"
     }
   ],
   "charts": [
     {
       "id": "percibe",
       "type": "pie",
-      "title": "Composición de beneficios previsionales — Morón",
+      "title": "Composición de la cobertura previsional — Morón",
       "sectionId": "composicion",
       "data": [
         {
@@ -50,8 +80,8 @@
           "value": 46611
         },
         {
-          "id": "Solo pensión",
-          "label": "Solo pensión fallecimiento",
+          "id": "Solo pensión por fallecimiento",
+          "label": "Solo pensión por fallecimiento",
           "value": 3768
         },
         {
@@ -72,9 +102,125 @@
       ]
     },
     {
+      "id": "percibe-edad-bsas",
+      "type": "line",
+      "title": "% Percibe jubilación o pensión por edad — Provincia BSAS",
+      "sectionId": "edad",
+      "data": [
+        {
+          "id": "Cobertura previsional",
+          "data": [
+            {
+              "x": "0-4",
+              "y": 3.1
+            },
+            {
+              "x": "5-9",
+              "y": 3.5
+            },
+            {
+              "x": "10-14",
+              "y": 4
+            },
+            {
+              "x": "15-19",
+              "y": 4.5
+            },
+            {
+              "x": "20-24",
+              "y": 4.5
+            },
+            {
+              "x": "25-29",
+              "y": 5
+            },
+            {
+              "x": "30-34",
+              "y": 5
+            },
+            {
+              "x": "35-39",
+              "y": 5.1
+            },
+            {
+              "x": "40-44",
+              "y": 5.8
+            },
+            {
+              "x": "45-49",
+              "y": 7.4
+            },
+            {
+              "x": "50-54",
+              "y": 11.1
+            },
+            {
+              "x": "55-59",
+              "y": 18.4
+            },
+            {
+              "x": "60-64",
+              "y": 46.6
+            },
+            {
+              "x": "65-69",
+              "y": 85.4
+            },
+            {
+              "x": "70-74",
+              "y": 96
+            },
+            {
+              "x": "75-79",
+              "y": 96.9
+            },
+            {
+              "x": "80-84",
+              "y": 97
+            },
+            {
+              "x": "85-89",
+              "y": 96.5
+            },
+            {
+              "x": "90-94",
+              "y": 93.1
+            },
+            {
+              "x": "95-99",
+              "y": 80.9
+            },
+            {
+              "x": "100ymás",
+              "y": 91.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "percibe-sexo-bsas",
+      "type": "bar",
+      "title": "% 65+ que percibe jubilación o pensión, por sexo — Provincia BSAS",
+      "sectionId": "brecha",
+      "data": [
+        {
+          "categoria": "Mujeres 65+",
+          "value": 95.3
+        },
+        {
+          "categoria": "Varones 65+",
+          "value": 89
+        }
+      ],
+      "config": {
+        "xAxis": "categoria"
+      }
+    },
+    {
       "id": "gba-percibe",
       "type": "bar",
-      "title": "% Percibe jubilación/pensión — 24 GBA",
+      "title": "% Percibe jubilación o pensión — 24 partidos del GBA",
       "sectionId": "comparacion",
       "data": [
         {
@@ -316,8 +462,169 @@
       "municipioNombre": "Morón",
       "value": 21.579463275035888,
       "formatted": "21,6%",
-      "caption": "De la población de Morón percibe jubilación o pensión",
-      "label": "21,6% · De la población de Morón percibe jubilación o pensión"
+      "caption": "De la población total de Morón percibe jubilación o pensión",
+      "label": "21,6% · De la población total de Morón percibe jubilación o pensión"
     }
-  ]
+  ],
+  "extras": {
+    "prevision": {
+      "partido": {
+        "pctPercibe": 21.579463275035888,
+        "pctJub": 14.145248955289105,
+        "pctSoloPension": 1.1434918380538788,
+        "pctJubYpension": 3.9457751800362346,
+        "pctOtraPension": 2.344947301656667,
+        "pctNoPercibe": 78.42053672496412,
+        "razonCob": 0.27517617420445883,
+        "percibe": 71108,
+        "noPercibe": 258409,
+        "pob": 329517
+      },
+      "gba": {
+        "promPondPercibeGBA": 17.493910012613252,
+        "deltaPercibe": 4.085553262422636,
+        "posPercibe": 2
+      },
+      "provBSASporCohorte": {
+        "c60a64": 46.639889898385825,
+        "c65a69": 85.37975667819076,
+        "c70a74": 95.98067303115486,
+        "c65plus": 92.73090894635519,
+        "c65plusMuj": 95.34983090514908,
+        "c65plusVar": 89.04246358790363
+      },
+      "moronEstimaciones": {
+        "pob65plus": 56886,
+        "estSinPrev65plus": 4135
+      },
+      "provBSASporEdad": [
+        {
+          "grupo": "0-4",
+          "pob": 1053406,
+          "percibe": 32452,
+          "pctPercibe": 3.0806735484703904
+        },
+        {
+          "grupo": "5-9",
+          "pob": 1368213,
+          "percibe": 47507,
+          "pctPercibe": 3.4721932915415947
+        },
+        {
+          "grupo": "10-14",
+          "pob": 1407051,
+          "percibe": 56078,
+          "pctPercibe": 3.985498748801571
+        },
+        {
+          "grupo": "15-19",
+          "pob": 1367538,
+          "percibe": 61882,
+          "pctPercibe": 4.525066213882174
+        },
+        {
+          "grupo": "20-24",
+          "pob": 1293362,
+          "percibe": 57598,
+          "pctPercibe": 4.453354899865621
+        },
+        {
+          "grupo": "25-29",
+          "pob": 1296778,
+          "percibe": 65117,
+          "pctPercibe": 5.021445459438701
+        },
+        {
+          "grupo": "30-34",
+          "pob": 1292913,
+          "percibe": 64883,
+          "pctPercibe": 5.018357770399091
+        },
+        {
+          "grupo": "35-39",
+          "pob": 1241676,
+          "percibe": 62933,
+          "pctPercibe": 5.068391432225476
+        },
+        {
+          "grupo": "40-44",
+          "pob": 1267205,
+          "percibe": 73166,
+          "pctPercibe": 5.773809288946934
+        },
+        {
+          "grupo": "45-49",
+          "pob": 1121090,
+          "percibe": 83086,
+          "pctPercibe": 7.411180190707258
+        },
+        {
+          "grupo": "50-54",
+          "pob": 971898,
+          "percibe": 108128,
+          "pctPercibe": 11.125447320603604
+        },
+        {
+          "grupo": "55-59",
+          "pob": 848854,
+          "percibe": 155919,
+          "pctPercibe": 18.368176388401302
+        },
+        {
+          "grupo": "60-64",
+          "pob": 765838,
+          "percibe": 357186,
+          "pctPercibe": 46.639889898385825
+        },
+        {
+          "grupo": "65-69",
+          "pob": 668744,
+          "percibe": 570972,
+          "pctPercibe": 85.37975667819076
+        },
+        {
+          "grupo": "70-74",
+          "pob": 556735,
+          "percibe": 534358,
+          "pctPercibe": 95.98067303115486
+        },
+        {
+          "grupo": "75-79",
+          "pob": 407708,
+          "percibe": 394885,
+          "pctPercibe": 96.8548569073945
+        },
+        {
+          "grupo": "80-84",
+          "pob": 256271,
+          "percibe": 248501,
+          "pctPercibe": 96.96805334977427
+        },
+        {
+          "grupo": "85-89",
+          "pob": 141470,
+          "percibe": 136475,
+          "pctPercibe": 96.46921608821658
+        },
+        {
+          "grupo": "90-94",
+          "pob": 62594,
+          "percibe": 58244,
+          "pctPercibe": 93.0504521200115
+        },
+        {
+          "grupo": "95-99",
+          "pob": 17469,
+          "percibe": 14130,
+          "pctPercibe": 80.88614116434827
+        },
+        {
+          "grupo": "100ymás",
+          "pob": 2093,
+          "percibe": 1917,
+          "pctPercibe": 91.5910176779742
+        }
+      ]
+    }
+  }
 }

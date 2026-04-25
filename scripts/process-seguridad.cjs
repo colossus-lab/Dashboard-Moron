@@ -84,23 +84,33 @@ function processSNIC() {
     const tasaHechos = num(r['tasa_hechos']);
 
     if (dep === MORON.codigo) {
-      if (!moronByYear[year]) moronByYear[year] = { hechos: 0, victimas: 0, masc: 0, fem: 0, delitos: {} };
+      if (!moronByYear[year]) moronByYear[year] = { hechos: 0, victimas: 0, masc: 0, fem: 0, delitos: {}, tasaTotalSum: 0 };
       moronByYear[year].hechos += hechos;
       moronByYear[year].victimas += victimas;
       moronByYear[year].masc += masc;
       moronByYear[year].fem += fem;
+      // Sumar tasas individuales para reconstruir tasa total (todos los delitos / 100K)
+      moronByYear[year].tasaTotalSum += tasaHechos;
       moronByYear[year].delitos[delito] = (moronByYear[year].delitos[delito] || 0) + hechos;
       if (/^Homicidios dolosos$/.test(delito)) {
         moronByYear[year].homicidiosTasa = tasaHechos;
         moronByYear[year].homicidios = hechos;
       }
+      if (/^Robos \(excluye/.test(delito)) {
+        moronByYear[year].robos = (moronByYear[year].robos || 0) + hechos;
+        moronByYear[year].robosTasa = tasaHechos;
+      }
     }
     if (gbaCodes.has(dep)) {
       const part = gbaByPartido[dep];
-      if (!part[year]) part[year] = { hechos: 0, victimas: 0, homicidios: 0 };
+      if (!part[year]) part[year] = { hechos: 0, victimas: 0, homicidios: 0, tasaTotalSum: 0, homicidiosTasa: 0 };
       part[year].hechos += hechos;
       part[year].victimas += victimas;
-      if (/^Homicidios dolosos$/.test(delito)) part[year].homicidios += hechos;
+      part[year].tasaTotalSum += tasaHechos;
+      if (/^Homicidios dolosos$/.test(delito)) {
+        part[year].homicidios += hechos;
+        part[year].homicidiosTasa = tasaHechos;
+      }
       if (/^Robos \(excluye/.test(delito)) part[year].robos = (part[year].robos || 0) + hechos;
       if (/^Hurtos$/.test(delito)) part[year].hurtos = (part[year].hurtos || 0) + hechos;
     }
@@ -112,6 +122,9 @@ function processSNIC() {
   const serieHechos = years.map(y => ({ x: String(y), y: moronByYear[y].hechos }));
   const serieVictimas = years.map(y => ({ x: String(y), y: moronByYear[y].victimas }));
   const serieHomicidios = years.map(y => ({ x: String(y), y: moronByYear[y].homicidios || 0 }));
+  const serieTasaHechos = years.map(y => ({ x: String(y), y: Number((moronByYear[y].tasaTotalSum || 0).toFixed(1)) }));
+  const serieTasaHomicidios = years.map(y => ({ x: String(y), y: Number((moronByYear[y].homicidiosTasa || 0).toFixed(2)) }));
+  const serieRobos = years.map(y => ({ x: String(y), y: moronByYear[y].robos || 0 }));
 
   const last = years[years.length - 1];
   const prev = last - 1;
@@ -145,16 +158,26 @@ function processSNIC() {
     data: years.map(y => ({ x: String(y), y: moronByYear[y].delitos[id] || 0 })),
   }));
 
-  // GBA rankings: hechos 2024, tasa homicidios 2024 (aprox sin tasa exacta)
+  // GBA rankings: hechos 2024, tasa homicidios 2024
   const gbaHechos24 = GBA24.map(p => ({
     codigo: p.codigo,
     nombre: p.nombre,
     value: gbaByPartido[p.codigo][last]?.hechos || null,
   }));
+  const gbaTasa24 = GBA24.map(p => ({
+    codigo: p.codigo,
+    nombre: p.nombre,
+    value: gbaByPartido[p.codigo][last]?.tasaTotalSum ? Number(gbaByPartido[p.codigo][last].tasaTotalSum.toFixed(1)) : null,
+  }));
   const gbaHomicidios24 = GBA24.map(p => ({
     codigo: p.codigo,
     nombre: p.nombre,
     value: gbaByPartido[p.codigo][last]?.homicidios ?? null,
+  }));
+  const gbaTasaHomicidios24 = GBA24.map(p => ({
+    codigo: p.codigo,
+    nombre: p.nombre,
+    value: gbaByPartido[p.codigo][last]?.homicidiosTasa ? Number(gbaByPartido[p.codigo][last].homicidiosTasa.toFixed(2)) : null,
   }));
   const gbaRobos24 = GBA24.map(p => ({
     codigo: p.codigo,
@@ -173,6 +196,42 @@ function processSNIC() {
       municipioId: r.codigo, municipioNombre: r.nombre, value: r.value, label: labelFn(r.value),
     }));
   }
+
+  // Posiciones Morón en rankings GBA (ordenado descendente: 1° = más alta)
+  const rkTasa = rank(gbaTasa24);
+  const rkTasaHom = rank(gbaTasaHomicidios24);
+  const posTasaHechos = rkTasa.findIndex(r => r.municipioId === MORON.codigo) + 1;
+  const posTasaHom = rkTasaHom.findIndex(r => r.municipioId === MORON.codigo) + 1;
+
+  // Promedio simple GBA de tasa de homicidios (no es ponderado, pero es comparable)
+  const validTasasHom = gbaTasaHomicidios24.filter(p => p.value != null).map(p => p.value);
+  const promGBAtasaHom = validTasasHom.length ? validTasasHom.reduce((a, b) => a + b, 0) / validTasasHom.length : null;
+  const validTasas = gbaTasa24.filter(p => p.value != null).map(p => p.value);
+  const promGBAtasaTot = validTasas.length ? validTasas.reduce((a, b) => a + b, 0) / validTasas.length : null;
+
+  // Composición patrimonial vs no patrimonial 2024
+  // Helper: busca la cifra de un delito por regex sobre las llaves
+  function findDelito(year, regex) {
+    const dels = moronByYear[year]?.delitos || {};
+    let total = 0;
+    for (const [name, val] of Object.entries(dels)) {
+      if (regex.test(name)) total += val;
+    }
+    return total;
+  }
+  const robos2024 = findDelito(last, /^Robos\b.*excluye los agravados/i);
+  const robosAgrav = findDelito(last, /^Robos agravados/i);
+  const hurtos2024 = findDelito(last, /^Hurtos$/i);
+  const tentRobos = findDelito(last, /^Tentativas de robo/i);
+  const patrimoniales = robos2024 + robosAgrav + hurtos2024 + tentRobos;
+  const pctPatrimoniales = (patrimoniales / hechos2024) * 100;
+
+  // Estafas virtuales evolución (delito incorporado al SNIC en 2023)
+  const estafasVirt2023 = findDelito(2023, /Estafas.*virtual/i);
+  const estafasVirt2024 = findDelito(last, /Estafas.*virtual/i);
+  const lesionesViales2024 = findDelito(last, /Lesiones culposas en Accidentes Viales/i);
+  const amenazas2024 = findDelito(last, /^Amenazas/i);
+  const lesionesDolosas2024 = findDelito(last, /^Lesiones dolosas/i);
 
   // Top delitos 2024 bar data
   const topBar = topDelitos.map(([name, value]) => ({
@@ -199,19 +258,26 @@ function processSNIC() {
         comparison: `${varAnual >= 0 ? '+' : ''}${fmtDec(varAnual)}% vs ${prev}`,
       },
       {
+        id: 'tasa-hechos',
+        label: `Tasa total de hechos ${last}`,
+        value: moronByYear[last].tasaTotalSum,
+        formatted: `${fmtDec(moronByYear[last].tasaTotalSum)} / 100K`,
+        comparison: `Promedio simple GBA24: ${fmtDec(promGBAtasaTot)} / 100K`,
+      },
+      {
         id: 'var-5y',
-        label: `Variación 5 años (${2019}→${last})`,
+        label: `Variación 5 años (2019→${last})`,
         value: var5y,
         formatted: `${var5y >= 0 ? '+' : ''}${fmtDec(var5y)}%`,
         status: var5y > 0 ? 'warning' : 'good',
         comparison: `${fmtInt(hechos2019)} → ${fmtInt(hechos2024)} hechos`,
       },
       {
-        id: 'top-delito',
-        label: 'Delito más frecuente',
-        value: topDelito[1],
-        formatted: fmtInt(topDelito[1]),
-        comparison: topDelito[0],
+        id: 'patrimoniales',
+        label: 'Delitos patrimoniales',
+        value: pctPatrimoniales,
+        formatted: fmtPct(pctPatrimoniales),
+        comparison: `${fmtInt(patrimoniales)} hechos · robos + hurtos + tentativas`,
       },
       {
         id: 'homicidios',
@@ -219,7 +285,14 @@ function processSNIC() {
         value: hom2024,
         formatted: fmtInt(hom2024),
         status: hom2024 > homPrev ? 'critical' : 'good',
-        comparison: `Tasa: ${fmtDec(homTasa, 1)} / 100K`,
+        comparison: `Tasa: ${fmtDec(homTasa, 2)} / 100K · Prom. GBA: ${fmtDec(promGBAtasaHom, 2)} / 100K`,
+      },
+      {
+        id: 'pos-gba-hom',
+        label: `Posición GBA — tasa homicidios ${last}`,
+        value: posTasaHom,
+        formatted: `${posTasaHom}° de 24`,
+        comparison: 'Mayor tasa de homicidios = posiciones más altas',
       },
       {
         id: 'victimas-fem',
@@ -229,10 +302,12 @@ function processSNIC() {
         comparison: `${fmtInt(victimasMasc2024)} varones • ${fmtPct(victimasFem2024 / (victimasFem2024 + victimasMasc2024) * 100)} del total`,
       },
       {
-        id: 'victimas-tot',
-        label: `Víctimas totales ${last}`,
-        value: moronByYear[last].victimas,
-        formatted: fmtInt(moronByYear[last].victimas),
+        id: 'estafas-virt',
+        label: `Estafas virtuales ${last}`,
+        value: estafasVirt2024,
+        formatted: fmtInt(estafasVirt2024),
+        status: 'warning',
+        comparison: `2023: ${fmtInt(estafasVirt2023)} · ${estafasVirt2023 > 0 ? '+' + fmtDec(((estafasVirt2024 - estafasVirt2023) / estafasVirt2023) * 100) + '% interanual' : 'nuevo registro'}`,
       },
     ],
     charts: [
@@ -258,6 +333,20 @@ function processSNIC() {
         data: [{ id: 'Homicidios', data: serieHomicidios }],
       },
       {
+        id: 'serie-tasa-hom',
+        type: 'line',
+        title: 'Tasa de homicidios dolosos por 100.000 habitantes — Morón',
+        sectionId: 'homicidios',
+        data: [{ id: 'Tasa /100K', data: serieTasaHomicidios }],
+      },
+      {
+        id: 'serie-tasa-hechos',
+        type: 'line',
+        title: 'Tasa total de hechos delictivos por 100.000 habitantes — Morón',
+        sectionId: 'panorama',
+        data: [{ id: 'Tasa /100K', data: serieTasaHechos }],
+      },
+      {
         id: 'top-delitos',
         type: 'bar',
         title: `Top 10 delitos en Morón — ${last}`,
@@ -278,23 +367,41 @@ function processSNIC() {
       {
         id: 'gba-hechos',
         type: 'bar',
-        title: `Hechos delictivos por partido — 24 GBA (${last})`,
+        title: `Hechos delictivos absolutos — 24 GBA (${last})`,
         sectionId: 'comparacion',
         data: rank(gbaHechos24).map(r => ({ partido: r.name, value: r.value })),
         config: { xAxis: 'partido', layout: 'horizontal' },
       },
       {
+        id: 'gba-tasa',
+        type: 'bar',
+        title: `Tasa total de hechos por 100.000 hab. — 24 GBA (${last})`,
+        sectionId: 'comparacion',
+        data: rkTasa.map(r => ({ partido: r.name, value: r.value })),
+        config: { xAxis: 'partido', layout: 'horizontal' },
+      },
+      {
         id: 'gba-homicidios',
         type: 'bar',
-        title: `Homicidios dolosos por partido — 24 GBA (${last})`,
+        title: `Homicidios dolosos absolutos — 24 GBA (${last})`,
         sectionId: 'comparacion',
         data: rank(gbaHomicidios24).map(r => ({ partido: r.name, value: r.value })),
         config: { xAxis: 'partido', layout: 'horizontal' },
       },
+      {
+        id: 'gba-tasa-hom',
+        type: 'bar',
+        title: `Tasa de homicidios por 100.000 hab. — 24 GBA (${last})`,
+        sectionId: 'comparacion',
+        data: rkTasaHom.map(r => ({ partido: r.name, value: r.value })),
+        config: { xAxis: 'partido', layout: 'horizontal' },
+      },
     ],
     rankings: [
-      { id: 'rk-hechos', title: `Hechos ${last} — 24 GBA`, sectionId: 'comparacion', items: rank(gbaHechos24), order: 'desc' },
-      { id: 'rk-homicidios', title: `Homicidios dolosos ${last} — 24 GBA`, sectionId: 'comparacion', items: rank(gbaHomicidios24), order: 'desc' },
+      { id: 'rk-hechos', title: `Hechos absolutos ${last} — 24 GBA`, sectionId: 'comparacion', items: rank(gbaHechos24), order: 'desc' },
+      { id: 'rk-tasa', title: `Tasa total /100K ${last} — 24 GBA`, sectionId: 'comparacion', items: rkTasa, order: 'desc' },
+      { id: 'rk-homicidios', title: `Homicidios absolutos ${last} — 24 GBA`, sectionId: 'comparacion', items: rank(gbaHomicidios24), order: 'desc' },
+      { id: 'rk-tasa-hom', title: `Tasa homicidios /100K ${last} — 24 GBA`, sectionId: 'comparacion', items: rkTasaHom, order: 'desc' },
       { id: 'rk-robos', title: `Robos ${last} — 24 GBA`, sectionId: 'comparacion', items: rank(gbaRobos24), order: 'desc' },
     ],
     mapData: [{
@@ -305,6 +412,25 @@ function processSNIC() {
       caption: `Hechos delictivos registrados en Morón — ${last}`,
       label: `${fmtInt(hechos2024)} hechos delictivos en ${last}`,
     }],
+    extras: {
+      snic: {
+        moron: {
+          last, prev, hechos2024, hechosPrev, hechos2019, varAnual, var5y,
+          tasaTotal2024: moronByYear[last].tasaTotalSum,
+          tasa2000: moronByYear[2000]?.tasaTotalSum,
+          hom2024, homTasa, homPrev,
+          robos2024, robosAgrav, hurtos2024, tentRobos, patrimoniales, pctPatrimoniales,
+          estafasVirt2023, estafasVirt2024,
+          lesionesViales2024, amenazas2024, lesionesDolosas2024,
+          victimasFem2024, victimasMasc2024, totalVic: moronByYear[last].victimas,
+        },
+        gba: {
+          posTasaHechos, posTasaHom,
+          promGBAtasaHom, promGBAtasaTot,
+        },
+        topDelitos2024: topDelitos.map(([name, value]) => ({ name, value })),
+      },
+    },
   };
 
   writeJson(path.join(OUT_DIR, 'snic.json'), data);
@@ -425,12 +551,42 @@ function processVialesMoron() {
     .slice(0, 15)
     .map(([k, v]) => ({ name: k, value: v }));
 
+  // Estacionalidad mensual
+  const porMes = Array(12).fill(0);
+  victimas.forEach(v => { if (v.mes >= 1 && v.mes <= 12) porMes[v.mes - 1]++; });
+  const meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  const mesBar = porMes.map((v, i) => ({ mes: meses[i], value: v }));
+  const mesPico = mesBar.reduce((a, b) => (b.value > a.value ? b : a), mesBar[0]);
+
+  // Tasa por 100.000 habitantes — usar pobl. Morón Censo 2022 (331.183)
+  const POBL_MORON = 331183;
+  const tasaPor100K = (totalVic / POBL_MORON) * 100000;
+  const tasaAnualPor100K = tasaPor100K / years.length;
+
+  // Conteos por categorías
+  const motos = victimas.filter(v => /moto/i.test(v.vehiculo || '')).length;
+  const autos = victimas.filter(v => /^Auto/i.test(v.vehiculo || '')).length;
+  const peatones = victimas.filter(v => /peat[oó]n/i.test(v.clase || '') || /peat[oó]n/i.test(v.vehiculo || '')).length;
+  const bicis = victimas.filter(v => /bici/i.test(v.vehiculo || '')).length;
+  const utilitarios = victimas.filter(v => /utilitario|cami[oó]n|camioneta/i.test(v.vehiculo || '')).length;
+
+  // Por sexo (data: "Masculino" / "Femenino" / "Sin determinar")
+  const vicVarones = victimas.filter(v => /^Mascul/i.test(v.sexo || '')).length;
+  const vicMujeres = victimas.filter(v => /^Femen/i.test(v.sexo || '')).length;
+  const vicSinDato = victimas.filter(v => !/^(Mascul|Femen)/i.test(v.sexo || '')).length;
+
   // Rankings GBA
   const gbaRanking = GBA24.map(p => ({
     codigo: p.codigo,
     nombre: p.nombre,
     value: allRowsByPartido[p.codigo] || 0,
   }));
+
+  // Posición Morón en ranking GBA absoluto
+  const rkGBA = [...gbaRanking].sort((a, b) => b.value - a.value);
+  const posGBA = rkGBA.findIndex(r => r.codigo === MORON.codigo) + 1;
+  // Promedio simple GBA
+  const promGBA = gbaRanking.reduce((a, b) => a + b.value, 0) / gbaRanking.length;
   function rank(rows) {
     return [...rows].sort((a, b) => b.value - a.value).map(r => ({ name: r.nombre, value: r.value, municipioId: r.codigo }));
   }
@@ -461,18 +617,48 @@ function processVialesMoron() {
         unit: 'víctimas/año',
       },
       {
-        id: 'vehiculo-top',
-        label: 'Vehículo más afectado',
-        value: vehiculoTop?.value ?? 0,
-        formatted: `${vehiculoTop?.label ?? '—'}`,
-        comparison: `${fmtInt(vehiculoTop?.value ?? 0)} víctimas`,
+        id: 'tasa',
+        label: 'Tasa anual por 100.000 hab.',
+        value: tasaAnualPor100K,
+        formatted: fmtDec(tasaAnualPor100K, 2),
+        unit: 'víctimas/100K/año',
+        comparison: `Acumulado 7 años: ${fmtDec(tasaPor100K, 1)} / 100K`,
       },
       {
-        id: 'calle-top',
-        label: 'Calle con más víctimas',
-        value: callesTop[0]?.value ?? 0,
-        formatted: callesTop[0]?.name ?? '—',
-        comparison: `${fmtInt(callesTop[0]?.value ?? 0)} víctimas`,
+        id: 'motos',
+        label: 'Víctimas en moto',
+        value: motos,
+        formatted: fmtInt(motos),
+        status: 'warning',
+        comparison: `${fmtPct((motos / totalVic) * 100)} del total`,
+      },
+      {
+        id: 'peatones',
+        label: 'Víctimas peatonas',
+        value: peatones,
+        formatted: fmtInt(peatones),
+        comparison: `${fmtPct((peatones / totalVic) * 100)} del total`,
+      },
+      {
+        id: 'mes-pico',
+        label: 'Mes con más víctimas',
+        value: mesPico.value,
+        formatted: mesPico.mes,
+        comparison: `${fmtInt(mesPico.value)} víctimas en ${mesPico.mes} (acumulado 7 años)`,
+      },
+      {
+        id: 'sexo',
+        label: 'Distribución por sexo',
+        value: vicVarones,
+        formatted: `${fmtPct((vicVarones / totalVic) * 100)} V`,
+        comparison: `${fmtInt(vicVarones)} varones · ${fmtInt(vicMujeres)} mujeres`,
+      },
+      {
+        id: 'pos-gba',
+        label: 'Posición GBA — víctimas absolutas',
+        value: posGBA,
+        formatted: `${posGBA}° de 24`,
+        comparison: `Mayor cantidad de víctimas = posiciones más altas · prom. GBA: ${fmtDec(promGBA, 0)}`,
       },
     ],
     charts: [
@@ -514,9 +700,17 @@ function processVialesMoron() {
         config: { xAxis: 'calle', layout: 'horizontal' },
       },
       {
+        id: 'estacionalidad',
+        type: 'bar',
+        title: 'Víctimas viales por mes (acumulado 2017-2023) — Morón',
+        sectionId: 'estacionalidad',
+        data: mesBar,
+        config: { xAxis: 'mes' },
+      },
+      {
         id: 'gba-total',
         type: 'bar',
-        title: 'Víctimas fatales viales — 24 GBA (2017-2023)',
+        title: 'Víctimas fatales viales absolutas — 24 GBA (2017-2023)',
         sectionId: 'comparacion',
         data: rank(gbaRanking).map(r => ({ partido: r.name, value: r.value })),
         config: { xAxis: 'partido', layout: 'horizontal' },
@@ -534,6 +728,19 @@ function processVialesMoron() {
       caption: 'Víctimas fatales en siniestros viales (2017-2023)',
       label: `${fmtInt(totalVic)} víctimas fatales (2017-2023)`,
     }],
+    extras: {
+      muertesViales: {
+        moron: {
+          totalVic, promedioAnual, tasaPor100K, tasaAnualPor100K, years: years.length,
+          motos, autos, peatones, bicis, utilitarios,
+          vicVarones, vicMujeres,
+          mesPico,
+          callesTop,
+        },
+        gba: { posGBA, promGBA },
+        porModo,
+      },
+    },
   };
 
   writeJson(path.join(OUT_DIR, 'muertes-viales.json'), data);
