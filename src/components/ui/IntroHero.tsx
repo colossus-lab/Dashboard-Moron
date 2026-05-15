@@ -1,39 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-// ═══════════════════════════════════════════════════════════════════
-// IntroHero — Overlay de bienvenida para la primera visita.
-// Aparece con fondo difuminado negro y escribe el título con efecto
-// "typewriter" (caracter por caracter + cursor parpadeante). Al
-// terminar el título aparece el subtítulo y un botón para ingresar.
-// ═══════════════════════════════════════════════════════════════════
-
-const TITLE = 'En Morón son 331.182 personas y vos.';
-const TYPE_SPEED = 55; // ms por caracter
-const SUBTITLE_DELAY = 450; // ms tras terminar de escribir
+// IntroHero — overlay de bienvenida (estilo CABA editorial: gradient drift + partículas).
+// Reemplaza el typewriter previo. La lógica de "primera visita" vive en FirstVisitIntro.
 
 interface Props {
   onDismiss: () => void;
 }
 
 export function IntroHero({ onDismiss }: Props) {
-  const [typed, setTyped] = useState('');
-  const [showSub, setShowSub] = useState(false);
   const [leaving, setLeaving] = useState(false);
-
-  useEffect(() => {
-    let i = 0;
-    const id = window.setInterval(() => {
-      i++;
-      setTyped(TITLE.slice(0, i));
-      if (i >= TITLE.length) {
-        window.clearInterval(id);
-        window.setTimeout(() => setShowSub(true), SUBTITLE_DELAY);
-      }
-    }, TYPE_SPEED);
-    return () => window.clearInterval(id);
-  }, []);
-
-  const finished = typed.length >= TITLE.length;
 
   function handleDismiss() {
     if (leaving) return;
@@ -42,7 +17,6 @@ export function IntroHero({ onDismiss }: Props) {
   }
 
   function handleKey(e: React.KeyboardEvent) {
-    if (!finished) return;
     if (e.key === 'Enter' || e.key === 'Escape' || e.key === ' ') handleDismiss();
   }
 
@@ -55,14 +29,16 @@ export function IntroHero({ onDismiss }: Props) {
       onKeyDown={handleKey}
       tabIndex={-1}
     >
-      <div className="intro-overlay-scanlines" aria-hidden="true" />
-      <div className="intro-overlay-content">
-        <h1 className="intro-title">
-          <span>{typed}</span>
-          <span className={`intro-cursor ${finished ? 'done' : ''}`}>▌</span>
-        </h1>
+      <div className="intro-overlay-particles" aria-hidden="true">
+        <span /><span /><span /><span /><span /><span />
+      </div>
 
-        <div className={`intro-subtitle ${showSub ? 'shown' : ''}`}>
+      <div className="intro-overlay-content">
+        <span className="intro-badge">Datos abiertos · Morón</span>
+
+        <h1 className="intro-title">En Morón son 331.182 personas y vos.</h1>
+
+        <div className="intro-subtitle">
           <p>
             Construimos esta plataforma desde <strong>Colossus Lab</strong> para
             hacerle llegar a la gente de Morón una radiografía lo más completa
@@ -83,7 +59,7 @@ export function IntroHero({ onDismiss }: Props) {
             onClick={handleDismiss}
             autoFocus
           >
-            Entrar al Dashboard
+            Entrar al Dashboard →
           </button>
         </div>
       </div>

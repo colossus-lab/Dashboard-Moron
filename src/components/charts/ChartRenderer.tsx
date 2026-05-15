@@ -30,32 +30,32 @@ function useChartTheme() {
 
   return {
     theme: {
-      text: { fill: isDark ? '#94a3b8' : '#475569' },
+      text: { fill: isDark ? '#8892A8' : '#4A5170' },
       axis: {
-        ticks: { text: { fill: isDark ? '#64748b' : '#64748b', fontSize: 11 } },
-        legend: { text: { fill: isDark ? '#94a3b8' : '#334155', fontSize: 12, fontWeight: 600 } },
+        ticks: { text: { fill: isDark ? '#5A6378' : '#6B7080', fontSize: 11 } },
+        legend: { text: { fill: isDark ? '#8892A8' : '#11142E', fontSize: 12, fontWeight: 600 } },
       },
-      grid: { line: { stroke: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)' } },
+      grid: { line: { stroke: isDark ? 'rgba(232,236,244,0.06)' : 'rgba(17,20,46,0.06)' } },
       tooltip: {
         container: {
-          background: isDark ? '#1e293b' : '#ffffff',
-          color: isDark ? '#f1f5f9' : '#0f172a',
-          borderRadius: '10px',
+          background: isDark ? '#1A2030' : '#FFFFFF',
+          color: isDark ? '#E8ECF4' : '#11142E',
+          borderRadius: '4px',
           boxShadow: isDark
-            ? '0 8px 32px rgba(0,0,0,0.5)'
-            : '0 8px 32px rgba(0,0,0,0.12)',
+            ? '0 8px 32px rgba(0,0,0,0.55)'
+            : '0 8px 32px rgba(17,20,46,0.10)',
           fontSize: '13px',
           padding: '10px 14px',
-          border: isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.06)',
+          border: isDark ? '1px solid rgba(232,236,244,0.10)' : '1px solid rgba(17,20,46,0.12)',
         },
       },
     },
-    labelColor: isDark ? '#ffffff' : '#1e293b',
+    labelColor: isDark ? '#FFFFFF' : '#11142E',
     isDark,
   };
 }
 
-const COLORS = ['#00d4ff', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444', '#ec4899', '#06b6d4', '#84cc16', '#f97316', '#6366f1'];
+const COLORS = ['#74ACDF', '#93C5F8', '#6BBF59', '#F6B40E', '#D9534F', '#FFD04A', '#1F4E89', '#4A8ABF', '#C03A18', '#D9A20E'];
 
 export function ChartRenderer({ chart, height = 400 }: ChartRendererProps) {
   switch (chart.type) {
