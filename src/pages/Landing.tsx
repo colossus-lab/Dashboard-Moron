@@ -25,18 +25,19 @@ const RESUMEN = {
   ],
 };
 
-// ─── Mini-stats per report (contextual data for cards) ───
-const MINI_STATS: Record<string, string> = {
-  'poblacion-estructura': '331K hab · +3,1%',
-  'poblacion-viviendas': '141K viviendas',
-  'poblacion-hogares': '129K hogares',
-  'poblacion-habitacional-personas': '81% gas de red',
-  'poblacion-salud': '76% obra social',
-  'poblacion-prevision': '33% percibe',
-  'poblacion-actividad-economica': '58,6% empleo',
-  'poblacion-educacion': '13,2% universitario',
-  'seguridad-snic': '13,4K hechos 2024',
-  'seguridad-muertes-viales': '94 víctimas 2017-23',
+// ─── Stat ticker items per report (rotan cada 4s en cada card) ───
+type TickerStat = { value: string; label: string };
+const REPORT_STATS: Record<string, TickerStat[]> = {
+  'poblacion-estructura':           [{ value: '331K', label: 'habitantes' }, { value: '+3,1%', label: 'vs 2010' }, { value: '5', label: 'localidades' }],
+  'poblacion-viviendas':            [{ value: '141K', label: 'viviendas' }, { value: '49', label: 'colectivas' }, { value: '129K', label: 'hogares' }],
+  'poblacion-hogares':              [{ value: '129K', label: 'hogares' }, { value: '2,55', label: 'pers/hogar' }, { value: '81%', label: 'gas de red' }],
+  'poblacion-habitacional-personas':[{ value: '81%', label: 'gas de red' }, { value: '99%', label: 'agua segura' }, { value: '95%', label: 'cloacas' }],
+  'poblacion-salud':                [{ value: '76%', label: 'obra social' }, { value: '24%', label: 'sin cobertura' }],
+  'poblacion-prevision':            [{ value: '33%', label: 'percibe' }, { value: '67%', label: 'no percibe' }],
+  'poblacion-actividad-economica':  [{ value: '58,6%', label: 'empleo' }, { value: '4,2%', label: 'desocupación' }, { value: '37%', label: 'inactivos' }],
+  'poblacion-educacion':            [{ value: '13,2%', label: 'universitario' }, { value: '99%', label: 'alfabetizados' }],
+  'seguridad-snic':                 [{ value: '13,4K', label: 'hechos 2024' }, { value: '25', label: 'años de serie' }],
+  'seguridad-muertes-viales':       [{ value: '94', label: 'víctimas 2017-23' }, { value: '7', label: 'años SAT' }],
 };
 
 export function Landing() {
@@ -150,7 +151,7 @@ export function Landing() {
               <p className="section-desc">25 años de delitos y 7 años de víctimas viales. Lo que pasa en Morón, con números oficiales.</p>
             </div>
           </div>
-          <div className="report-grid">
+          <div className="report-grid report-grid--compact">
             {sectoriales.map((report, i) => (
               <ReportCard key={report.id} report={report} index={i} />
             ))}
@@ -197,7 +198,7 @@ export function Landing() {
 // ═══════ Components ═══════
 
 function ReportCard({ report, index }: { report: ReportEntry; index: number }) {
-  const miniStat = MINI_STATS[report.id] || '';
+  const stats = REPORT_STATS[report.id] || [];
 
   return (
     <Link
@@ -208,21 +209,42 @@ function ReportCard({ report, index }: { report: ReportEntry; index: number }) {
         animationDelay: `${index * 80}ms`,
       } as React.CSSProperties}
     >
-      <div className="report-card-glow" aria-hidden="true" />
       <div className="report-card-header">
-        <span className="report-card-icon">{report.icon}</span>
+        <span className="report-card-number">{String(report.order).padStart(2, '0')}</span>
         <span className="report-card-arrow">→</span>
       </div>
       <div className="report-card-body">
         <span className="report-card-title">{report.shortTitle}</span>
         <span className="report-card-desc">{report.title}</span>
       </div>
-      {miniStat && (
+      {stats.length > 0 && (
         <div className="report-card-stat">
-          <span className="report-card-stat-value">{miniStat}</span>
+          <StatTicker items={stats} />
         </div>
       )}
     </Link>
+  );
+}
+
+// ─── StatTicker — cicla items con slide animation ───
+function StatTicker({ items }: { items: TickerStat[] }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (items.length <= 1) return;
+    const id = window.setInterval(() => {
+      setIdx(i => (i + 1) % items.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, [items.length]);
+
+  const item = items[idx];
+  return (
+    <div className="report-card-ticker" aria-live="polite">
+      <div key={idx} className="report-card-ticker-item">
+        <span className="report-card-ticker-value">{item.value}</span>
+        <span className="report-card-ticker-label">{item.label}</span>
+      </div>
+    </div>
   );
 }
 

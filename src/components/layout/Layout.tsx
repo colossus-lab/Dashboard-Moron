@@ -4,10 +4,12 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 import { useStore } from '../../store/useStore';
 import { REPORTS, getPoblacionReports, getSectorialReports } from '../../data/reportRegistry';
 import { useScrollProgress } from '../../hooks/useIntersectionObserver';
+import { PersistentSidebar, useIsReportRoute } from './PersistentSidebar';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { theme, sidebarOpen } = useStore();
   const progress = useScrollProgress();
+  const isReportRoute = useIsReportRoute();
 
   // Apply theme when it changes
   useEffect(() => {
@@ -24,11 +26,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {/* TopBar */}
       <TopBar />
 
-      {/* Sidebar — rendered at root level to avoid iOS fixed positioning bugs */}
+      {/* Sidebar mobile — rendered at root level */}
       {sidebarOpen && <Sidebar />}
 
+      {/* Persistent sidebar — solo en rutas de informe ≥1024px */}
+      {isReportRoute && <PersistentSidebar />}
+
       {/* Main content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      <main className="main-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         {children}
       </main>
     </div>
@@ -69,14 +74,11 @@ function TopBar() {
               </svg>
             </button>
           )}
-          <Link to="/" className="flex items-center gap-2 no-underline">
-            <span className="text-xl">📊</span>
+          <Link to="/" className="flex items-center no-underline shrink-0" aria-label="Inicio">
             <h1 className="text-lg font-bold" style={{
               fontFamily: 'var(--font-heading)',
-              background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-purple, #8b5cf6))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              color: 'var(--text-primary)',
+              letterSpacing: '-0.02em',
             }}>
               Dashboard Morón
             </h1>
@@ -170,10 +172,12 @@ function Sidebar() {
               key={r.id}
               to={`/${r.slug}`}
               onClick={() => setSidebarOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm no-underline mb-1 transition-colors hover:opacity-90"
+              className="flex items-center gap-2 px-3 py-2 text-sm no-underline mb-1 transition-colors hover:opacity-90"
               style={{ color: 'var(--text-secondary)' }}
             >
-              <span>{r.icon}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent-orange)', minWidth: '1.5rem' }}>
+                {String(r.order).padStart(2, '0')}
+              </span>
               <span>{r.shortTitle}</span>
             </Link>
           ))}
@@ -188,10 +192,12 @@ function Sidebar() {
               key={r.id}
               to={`/${r.slug}`}
               onClick={() => setSidebarOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm no-underline mb-1 transition-colors hover:opacity-90"
+              className="flex items-center gap-2 px-3 py-2 text-sm no-underline mb-1 transition-colors hover:opacity-90"
               style={{ color: 'var(--text-secondary)' }}
             >
-              <span>{r.icon}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--accent-orange)', minWidth: '1.5rem' }}>
+                {String(r.order).padStart(2, '0')}
+              </span>
               <span>{r.shortTitle}</span>
             </Link>
           ))}
