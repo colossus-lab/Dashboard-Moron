@@ -1266,9 +1266,49 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     padding-top: 0;
     border-top: none;
-    padding-left: 0.5rem;
+    padding-left: 0.6rem;
     border-left: 1px solid var(--border-glass);
     flex-shrink: 0;
+    /* Sin ancho explícito el ticker (hijos position:absolute) colapsa a 0 */
+    width: 112px;
+  }
+
+  /* Ticker mini-stats en columna estrecha: apilar valor sobre etiqueta */
+  .report-card-ticker {
+    height: auto;
+    min-height: 34px;
+  }
+  .report-card-ticker-item {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+  }
+  .report-card-ticker-value {
+    font-size: 1rem;
+  }
+  .report-card-ticker-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  /* Card destacada (primer hijo, layout columna): ticker a todo el ancho */
+  .report-grid > .report-card:first-child .report-card-stat {
+    align-self: stretch;
+    width: auto;
+    border-left: none;
+    border-top: 1px solid var(--border-glass);
+    padding-left: 0;
+    padding-top: 0.7rem;
+    margin-top: 0.85rem;
+  }
+  .report-grid > .report-card:first-child .report-card-ticker-item {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 8px;
   }
 
   .explorer-banner {
