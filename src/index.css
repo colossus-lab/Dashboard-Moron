@@ -4139,3 +4139,85 @@ h1, h2, h3, h4, h5, h6 {
   .has-psidebar .main-content { padding-left: 16rem; }
   .has-psidebar.psidebar-collapsed .main-content { padding-left: 4rem; }
 }
+
+/* ─── SchoolMap (mapa geolocalizado de escuelas · Radar-PBA) ─── */
+.school-map {
+  position: relative;
+  width: 100%;
+}
+.school-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  overflow: visible;
+}
+.school-dot {
+  cursor: pointer;
+  transition: r 0.12s ease, opacity 0.12s ease;
+}
+.school-dot:hover {
+  r: 9;
+}
+.school-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-glass);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.school-map-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.school-map-legend-item strong {
+  color: var(--text-primary);
+}
+.school-dot-legend {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: none;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.7);
+}
+.school-map-tooltip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  max-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-card, 0 8px 32px rgba(0, 0, 0, 0.25));
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+.school-map-tooltip strong {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+.school-map-tt-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+.school-map-tt-muted {
+  color: var(--text-tertiary);
+  font-size: 0.74rem;
+}
+.school-map-tt-motivo {
+  color: #dc2626;
+  font-weight: 600;
+}

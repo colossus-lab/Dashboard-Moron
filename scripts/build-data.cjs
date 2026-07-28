@@ -21,6 +21,7 @@ const SCRIPTS_DIR = __dirname;
 const PIPELINE = [
   "process-poblacion.cjs",
   "process-seguridad.cjs",
+  "process-infraestructura.cjs",
 ];
 
 console.log("╔══════════════════════════════════════════════════════════╗");
