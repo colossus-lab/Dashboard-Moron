@@ -4,6 +4,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
+    { "source": "/infraestructura/escuelas", "destination": "/infraestructura/escuelas.html" },
     { "source": "/((?!assets|data|reports|\\.well-known).*)", "destination": "/index.html" }
   ],
   "redirects": [
