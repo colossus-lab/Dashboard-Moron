@@ -125,48 +125,12 @@ export function Landing() {
         </div>
       </SectionReveal>
 
-      {/* ─── Población Grid ─── */}
-      <SectionReveal>
-        <section className="landing-section">
-          <div className="section-header">
-            <div className="section-number">01</div>
-            <div>
-              <h2 className="section-title">Quiénes somos en Morón</h2>
-              <p className="section-desc">Cuántos somos, cómo vivimos, de dónde venimos. La foto del Censo 2022 del partido.</p>
-            </div>
-          </div>
-          <div className="report-grid">
-            {poblacion.map((report, i) => (
-              <ReportCard key={report.id} report={report} index={i} />
-            ))}
-          </div>
-        </section>
-      </SectionReveal>
-
-      {/* ─── Sectoriales Grid ─── */}
-      <SectionReveal>
-        <section className="landing-section">
-          <div className="section-header">
-            <div className="section-number">02</div>
-            <div>
-              <h2 className="section-title">Seguridad en el barrio</h2>
-              <p className="section-desc">25 años de delitos y 7 años de víctimas viales. Lo que pasa en Morón, con números oficiales.</p>
-            </div>
-          </div>
-          <div className="report-grid report-grid--compact">
-            {seguridad.map((report, i) => (
-              <ReportCard key={report.id} report={report} index={i} />
-            ))}
-          </div>
-        </section>
-      </SectionReveal>
-
       {/* ─── Infraestructura escolar Grid ─── */}
       {infraestructura.length > 0 && (
         <SectionReveal>
           <section className="landing-section">
             <div className="section-header">
-              <div className="section-number">03</div>
+              <div className="section-number">01</div>
               <div>
                 <h2 className="section-title">El estado de las escuelas</h2>
                 <p className="section-desc">Relevamiento territorial edificio por edificio: qué escuelas están en rojo, y por qué. Datos de Radar-PBA.</p>
@@ -197,6 +161,42 @@ export function Landing() {
           <Link to="/muro" className="muro-cta-action">
             Entrar al muro <span aria-hidden="true">→</span>
           </Link>
+        </section>
+      </SectionReveal>
+
+      {/* ─── Población Grid ─── */}
+      <SectionReveal>
+        <section className="landing-section">
+          <div className="section-header">
+            <div className="section-number">02</div>
+            <div>
+              <h2 className="section-title">Quiénes somos en Morón</h2>
+              <p className="section-desc">Cuántos somos, cómo vivimos, de dónde venimos. La foto del Censo 2022 del partido.</p>
+            </div>
+          </div>
+          <div className="report-grid">
+            {poblacion.map((report, i) => (
+              <ReportCard key={report.id} report={report} index={i} />
+            ))}
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* ─── Sectoriales Grid ─── */}
+      <SectionReveal>
+        <section className="landing-section">
+          <div className="section-header">
+            <div className="section-number">03</div>
+            <div>
+              <h2 className="section-title">Seguridad en el barrio</h2>
+              <p className="section-desc">25 años de delitos y 7 años de víctimas viales. Lo que pasa en Morón, con números oficiales.</p>
+            </div>
+          </div>
+          <div className="report-grid report-grid--compact">
+            {seguridad.map((report, i) => (
+              <ReportCard key={report.id} report={report} index={i} />
+            ))}
+          </div>
         </section>
       </SectionReveal>
 
