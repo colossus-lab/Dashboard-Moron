@@ -36,6 +36,13 @@ export interface ChartConfig {
     stacked?: boolean;
     grouped?: boolean;
     layout?: 'horizontal' | 'vertical';
+    /** Colores por-dato: mapea id de serie o valor del eje a un color.
+     *  Activa la paleta semáforo en pie/bar sin tocar el resto de los charts. */
+    colors?: Record<string, string>;
+    /** Color de relleno para las barras/arcos sin match en `colors`. */
+    colorDefault?: string;
+    /** GeoJSON del partido para el chart `type: 'map'` (frontera del mapa). */
+    geojson?: unknown;
   };
 }
 
@@ -59,6 +66,10 @@ export interface MapDataItem {
   formatted?: string;
   /** Caption que explica qué representa el número (overline) */
   caption?: string;
+  /** Nota al pie del bloque hero. Si se omite, ReportView usa el texto por
+   *  defecto del Censo ("no se publica desagregado por barrio"). Los informes
+   *  con datos geolocalizados (ej. Radar-PBA) pasan su propia nota. */
+  footnote?: string;
   /** Legacy: texto humano combinado para tooltips */
   label: string;
 }

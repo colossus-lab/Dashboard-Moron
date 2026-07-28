@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { getPoblacionReports, getSectorialReports } from '../data/reportRegistry';
+import { getPoblacionReports, getReportsByCategory } from '../data/reportRegistry';
 import { SectionReveal } from '../components/ui/SectionReveal';
 import type { ReportEntry } from '../types/report';
 
@@ -9,7 +9,7 @@ const HERO_STATS = [
   { value: 331183, label: 'Habitantes', suffix: '' },
   { value: 55, label: 'km²', suffix: '' },
   { value: 5, label: 'Localidades', suffix: '' },
-  { value: 10, label: 'Informes', suffix: '' },
+  { value: 11, label: 'Informes', suffix: '' },
 ];
 
 // ─── Resumen del partido (Cuadro 1.2 bloque Gobierno Local, INDEC 2022) ───
@@ -38,11 +38,13 @@ const REPORT_STATS: Record<string, TickerStat[]> = {
   'poblacion-educacion':            [{ value: '13,2%', label: 'universitario' }, { value: '99%', label: 'alfabetizados' }],
   'seguridad-snic':                 [{ value: '13,4K', label: 'hechos 2024' }, { value: '25', label: 'años de serie' }],
   'seguridad-muertes-viales':       [{ value: '94', label: 'víctimas 2017-23' }, { value: '7', label: 'años SAT' }],
+  'infraestructura-escuelas':       [{ value: '119', label: 'escuelas relevadas' }, { value: '55%', label: 'en rojo' }, { value: '5', label: 'localidades' }],
 };
 
 export function Landing() {
   const poblacion = getPoblacionReports();
-  const sectoriales = getSectorialReports();
+  const seguridad = getReportsByCategory('Seguridad');
+  const infraestructura = getReportsByCategory('Infraestructura escolar');
 
   return (
     <div className="landing-page">
@@ -152,12 +154,32 @@ export function Landing() {
             </div>
           </div>
           <div className="report-grid report-grid--compact">
-            {sectoriales.map((report, i) => (
+            {seguridad.map((report, i) => (
               <ReportCard key={report.id} report={report} index={i} />
             ))}
           </div>
         </section>
       </SectionReveal>
+
+      {/* ─── Infraestructura escolar Grid ─── */}
+      {infraestructura.length > 0 && (
+        <SectionReveal>
+          <section className="landing-section">
+            <div className="section-header">
+              <div className="section-number">03</div>
+              <div>
+                <h2 className="section-title">El estado de las escuelas</h2>
+                <p className="section-desc">Relevamiento territorial edificio por edificio: qué escuelas están en rojo, y por qué. Datos de Radar-PBA.</p>
+              </div>
+            </div>
+            <div className="report-grid report-grid--compact">
+              {infraestructura.map((report, i) => (
+                <ReportCard key={report.id} report={report} index={i} />
+              ))}
+            </div>
+          </section>
+        </SectionReveal>
+      )}
 
       {/* ─── CTA Muro comunitario ─── */}
       <SectionReveal>

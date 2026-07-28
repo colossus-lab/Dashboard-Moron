@@ -1,0 +1,1224 @@
+{
+  "meta": {
+    "id": "infraestructura-escuelas",
+    "title": "Estado Edilicio de las Escuelas — Morón",
+    "category": "Infraestructura escolar",
+    "subcategory": "Semáforo edilicio · Radar-PBA",
+    "source": "Radar-PBA — relevamiento territorial de escuelas (último relevamiento aprobado por escuela)",
+    "date": "2026-07-28"
+  },
+  "kpis": [
+    {
+      "id": "relevadas",
+      "label": "Escuelas relevadas",
+      "value": 119,
+      "formatted": "119"
+    },
+    {
+      "id": "rojo",
+      "label": "En estado rojo (crítico)",
+      "value": 65,
+      "formatted": "65",
+      "unit": "54,6% del total",
+      "status": "critical"
+    },
+    {
+      "id": "amarillo",
+      "label": "En alerta (amarillo)",
+      "value": 45,
+      "formatted": "45",
+      "status": "warning"
+    },
+    {
+      "id": "verde",
+      "label": "Sin hallazgos críticos (verde)",
+      "value": 9,
+      "formatted": "9",
+      "status": "good"
+    },
+    {
+      "id": "rank",
+      "label": "Puesto en el GBA por % en rojo",
+      "value": 5,
+      "formatted": "5° de 6",
+      "unit": "partidos del GBA con ≥20 escuelas relevadas"
+    }
+  ],
+  "charts": [
+    {
+      "id": "semaforo",
+      "type": "pie",
+      "title": "Distribución del semáforo edilicio",
+      "sectionId": "panorama",
+      "data": [
+        {
+          "id": "Rojo",
+          "label": "Rojo",
+          "value": 65
+        },
+        {
+          "id": "Amarillo",
+          "label": "Amarillo",
+          "value": 45
+        },
+        {
+          "id": "Verde",
+          "label": "Verde",
+          "value": 9
+        }
+      ],
+      "config": {
+        "colors": {
+          "Rojo": "#dc2626",
+          "Amarillo": "#f59e0b",
+          "Verde": "#16a34a"
+        }
+      }
+    },
+    {
+      "id": "mapa-escuelas",
+      "type": "map",
+      "title": "Cada escuela relevada, por estado del semáforo",
+      "sectionId": "territorio",
+      "data": [
+        {
+          "lon": -58.630864,
+          "lat": -34.642988,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE ADULTOS Nº707/01",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.594146,
+          "lat": -34.657938,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE ADULTOS Nº711/02",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.597179,
+          "lat": -34.630356,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE ADULTOS Nº715 CRISTO REY",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.636573,
+          "lat": -34.689209,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE ADULTOS Nº716/03",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.579446,
+          "lat": -34.6262,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE EDUCACIÓN FÍSICA Nº149",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.621474,
+          "lat": -34.655139,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE FORMACIÓN INTEGRAL Nº2",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.623169,
+          "lat": -34.648423,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE FORMACIÓN LABORAL Nº408",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.615551,
+          "lat": -34.647638,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE FORMACIÓN LABORAL Nº 409",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.592244,
+          "lat": -34.643868,
+          "estado": "amarillo",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIONAL Nº401",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.652356,
+          "lat": -34.63352,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO COMPLEMENTARIO N° 1 MELVIN JONES",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.652957,
+          "lat": -34.686489,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO COMPLEMENTARIO Nº 2 TERRITORIO DE PALABRAS",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.58262,
+          "lat": -34.616272,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO N°462",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.646883,
+          "lat": -34.640307,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO Nº460",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.632729,
+          "lat": -34.690161,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO Nº463",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.617643,
+          "lat": -34.653391,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO NIVEL SECUNDARIO Nº451",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.572749,
+          "lat": -34.629149,
+          "estado": "amarillo",
+          "nombre": "CENTRO EDUCATIVO NIVEL SECUNDARIO Nº453",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.612691,
+          "lat": -34.651279,
+          "estado": "amarillo",
+          "nombre": "CENTRO INVESTIGACIÓN EDUCATIVA MARÍA ELENA WALSH",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.661647,
+          "lat": -34.683231,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE ADULTOS Nº705",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.60821,
+          "lat": -34.63833,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº100 SAVERIO LAIACONA",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.63785,
+          "lat": -34.63827,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº105 REPUBLICA DE ITALIA",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.620549,
+          "lat": -34.660626,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº14 LEOPOLDO LUGONES",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.592056,
+          "lat": -34.635773,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº16 DOMINGO FAUSTINO SARMIENTO",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.602488,
+          "lat": -34.648648,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº18 CNEL. DE MARINA NICOLAS JORGE",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.619765,
+          "lat": -34.640203,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº19 EJERCITO DE LOS ANDES",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.606303,
+          "lat": -34.657247,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº22 NUESTRA SEÑORA DEL CARMEN",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.564618,
+          "lat": -34.636599,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº24 PATRICIAS ARGENTINAS",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.581946,
+          "lat": -34.615739,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº36 TENIENTE MANUEL FELIX ORIGONE",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.612757,
+          "lat": -34.672526,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº57 BRIGADIER ALBERTO SOLÁ CLARET",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.606063,
+          "lat": -34.627465,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº78 FRANCISCO PERITO MORENO",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.599042,
+          "lat": -34.623174,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº93 MARCELINO CHAMPAGNAT",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.646917,
+          "lat": -34.6403,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº12",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.582629,
+          "lat": -34.616242,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº3 LEANDRO N ALEN",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.575079,
+          "lat": -34.633123,
+          "estado": "amarillo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº58",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.622912,
+          "lat": -34.652308,
+          "estado": "amarillo",
+          "nombre": "ESCUELA ESPECIAL Nº502 DR. T. ATILIO BUSTOS",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.57497,
+          "lat": -34.632906,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº913",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.662602,
+          "lat": -34.676292,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº 915 LUIS RICARDO ESCALANTE",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.596334,
+          "lat": -34.655439,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº918 DALMACIO VÉLEZ SARSFIELD",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.592506,
+          "lat": -34.635889,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº920 MISKY HUA HUA",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.638403,
+          "lat": -34.63837,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº924 MIGUEL LILLO",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.646417,
+          "lat": -34.634478,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº925",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.58699,
+          "lat": -34.6194,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº927 ALMAFUERTE",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.622093,
+          "lat": -34.67825,
+          "estado": "amarillo",
+          "nombre": "JARDÍN DE INFANTES Nº932 MARIANO MORENO",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.587887,
+          "lat": -34.62861,
+          "estado": "amarillo",
+          "nombre": "JARDÍN MUNICIPAL Nº4 CONSTANCIO C. VIGIL",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.653668,
+          "lat": -34.686699,
+          "estado": "amarillo",
+          "nombre": "JARDÍN MUNICIPAL Nº5 PORTAL DE BELÉN",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.6397,
+          "lat": -34.677882,
+          "estado": "amarillo",
+          "nombre": "JARDÍN MUNICIPAL Nº9 SUEÑO DE MI BARRIO",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.622578,
+          "lat": -34.652307,
+          "estado": "rojo",
+          "nombre": "C.E.B.A.S. Nº28",
+          "localidad": "MORON",
+          "motivo": "Medidor o artefacto clausurado por la distribuidora"
+        },
+        {
+          "lon": -58.631102,
+          "lat": -34.674459,
+          "estado": "rojo",
+          "nombre": "CENTRO DE ADULTOS Nº706/03",
+          "localidad": "MORON",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.617979,
+          "lat": -34.653761,
+          "estado": "rojo",
+          "nombre": "CENTRO DE ADULTOS Nº708/02",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.632431,
+          "lat": -34.690687,
+          "estado": "rojo",
+          "nombre": "CENTRO DE ADULTOS Nº709/03",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.613353,
+          "lat": -34.641329,
+          "estado": "rojo",
+          "nombre": "CENTRO DE ADULTOS Nº710/04",
+          "localidad": "EL PALOMAR",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.579482,
+          "lat": -34.626096,
+          "estado": "rojo",
+          "nombre": "CENTRO DE ADULTOS Nº712/04",
+          "localidad": "EL PALOMAR",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.619147,
+          "lat": -34.647171,
+          "estado": "rojo",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIONAL MANUEL BELGRANO",
+          "localidad": "MORON",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.637614,
+          "lat": -34.677652,
+          "estado": "rojo",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIÓNAL Nº403",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.622638,
+          "lat": -34.654215,
+          "estado": "rojo",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIONAL Nº406",
+          "localidad": "MORON",
+          "motivo": "Paredes en estado malo"
+        },
+        {
+          "lon": -58.622905,
+          "lat": -34.653535,
+          "estado": "rojo",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIONAL Nº407",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.611952,
+          "lat": -34.65175,
+          "estado": "rojo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO Nº457",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.636462,
+          "lat": -34.654164,
+          "estado": "rojo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO Nº458",
+          "localidad": "CASTELAR",
+          "motivo": "Paredes en estado malo"
+        },
+        {
+          "lon": -58.652755,
+          "lat": -34.687136,
+          "estado": "rojo",
+          "nombre": "CENTRO EDUCATIVO DE NIVEL SECUNDARIO Nº461",
+          "localidad": "CASTELAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.663438,
+          "lat": -34.676625,
+          "estado": "rojo",
+          "nombre": "CENTRO EDUCATIVO NIVEL SECUNDARIO Nº454",
+          "localidad": "CASTELAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.64444,
+          "lat": -34.698816,
+          "estado": "rojo",
+          "nombre": "CENTRO EDUCATIVO NIVEL SECUNDARIO Nº456",
+          "localidad": "MORON",
+          "motivo": "Sin agua corriente"
+        },
+        {
+          "lon": -58.589036,
+          "lat": -34.643986,
+          "estado": "rojo",
+          "nombre": "CENTRO MUNICIPAL DE FORMACIÓN PROFESIONAL Nº1 RICARDO ROJAS",
+          "localidad": "HAEDO",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.622545,
+          "lat": -34.652503,
+          "estado": "rojo",
+          "nombre": "CONSERVATORIO DE MUSICA DE MORON ALBERTO GINASTERA",
+          "localidad": "MORON",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.60383,
+          "lat": -34.640503,
+          "estado": "rojo",
+          "nombre": "ESC. ESP. MUN. P/ NIÑOS SORDO E HIPOACUSICOS RAMON CARRILLO",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.626935,
+          "lat": -34.63788,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE ADULTOS Nº701 COMODORO PEDRO ZANNI",
+          "localidad": "CASTELAR",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.644453,
+          "lat": -34.698849,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE ADULTOS Nº703 FLORENTINO AMEGHINO",
+          "localidad": "MORON",
+          "motivo": "Sin agua corriente"
+        },
+        {
+          "lon": -58.6139,
+          "lat": -34.652648,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN ARTÍSTICA Nº2 XUL SOLAR",
+          "localidad": "MORON",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.624385,
+          "lat": -34.649348,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº108 MANUEL DORREGO",
+          "localidad": "MORON",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.577707,
+          "lat": -34.628469,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº109 PROFESOR ALEJANDRO POSADAS",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.569967,
+          "lat": -34.631902,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº11 REMEDIOS ESCALADA DE SAN MARTIN",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.612693,
+          "lat": -34.651704,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº12 ALMIRANTE GUILLERMO BROWN",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.622632,
+          "lat": -34.65502,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº1 TENIENTE GENERAL JULIO A. ROCA",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.572434,
+          "lat": -34.637794,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº21 GRAL. MANUEL BELGRANO",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.59438,
+          "lat": -34.639218,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº23 HIPOLITO YRIGOYEN",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.617239,
+          "lat": -34.630439,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº31 CALIXTO GAUNA",
+          "localidad": "EL PALOMAR",
+          "motivo": "Sin agua corriente"
+        },
+        {
+          "lon": -58.631217,
+          "lat": -34.682362,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº39 LEOPOLDO HERRERA",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.619167,
+          "lat": -34.647199,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº3 JUAN BAUTISTA ALBERDI",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.591537,
+          "lat": -34.616963,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº56 DARDO ROCHA",
+          "localidad": "EL PALOMAR",
+          "motivo": "Servicio Alimentario no funciona"
+        },
+        {
+          "lon": -58.590104,
+          "lat": -34.608301,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº58 GREGORIA MATORRAS",
+          "localidad": "EL PALOMAR",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.598694,
+          "lat": -34.606669,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº5 TENIENTE BENJAMIN MATIENZO",
+          "localidad": "EL PALOMAR",
+          "motivo": "Servicio Alimentario no funciona"
+        },
+        {
+          "lon": -58.588044,
+          "lat": -34.629063,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº67 ESTEBAN ECHEVERRIA",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.643103,
+          "lat": -34.64836,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº7 CORONEL DE MARINA TOMAS ESPORA",
+          "localidad": "CASTELAR",
+          "motivo": "Artefacto sin salida al exterior en aula"
+        },
+        {
+          "lon": -58.605791,
+          "lat": -34.631935,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN PRIMARIA Nº81 JOHN F. KENNEDY",
+          "localidad": "EL PALOMAR",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.643035,
+          "lat": -34.648385,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA N°54 MARÍA ELENA WALSH",
+          "localidad": "CASTELAR",
+          "motivo": "Olor a gas detectado"
+        },
+        {
+          "lon": -58.563043,
+          "lat": -34.636491,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA N°60",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.621273,
+          "lat": -34.678336,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº11 AMERICA LIBRE",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.599586,
+          "lat": -34.65838,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº22",
+          "localidad": "MORON",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.624371,
+          "lat": -34.649367,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº31 MANUEL DORREGO",
+          "localidad": "MORON",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.631458,
+          "lat": -34.682181,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº48",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.619143,
+          "lat": -34.647205,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº49",
+          "localidad": "MORON",
+          "motivo": "Paredes en estado malo"
+        },
+        {
+          "lon": -58.609971,
+          "lat": -34.658615,
+          "estado": "rojo",
+          "nombre": "ESCUELA DE EDUCACIÓN TEMPRANA Nº 1",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.580473,
+          "lat": -34.640847,
+          "estado": "rojo",
+          "nombre": "ESCUELA ESPECIAL Nº501 DOÑA MARTA RAMOS MEXIA DE GÜEMES",
+          "localidad": "HAEDO",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.622894,
+          "lat": -34.652217,
+          "estado": "rojo",
+          "nombre": "ESCUELA ESPECIAL Nº503",
+          "localidad": "MORON",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.630997,
+          "lat": -34.673142,
+          "estado": "rojo",
+          "nombre": "INSTITUTO NACIONAL DE AVIACION CIVIL",
+          "localidad": "MORON",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.641496,
+          "lat": -34.704156,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES DE CARÁCTER COMUNITARIO N°1",
+          "localidad": "MORON",
+          "motivo": "Sin agua corriente"
+        },
+        {
+          "lon": -58.64042,
+          "lat": -34.658355,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº901",
+          "localidad": "CASTELAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.593005,
+          "lat": -34.60916,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº903 AVIADOR MILITAR SGTO. GOMEZ",
+          "localidad": "EL PALOMAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.564651,
+          "lat": -34.636431,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº904 JOSÉ PEDRONI",
+          "localidad": "VILLA SARMIENTO",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.617779,
+          "lat": -34.629981,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº905 EL JARDÍN DE LA PLAZA",
+          "localidad": "EL PALOMAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.593767,
+          "lat": -34.638966,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº906 PICHI LIHUEL",
+          "localidad": "HAEDO",
+          "motivo": "Sin agua corriente"
+        },
+        {
+          "lon": -58.595532,
+          "lat": -34.629579,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº908 CREAR JUGANDO",
+          "localidad": "HAEDO",
+          "motivo": "Medidor o artefacto clausurado por la distribuidora"
+        },
+        {
+          "lon": -58.589973,
+          "lat": -34.625758,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº910 VILLA ROSALES",
+          "localidad": "EL PALOMAR",
+          "motivo": "Sectores del edificio clausurados"
+        },
+        {
+          "lon": -58.605864,
+          "lat": -34.627316,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº911 ALITAS ARGENTINAS",
+          "localidad": "EL PALOMAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.605316,
+          "lat": -34.631746,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº921",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.603827,
+          "lat": -34.6409,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº926 M. B. D. NAUDEAU",
+          "localidad": "HAEDO",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.627087,
+          "lat": -34.63812,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº928 ROSARIO VERA PEÑALOZA",
+          "localidad": "CASTELAR",
+          "motivo": "Aulas en uso sin calefacción"
+        },
+        {
+          "lon": -58.628931,
+          "lat": -34.65547,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº930 CLUB DE LEONES DE MORON",
+          "localidad": "MORON",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.653307,
+          "lat": -34.687624,
+          "estado": "rojo",
+          "nombre": "JARDÍN DE INFANTES Nº934",
+          "localidad": "CASTELAR",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.592295,
+          "lat": -34.623629,
+          "estado": "rojo",
+          "nombre": "JARDÍN MUNICIPAL Nº14 TOLKEYEN",
+          "localidad": "EL PALOMAR",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.583078,
+          "lat": -34.649453,
+          "estado": "rojo",
+          "nombre": "JARDÍN MUNICIPAL Nº2 CASCABELES",
+          "localidad": "HAEDO",
+          "motivo": "Techos en estado malo"
+        },
+        {
+          "lon": -58.656896,
+          "lat": -34.658581,
+          "estado": "rojo",
+          "nombre": "JARDÍN MUNICIPAL Nº3 TAMBOR DE TACUARI",
+          "localidad": "CASTELAR",
+          "motivo": "Salidas de emergencia obstruidas"
+        },
+        {
+          "lon": -58.588545,
+          "lat": -34.643955,
+          "estado": "verde",
+          "nombre": "CENTRO DE FORMACIÓN PROFESIONAL GASTRONOMÍA",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.654532,
+          "lat": -34.662054,
+          "estado": "verde",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA Nº9 FRAGATA SARMIENTO",
+          "localidad": "CASTELAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.608681,
+          "lat": -34.647864,
+          "estado": "verde",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA TÉCNICA Nº6 CHACABUCO",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.608359,
+          "lat": -34.63614,
+          "estado": "verde",
+          "nombre": "ESCUELA DE EDUCACIÓN SECUNDARIA TÉCNICA Nº8",
+          "localidad": "HAEDO",
+          "motivo": ""
+        },
+        {
+          "lon": -58.598284,
+          "lat": -34.613555,
+          "estado": "verde",
+          "nombre": "ESCUELA ESPECIAL MUNICIPAL MI FUTURO",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.619431,
+          "lat": -34.646898,
+          "estado": "verde",
+          "nombre": "ESCUELA MUNICIPAL DE DANZAS JOSÉ NEGLIA",
+          "localidad": "MORON",
+          "motivo": ""
+        },
+        {
+          "lon": -58.578026,
+          "lat": -34.628131,
+          "estado": "verde",
+          "nombre": "JARDÍN DE INFANTES Nº912 CARLOS GARDEL",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.601319,
+          "lat": -34.622138,
+          "estado": "verde",
+          "nombre": "JARDÍN DE INFANTES Nº923",
+          "localidad": "EL PALOMAR",
+          "motivo": ""
+        },
+        {
+          "lon": -58.625912,
+          "lat": -34.648306,
+          "estado": "verde",
+          "nombre": "JARDÍN MUNICIPAL Nº1 DR. ALFREDO PALACIOS",
+          "localidad": "MORON",
+          "motivo": ""
+        }
+      ],
+      "config": {
+        "geojson": {
+          "type": "Feature",
+          "properties": {
+            "nombre": "Morón"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -58.616027538,
+                  -34.588705182
+                ],
+                [
+                  -58.556107068,
+                  -34.634703244
+                ],
+                [
+                  -58.581876,
+                  -34.6431699999999
+                ],
+                [
+                  -58.6409743149999,
+                  -34.704543088
+                ],
+                [
+                  -58.667381,
+                  -34.685988
+                ],
+                [
+                  -58.653486,
+                  -34.631612
+                ],
+                [
+                  -58.620379,
+                  -34.6314189999999
+                ],
+                [
+                  -58.616027538,
+                  -34.588705182
+                ]
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "hallazgos",
+      "type": "bar",
+      "title": "Hallazgos más frecuentes en escuelas en rojo",
+      "sectionId": "hallazgos",
+      "data": [
+        {
+          "motivo": "Techos en estado malo",
+          "Escuelas": 26
+        },
+        {
+          "motivo": "Salidas de emergencia obstruidas",
+          "Escuelas": 12
+        },
+        {
+          "motivo": "Aulas en uso sin calefacción",
+          "Escuelas": 7
+        },
+        {
+          "motivo": "Sectores del edificio clausurados",
+          "Escuelas": 6
+        },
+        {
+          "motivo": "Sin agua corriente",
+          "Escuelas": 5
+        },
+        {
+          "motivo": "Paredes en estado malo",
+          "Escuelas": 3
+        }
+      ],
+      "config": {
+        "xAxis": "motivo",
+        "layout": "horizontal",
+        "colors": {
+          "Escuelas": "#dc2626"
+        }
+      }
+    },
+    {
+      "id": "localidad",
+      "type": "bar",
+      "title": "Escuelas por localidad y estado",
+      "sectionId": "localidades",
+      "data": [
+        {
+          "localidad": "MORON",
+          "Rojo": 28,
+          "Amarillo": 14,
+          "Verde": 3
+        },
+        {
+          "localidad": "EL PALOMAR",
+          "Rojo": 12,
+          "Amarillo": 8,
+          "Verde": 3
+        },
+        {
+          "localidad": "CASTELAR",
+          "Rojo": 10,
+          "Amarillo": 11,
+          "Verde": 1
+        },
+        {
+          "localidad": "HAEDO",
+          "Rojo": 11,
+          "Amarillo": 8,
+          "Verde": 2
+        },
+        {
+          "localidad": "VILLA SARMIENTO",
+          "Rojo": 4,
+          "Amarillo": 4,
+          "Verde": 0
+        }
+      ],
+      "config": {
+        "xAxis": "localidad",
+        "stacked": true,
+        "colors": {
+          "Rojo": "#dc2626",
+          "Amarillo": "#f59e0b",
+          "Verde": "#16a34a"
+        }
+      }
+    },
+    {
+      "id": "ranking-gba",
+      "type": "bar",
+      "title": "% de escuelas en rojo — GBA (≥20 escuelas relevadas)",
+      "sectionId": "comparacion",
+      "data": [
+        {
+          "partido": "Esteban Echeverría",
+          "En rojo": 86.4
+        },
+        {
+          "partido": "Almirante Brown",
+          "En rojo": 72.1
+        },
+        {
+          "partido": "Merlo",
+          "En rojo": 60.6
+        },
+        {
+          "partido": "La Matanza",
+          "En rojo": 55.9
+        },
+        {
+          "partido": "Morón",
+          "En rojo": 54.6
+        },
+        {
+          "partido": "General San Martín",
+          "En rojo": 47.1
+        }
+      ],
+      "config": {
+        "xAxis": "partido",
+        "layout": "horizontal",
+        "colors": {
+          "Morón": "#dc2626"
+        },
+        "colorDefault": "#94a3b8"
+      }
+    }
+  ],
+  "rankings": [],
+  "mapData": [
+    {
+      "municipioId": "06568",
+      "municipioNombre": "Morón",
+      "value": 54.6,
+      "formatted": "54,6%",
+      "caption": "de las escuelas relevadas está en estado rojo (crítico)",
+      "footnote": "Morón · 119 escuelas con relevamiento aprobado · Fuente: Radar-PBA (2026-07-28)",
+      "label": "54,6% en rojo"
+    }
+  ]
+}

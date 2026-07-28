@@ -111,7 +111,8 @@ function ReportContent({ reportEntry }: { reportEntry: ReportEntry }) {
               {data.mapData[0].formatted ?? data.mapData[0].label}
             </span>
             <span className="featured-kpi-footnote">
-              Morón · Partido completo. Los datos públicos no se publican desagregados por barrio.
+              {data.mapData[0].footnote ??
+                'Morón · Partido completo. Los datos públicos no se publican desagregados por barrio.'}
             </span>
           </section>
         </SectionReveal>

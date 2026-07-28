@@ -111,6 +111,20 @@ export const REPORTS: ReportEntry[] = [
     dataPath: '/data/poblacion/educacion.json',
     order: 8,
   },
+  // ─── Grupo 3: Infraestructura escolar (Radar-PBA) ───
+  {
+    id: 'infraestructura-escuelas',
+    slug: 'infraestructura/escuelas',
+    title: 'Estado Edilicio de las Escuelas',
+    shortTitle: 'Escuelas',
+    category: 'Infraestructura escolar',
+    subcategory: 'Semáforo edilicio',
+    icon: '🏫',
+    color: '#dc2626',
+    mdPath: '/reports/infraestructura/escuelas.md',
+    dataPath: '/data/infraestructura/escuelas.json',
+    order: 11,
+  },
   // ─── Grupo 2: Seguridad ───
   {
     id: 'seguridad-snic',

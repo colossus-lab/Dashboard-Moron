@@ -4,6 +4,7 @@ import { ResponsiveLine } from '@nivo/line';
 import { useState, useEffect } from 'react';
 import { useStore } from '../../store/useStore';
 import type { ChartConfig } from '../../types/report';
+import { SchoolMap } from './SchoolMap';
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < breakpoint : false);
@@ -68,10 +69,10 @@ export function ChartRenderer({ chart, height = 400 }: ChartRendererProps) {
     case 'pyramid':
       return <PyramidChartView chart={chart} height={height} />;
     case 'map':
-      // El mapa territorial fue reemplazado por un KPI hero a nivel
-      // partido (renderizado directamente en ReportView). Los charts
-      // con type: 'map' en JSONs heredados se ignoran silenciosamente.
-      return null;
+      // Mapa geolocalizado (d3-geo). Si el chart no trae geojson en config,
+      // SchoolMap devuelve null y el bloque se ignora (compat. con JSONs viejos
+      // que usaban type: 'map' como placeholder del KPI hero).
+      return <SchoolMap chart={chart} />;
     default:
       return <BarChartView chart={chart} height={height} />;
   }
@@ -85,6 +86,15 @@ function BarChartView({ chart, height }: { chart: ChartConfig; height: number })
   const isHorizontal = chart.config?.layout === 'horizontal';
   const dataCount = chart.data.length;
   const mobile = useIsMobile();
+
+  // Colores por-dato opcionales: mapea valor del eje o id de serie a un color
+  // (ej. semáforo, o resaltar Morón en un ranking). Fallback a la paleta.
+  const cmap = chart.config?.colors;
+  const cdef = chart.config?.colorDefault;
+  const barColors = cmap
+    ? (bar: { id: string | number; indexValue: string | number; index: number }) =>
+        cmap[String(bar.indexValue)] ?? cmap[String(bar.id)] ?? cdef ?? COLORS[bar.index % COLORS.length]
+    : COLORS;
 
   // Cap horizontal bar height to fit within the panel (max ~10 items visible)
   const maxItems = mobile ? 8 : 10;
@@ -121,7 +131,7 @@ function BarChartView({ chart, height }: { chart: ChartConfig; height: number })
         }}
         padding={0.3}
         layout={isHorizontal ? 'horizontal' : 'vertical'}
-        colors={COLORS}
+        colors={barColors as any}
         borderRadius={3}
         axisBottom={mobileBottomAxis()}
         axisLeft={
@@ -149,6 +159,13 @@ function PieChartView({ chart, height }: { chart: ChartConfig; height: number })
   const mobile = useIsMobile();
   const dataCount = chart.data.length;
 
+  const cmap = chart.config?.colors;
+  const cdef = chart.config?.colorDefault;
+  const pieColors = cmap
+    ? (d: { id: string | number; label: string | number }) =>
+        cmap[String(d.id)] ?? cmap[String(d.label)] ?? cdef ?? COLORS[0]
+    : COLORS;
+
   // Format large numbers in arc labels
   const formatValue = (v: number) => {
     if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`;
@@ -173,7 +190,7 @@ function PieChartView({ chart, height }: { chart: ChartConfig; height: number })
         innerRadius={0.5}
         padAngle={2}
         cornerRadius={5}
-        colors={COLORS}
+        colors={pieColors as any}
         borderWidth={0}
         enableArcLinkLabels={!mobile}
         arcLinkLabelsSkipAngle={8}
